@@ -10,11 +10,15 @@
 .genderBlock {
 	display: inline-block;
 	color: white;
-	margin: 0 50px;
-	padding: 5px 10px;
+	margin: 0 30px;
+	padding: 10px 10px;
 	background-color: orange;
 }
 
 body {
 	text-align: center;
+}
+
+#name {
+	margin: 30px 0px;
 }
