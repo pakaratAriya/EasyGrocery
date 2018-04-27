@@ -1,0 +1,74 @@
+-- PATH=$PATH:/Applications/MAMP/Library/bin
+-- export PATH
+-- mysql -h localhost -u root -p food < Dairy.txt
+
+CREATE TABLE Dairy (
+ID int NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+calories VARCHAR(30),
+img VARCHAR(150),
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE Grains (
+ID int NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+calories VARCHAR(30),
+img VARCHAR(150),
+PRIMARY KEY (ID)
+);
+
+
+CREATE TABLE Meat (
+ID int NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+calories VARCHAR(30),
+img VARCHAR(150),
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE Veggies_and_fruits (
+ID int NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+calories VARCHAR(30),
+img VARCHAR(150),
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE Other (
+ID int NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+calories VARCHAR(30),
+img VARCHAR(150),
+PRIMARY KEY (ID)
+);
+
+INSERT INTO Grains (name, calories, img) VALUES ("bread", "256", "./picture/Grains/bread.jpg");
+INSERT INTO Grains (name, calories, img) VALUES ("rice", "130", "./picture/Grains/rice.jpg");
+INSERT INTO Grains (name, calories, img) VALUES ("oatmeal", "68", "./picture/Grains/oatmeal.jpg");
+INSERT INTO Grains (name, calories, img) VALUES ("buckwheat", "343", "./picture/Grains/buckwheat.jpg");
+INSERT INTO Grains (name, calories, img) VALUES ("popcorn", "375", "./picture/Grains/popcorn.jpg");
+
+INSERT INTO Dairy(name, calories, img) VALUES ("milk", "42", "./picture/Dairy/milk.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("cheese", "402", "./picture/Dairy/cheese.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("yogurt", "59", "./picture/Dairy/yogurt.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("sour cream", "193", "./picture/Dairy/sourcream.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("cream cheese", "342", "./picture/Dairy/creamcheese.jpg");
+
+INSERT INTO Meat(name, calories, img) VALUES ("beef", "250", "./picture/Meat/beef.jpg");
+INSERT INTO Meat(name, calories, img) VALUES ("pork", "242", "./picture/Meat/pork.jpg");
+INSERT INTO Meat(name, calories, img) VALUES ("lamb", "294", "./picture/Meat/lamb.jpg");
+INSERT INTO Meat(name, calories, img) VALUES ("chicken", "239", "./picture/Meat/chicken.jpg");
+INSERT INTO Meat(name, calories, img) VALUES ("veal", "172", "./picture/Meat/veal.jpg");
+
+INSERT INTO Veggies_and_fruits(name, calories, img) VALUES ("apple", "52", "./picture/veggies_and_fruits/apple.jpg");
+INSERT INTO Veggies_and_fruits(name, calories, img) VALUES ("banana", "89", "./picture/veggies_and_fruits/banana.jpg");
+INSERT INTO Veggies_and_fruits(name, calories, img) VALUES ("celery", "16", "./picture/veggies_and_fruits/celery.jpg");
+INSERT INTO Veggies_and_fruits(name, calories, img) VALUES ("tomato", "18", "./picture/veggies_and_fruits/tomato.jpg");
+INSERT INTO Veggies_and_fruits(name, calories, img) VALUES ("lettuce", "15", "./picture/veggies_and_fruits/lettuce.jpg");
+
+INSERT INTO Other(name, calories, img) VALUES ("salmon", "208", "./picture/Other/salmon.jpg");
+INSERT INTO Other(name, calories, img) VALUES ("cod", "82", "./picture/Other/cod.jpg");
+INSERT INTO Other(name, calories, img) VALUES ("tofu", "76", "./picture/Other/tofu.jpg");
+INSERT INTO Other(name, calories, img) VALUES ("avocado", "160", "./picture/Other/avocado.jpg");
+INSERT INTO Other(name, calories, img) VALUES ("ham", "145", "./picture/Other/ham.jpg");

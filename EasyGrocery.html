@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Easy Grocery</title>
+    <link rel="stylesheet" href="EasyGrocery.css" type="text/css"/>
+  </head>
+  <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <div id="content">
+      <form method="GET">
+          <label>name:</label>
+          <input id="userName" type="text" placeholder="Max" value="Max" required>
+         </form>
+        <a id="man" href="#">
+          <img class="genderSelection selectedGender" src="manFace.png" value="male"/>
+        </a>
+        <a id="woman" href="#">
+          <img class="genderSelection" src="girlFace.png" value="female"/>
+        </a>
+        <br/>
+        <button class="ageSelection selectedAge" value="5">0-9</button>
+        <button class="ageSelection" value="15">10-19</button>
+        <button class="ageSelection" value="26">20-32</button>
+        <button class="ageSelection" value="45">33+</button>
+        <br/>
+        <button class="submit" style="margin: 30px;">Submit</button>
+     
+    </div>
+    <div id="result">
+      
+    </div>
+    
+    <script src="EasyGrocery.js"></script>
+    
+  </body>
+
+</html>

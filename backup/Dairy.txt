@@ -1,0 +1,11 @@
+-- PATH=$PATH:/Applications/MAMP/Library/bin
+-- export PATH
+-- mysql -h localhost -u root -p food < Dairy.txt
+
+CREATE TABLE Dairy (
+ID int NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+calories VARCHAR(30),
+img VARCHAR(150),
+PRIMARY KEY (ID)
+);
