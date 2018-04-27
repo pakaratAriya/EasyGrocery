@@ -1,0 +1,20 @@
+#nav h2 {
+	color: white;
+	margin-top: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	background-color: green;
+}
+
+.genderBlock {
+	display: inline-block;
+	color: white;
+	margin: 0 50px;
+	padding: 5px 10px;
+	background-color: orange;
+}
+
+body {
+	text-align: center;
+}
