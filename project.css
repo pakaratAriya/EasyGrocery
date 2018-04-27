@@ -8,11 +8,11 @@
 }
 
 .genderBlock {
-	display: inline-block;
 	color: white;
 	margin: 0 30px;
-	padding: 10px 10px;
 	background-color: orange;
+	width: 100px;
+	height: 80px;
 }
 
 body {
@@ -21,4 +21,12 @@ body {
 
 #name {
 	margin: 30px 0px;
+}
+
+#ageGroupDiv {
+	margin-top: 50px;
+}
+
+#ageGroupBlock {
+	/*margin: 0px 20px;*/
 }
