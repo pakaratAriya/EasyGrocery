@@ -7,6 +7,15 @@ var age = 5;
 $(document).ready(function() {
 
 
+var necCal = 0;
+var calData;
+var femaleCal = { 1666, 2000, 1800 };
+var maleCal = { 1733, 2800, 2600 }
+for (var i = 0; i < maleCal.length; i++){
+  calData['male'][i] = maleCal[i];
+  calData['female'][i] = femaleCal[i];
+}
+
 $(".genderSelection").on("click", function(event){
   $(".genderSelection").removeClass("selectedGender");
   $(this).addClass("selectedGender");

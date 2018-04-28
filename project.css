@@ -14,7 +14,7 @@
 
 .genderBlock {
 	color: white;
-	margin: 0 20px;
+	margin: 0 10px;
 	background-color: orange;
 	width: 120px;
 	height: 90px;
@@ -34,7 +34,7 @@ body {
 
 .ageGroupBlock {
 	/*margin-top: 50px;*/
-	margin: 0px 5px;
+	margin: 0px 0px;
 	padding-bottom: 110px;
 	height: 100px;
 	width: 95px;
