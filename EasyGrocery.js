@@ -1,8 +1,11 @@
 var calSum=0;
-$(document).ready(function() {
 var gender = "male";
 var age = 5;
-var pureData;
+// calories that the per son need
+
+
+$(document).ready(function() {
+
 
 $(".genderSelection").on("click", function(event){
   $(".genderSelection").removeClass("selectedGender");
