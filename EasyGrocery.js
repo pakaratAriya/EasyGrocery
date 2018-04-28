@@ -1,8 +1,11 @@
 var calSum=0;
-$(document).ready(function() {
 var gender = "male";
 var age = 5;
-var pureData;
+// calories that the per son need
+
+
+$(document).ready(function() {
+
 
 var necCal = 0;
 var calData;
