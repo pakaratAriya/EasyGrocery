@@ -1,0 +1,50 @@
+#content {
+	/*width: 400px;*/
+	text-align: center;
+}
+
+#nav h2 {
+	color: white;
+	margin-top: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	background-color: green;
+}
+
+.genderBlock {
+	color: white;
+	margin: 0 10px;
+	background-color: orange;
+	width: 120px;
+	height: 90px;
+}
+
+body {
+	text-align: center;
+}
+
+#name {
+	margin: 30px 0px;
+}
+
+#ageGroupDiv {
+	margin-top: 50px;
+}
+
+.ageGroupBlock {
+	/*margin-top: 50px;*/
+	margin: 0px 0px;
+	padding-bottom: 110px;
+	height: 100px;
+	width: 95px;
+	background-color: #4dff4d;
+	color: white;
+}
+
+#submitButton {
+	background-color: red;
+	color: white;
+	transform: translate(110px, 40px);
+	border-radius: 50%;
+}
