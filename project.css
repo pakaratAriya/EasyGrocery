@@ -1,3 +1,7 @@
+#content {
+	/*width: 400px;*/
+}
+
 #nav h2 {
 	color: white;
 	margin-top: 0;
@@ -9,7 +13,7 @@
 
 .genderBlock {
 	color: white;
-	margin: 0 25px;
+	margin: 0 20px;
 	background-color: orange;
 	width: 120px;
 	height: 90px;
@@ -40,8 +44,9 @@ body {
 #submitButton {
 	background-color: red;
 	color: white;
+	/*float: right;*/
 	position: absolute;
-	right: 65px;
-	bottom: 240px;
+	right: 10%;
+	top: 450px;
 	border-radius: 50%;
 }
