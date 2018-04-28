@@ -48,11 +48,21 @@ INSERT INTO Grains (name, calories, img) VALUES ("rice", "130", "./picture/Grain
 INSERT INTO Grains (name, calories, img) VALUES ("oatmeal", "68", "./picture/Grains/oatmeal.jpg");
 INSERT INTO Grains (name, calories, img) VALUES ("buckwheat", "343", "./picture/Grains/buckwheat.jpg");
 INSERT INTO Grains (name, calories, img) VALUES ("popcorn", "375", "./picture/Grains/popcorn.jpg");
+INSERT INTO Grains (name, calories, img) VALUES ("millet", "189", "./picture/Grains/popcorn.jpg", "6.78");
+INSERT INTO Grains (name, calories, img) VALUES ("quinoa", "156", "./picture/Grains/quinoa.jpg", "3.98");
+INSERT INTO Grains (name, calories, img) VALUES ("teff", "180", "./picture/Grains/teff.png","1.98");
+INSERT INTO Grains (name, calories, img) VALUES ("barley", "176", "./picture/Grains/barley.jpg", "3.42");
+INSERT INTO Grains (name, calories, img) VALUES ("farro", "200", "./picture/Grains/farro.jpg", "3.28");
+INSERT INTO Grains (name, calories, img) VALUES ("amaranth", "375", "./picture/Grains/amaranth.jpg", "1.7");
+INSERT INTO Grains (name, calories, img) VALUES ("oats", "150", "./picture/Grains/popcorn.jpg", "2.38");
 
 INSERT INTO Dairy(name, calories, img) VALUES ("milk", "42", "./picture/Dairy/milk.jpg");
 INSERT INTO Dairy(name, calories, img) VALUES ("cheese", "402", "./picture/Dairy/cheese.jpg");
 INSERT INTO Dairy(name, calories, img) VALUES ("yogurt", "59", "./picture/Dairy/yogurt.jpg");
 INSERT INTO Dairy(name, calories, img) VALUES ("sour cream", "193", "./picture/Dairy/sourcream.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("cream cheese", "342", "./picture/Dairy/creamcheese.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("cream cheese", "342", "./picture/Dairy/creamcheese.jpg");
+INSERT INTO Dairy(name, calories, img) VALUES ("cream cheese", "342", "./picture/Dairy/creamcheese.jpg");
 INSERT INTO Dairy(name, calories, img) VALUES ("cream cheese", "342", "./picture/Dairy/creamcheese.jpg");
 
 INSERT INTO Meat(name, calories, img) VALUES ("beef", "250", "./picture/Meat/beef.jpg");
