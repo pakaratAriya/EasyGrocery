@@ -1,5 +1,6 @@
 #content {
 	/*width: 400px;*/
+	text-align: center;
 }
 
 #nav h2 {
@@ -44,9 +45,6 @@ body {
 #submitButton {
 	background-color: red;
 	color: white;
-	/*float: right;*/
-	position: absolute;
-	right: 10%;
-	top: 450px;
+	transform: translate(110px, 40px);
 	border-radius: 50%;
 }
