@@ -1,0 +1,71 @@
+#title{
+    background-color: rgb(15, 161, 15);
+    height: 40px;
+}
+
+#title > p{
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+#info{
+    background-color: rgb(16, 241, 16);
+    height: 60px;
+}
+
+#info > p{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    word-spacing: 30px;
+    padding-top: 10px;
+    padding-left: 25%;
+}
+
+#name{
+    padding-left: 25%; 
+}
+
+#gender{
+    padding-left: 35px; 
+}
+
+#age{
+    padding-left: 35px; 
+}
+
+#grains, #dairy, #meat, #veggies, #other{
+    margin-top: 10px;
+    height: 80px;
+}
+
+#grains > p, #dairy > p, #meat > p, #veggies > p, #other > p{
+    padding-left: 20px;
+    margin: 0%;
+}
+
+.img{
+    padding-left: 20px;
+}
+
+
+#bot{
+    background-color: rgb(15, 161, 15);
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#bot > p{
+    padding-left: 25%;
+    font-size: 15px;
+    color: white;
+}
+
+#cost{
+    padding-left: 5px;
+}
