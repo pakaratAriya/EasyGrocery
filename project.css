@@ -9,10 +9,10 @@
 
 .genderBlock {
 	color: white;
-	margin: 0 30px;
+	margin: 0 25px;
 	background-color: orange;
-	width: 100px;
-	height: 80px;
+	width: 120px;
+	height: 90px;
 }
 
 body {
@@ -27,6 +27,21 @@ body {
 	margin-top: 50px;
 }
 
-#ageGroupBlock {
-	/*margin: 0px 20px;*/
+.ageGroupBlock {
+	/*margin-top: 50px;*/
+	margin: 0px 5px;
+	padding-bottom: 110px;
+	height: 100px;
+	width: 95px;
+	background-color: #4dff4d;
+	color: white;
+}
+
+#submitButton {
+	background-color: red;
+	color: white;
+	position: absolute;
+	right: 65px;
+	bottom: 240px;
+	border-radius: 50%;
 }
