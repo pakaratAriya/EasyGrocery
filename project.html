@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <div id="content">
 <div id="nav">
 	<h2>EasyGrocery</h2>
@@ -23,35 +23,35 @@
 </div>
 
 <div id="gender">
-	<button class="genderBlock">
+	<button class="genderBlock genderSelection selectedGender" value="male">
 		<h3>Male</h3>
 	</button>
-	<button class="genderBlock">
+	<button class="genderBlock genderSelection" value="female">
 		<h3>Female</h3>
 	</button>
 </div>
 
 <div id="ageGroupDiv">
-	<button class="ageGroupBlock">
+	<button class="ageGroupBlock ageSelection selectedAge" value="2-13">
 		<h3>Child</h3>
 		<h3>2-13</h3>
 	</button>
-	<button class="ageGroupBlock">
+	<button class="ageGroupBlock ageSelection" value="14-18">
 		<h3>Teen</h3>
 		<h3>14-18</h3>
 	</button>
-	<button class="ageGroupBlock">
+	<button class="ageGroupBlock ageSelection" value="19-51+">
 		<h3>Adult</h3>
 		<h3>19-51+</h3>
 	</button>
 </div>
 
 <div id="submitDiv">
-	<button id="submitButton">
+	<button id="submitButton" class="submit">
 		<h3>Submit</h3>
 	</button>
 </div>
 </div>
-</div>
+<script src="EasyGrocery.js"></script>
 </body>
 </html>

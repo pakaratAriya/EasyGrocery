@@ -1,16 +1,17 @@
 var calSum=0;
+var userName;
 var gender = "male";
-var age = 5;
+var age = "2-13";
+var queryData;
 // calories that the per son need
 
 
-$(document).ready(function() {
-
 
 var necCal = 0;
-var calData;
-var femaleCal = { 1666, 2000, 1800 };
-var maleCal = { 1733, 2800, 2600 }
+var calData = {male: {}, female: {}};
+  
+var femaleCal = [ 1666, 2000, 1800 ];
+var maleCal = [ 1733, 2800, 2600 ];
 for (var i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
@@ -31,18 +32,23 @@ $(".ageSelection").on("click", function(event){
 
   
 $(".submit").on("click",function(event){
-  var userName = $("#userName").val();
-  
-  
- event.preventDefault();
+  userName = $("#userName").val();
 
+  event.preventDefault();
+  
+  localStorage.setItem("userName",userName);
+  localStorage.setItem("age",age);
+  localStorage.setItem("gender",gender);
   $.ajax({
       url: "EasyGrocery.php",
       dataType: "json",
       type: "GET",
       data: {output: 'json'},
       success: function(data) {
-        createTable(data);
+          localStorage.setItem("queryData",JSON.stringify(data));
+          
+          document.location = "secondpage.html";
+
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log(errorThrown);
@@ -51,21 +57,18 @@ $(".submit").on("click",function(event){
   
   
 });
-});
+
 
 function createTable(data){
-  var st = "<table class='foodTable'>";
+  
   for (var d in data){
-    st += "<tr class='foodTable'>";
-    st += "<th class='foodTable'>" + d + "</th>";
+    var st = "<p>" + d + "</p>";
     for (var i = 0; i < data[d].length; i++){
-      
-      st += "<td class='foodTable'><img class='foodImg' cal='" + data[d][i]['calories'] + "'value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"'/></td>";
+      st += "<img class='img foodImg' cal='" + data[d][i]['calories'] + "'value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"'/>";
     }
-    st += "</tr>";
+    $("#" + d).html(st);
   }
-  st += "</tr>";
-  $("#result").html(st);
+  
   
   $(".foodImg").on("click", function(event){
     if($(this).hasClass("selectedFood")){
@@ -75,11 +78,28 @@ function createTable(data){
     }
     $(this).toggleClass("selectedFood");
     calculateCalories();
-    
 });
+
+    
 }
 
 function calculateCalories(){
   $("#calories").html("Total Calories: " + calSum);;
 }
+
+$(document).ready(function() {
+  if(window.location.pathname.split("/").pop() == "secondpage.html"){
+    age = localStorage.getItem("age");
+    gender = localStorage.getItem("gender");
+    userName = localStorage.getItem("userName");
+    queryData = JSON.parse(localStorage.getItem("queryData"));
+    $("#username").html(userName);
+    $("#gender").html(gender);
+    $("#age").html(age);
+    createTable(queryData);
+  }
+  
+});
+
+
   
