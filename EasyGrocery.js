@@ -81,7 +81,6 @@ function createTable(data){
   
   
   $(".foodImg").on("click", function(event){
-    console.log($(this).attr("cost"));
     if($(this).hasClass("selectedFood")){
       calSum -= ($(this).attr("cal"));
       totalCost -= parseFloat($(this).attr("cost"));
@@ -151,7 +150,6 @@ function sortData(data){
       if(sortedData[d]['min'] > parseFloat(data[d][i]['calories'])){
         sortedData[d]['min'] = parseFloat(data[d][i]['calories']);
       }
-      //console.log(d + i);
     }
     
     for (var i = 0; i < data[d].length; i++){
@@ -196,11 +194,9 @@ function getFoodData(){
       }
       var randIndex = Math.floor(Math.random() * maxIndex);
       selectedFood[d]['data'][foodIndex] = sortedData[d]['data'][randIndex];
-        //console.log(d+ selectedFood[d]['data'][foodIndex]['calories']);
       
       calRemaining[calIndex] -= parseFloat(selectedFood[d]['data'][foodIndex]['calories']);
       foodIndex++;
-      //console.log(calRemaining[calIndex]);
     }
     calIndex++;
   }
