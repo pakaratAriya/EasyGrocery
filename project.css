@@ -15,7 +15,7 @@
 .genderBlock {
 	color: white;
 	margin: 0px 10px;
-	background-color: orange;
+	/*background-color: orange;*/
 	width: 100px;
 	height: 80px;
 }
@@ -48,3 +48,10 @@ body {
 	transform: translate(85px, 40px);
 	border-radius: 50%;
 }
+      .selectedGender {
+        background-color: deepskyblue;
+      }
+      
+      .selectedAge {
+        background-color: orange;
+      }
