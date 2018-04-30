@@ -48,10 +48,11 @@ body {
 	transform: translate(85px, 40px);
 	border-radius: 50%;
 }
-      .selectedGender {
-        background-color: deepskyblue;
-      }
-      
-      .selectedAge {
-        background-color: orange;
-      }
+
+.selectedGender {
+	background-color: deepskyblue;
+}
+
+.selectedAge {
+	background-color: orange;
+}
