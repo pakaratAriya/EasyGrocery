@@ -53,13 +53,13 @@ INSERT INTO Grains (name, calories, img, cost) VALUES ("rice", "130", "./picture
 INSERT INTO Grains (name, calories, img, cost) VALUES ("oatmeal", "68", "./picture/Grains/oatmeal.jpg", "2.48");
 INSERT INTO Grains (name, calories, img, cost) VALUES ("buckwheat", "343", "./picture/Grains/buckwheat.jpg", "3.37");
 INSERT INTO Grains (name, calories, img, cost) VALUES ("popcorn", "375", "./picture/Grains/popcorn.jpg", "4.98");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("millet", "189", "./picture/Grains/popcorn.jpg", "6.78");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("quinoa", "156", "./picture/Grains/quinoa.jpg", "3.98");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("teff", "180", "./picture/Grains/teff.png","1.98");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("barley", "176", "./picture/Grains/barley.jpg", "3.42");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("farro", "200", "./picture/Grains/farro.jpg", "3.28");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("amaranth", "375", "./picture/Grains/amaranth.jpg", "1.7");
-INSERT INTO Grains (name, calories, img, cost)) VALUES ("oats", "150", "./picture/Grains/popcorn.jpg", "2.38");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("millet", "189", "./picture/Grains/popcorn.jpg", "6.78");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("quinoa", "156", "./picture/Grains/quinoa.jpg", "3.98");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("teff", "180", "./picture/Grains/teff.png","1.98");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("barley", "176", "./picture/Grains/barley.jpg", "3.42");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("farro", "200", "./picture/Grains/farro.jpg", "3.28");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("amaranth", "375", "./picture/Grains/amaranth.jpg", "1.7");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("oats", "150", "./picture/Grains/popcorn.jpg", "2.38");
 
 INSERT INTO Dairy(name, calories, img, cost) VALUES ("milk", "42", "./picture/Dairy/milk.jpg", "2.95");
 INSERT INTO Dairy(name, calories, img, cost) VALUES ("cheese", "402", "./picture/Dairy/cheese.jpg", "5.99");
