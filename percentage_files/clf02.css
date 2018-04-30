@@ -1,0 +1,109 @@
+<!-- 
+body  {font:0.8em Arial, Helvetica, sans-serif; background:#fff; color:#000;}
+p,div,table,th,td,ol,ul,li {font-family: Arial, Helvetica, sans-serif;}
+
+a:link {color:#00f;background:#fff;}
+a:visited {color:#609;background:#fff;}
+a:active {color:#609;background:#fff;}
+
+h1 {font:1.7em Arial, Helvetica, sans-serif;}
+h2 {font:bold 1.5em Arial, Helvetica, sans-serif;}
+h3 {font:bold 1.3em Arial, Helvetica, sans-serif;}
+h4 {font:bold 1.1em Arial, Helvetica, sans-serif;}
+h5 {font:bold 1.05em Arial, Helvetica, sans-serif;}
+
+.nowrap {white-space:nowrap;}
+
+hr {height:1px;}
+img {border:0px;}
+caption {font-size:1.15em; font-weight:bold; caption-side:top; text-align:left; padding-top:12px;padding-left:0;}
+
+.ct {text-align:center;}
+.lf {text-align:left;}
+.rt {text-align:right;}
+.bt {vertical-align:bottom;} 
+.tp {vertical-align:top;}
+.notpspc {margin-top:0;padding-top:0;}
+.nobtspc {margin-bottom:0;padding-bottom:0;}
+.indnt {margin-left:1.5em;}
+
+/* Note: Use hide instead of hideoff for transition to Framework */
+.hideoff {position:absolute;height:1%;left:-3400px;top:-20px;}
+.hide {position:absolute;height:1%;left:-3400px;top:-20px;}
+
+.listspc {margin-top:.8em;}
+
+#fip_noNav {margin-bottom:14px;}
+
+/** Publication sidebar menu **/
+
+#sidelist
+{
+background:#fff;
+color:#000;
+border-top:1px solid #bbb;
+margin:0;
+padding:0;
+text-align:left;
+white-space:normal;
+	/* IE 4,5, 5.5 */
+	width:132px;
+	voice-family:"\"}\"";
+	voice-family:inherit;
+width:132px;
+height:100%;
+z-index:100;
+}
+
+#sidelist li
+{
+background:transparent;
+font:bold 0.9em arial, sans-serif;
+display:list-item;
+list-style-type:none;
+margin:0;
+padding:0;
+line-height:auto;
+white-space:normal;
+}
+
+#sidelist li a
+{
+background:#fff;
+color:#004d9d;
+border-bottom:1px solid #bbb;
+display:block;
+margin:0;
+padding:3px 0px;
+text-decoration:none;
+white-space:normal;
+	/* IE 4,5, 5.5 */
+	width:132px;
+	voice-family:"\"}\"";
+	voice-family:inherit;
+width:132px;
+}
+
+#sidelist li a:hover,
+#sidelist li a:active,
+#sidelist li.home a:hover,
+#sidelist li.home a:active
+{
+background:#444;
+color:#fff;
+}
+
+#sidelist li a:visited,
+#sidelist li a:visited
+#sidelist li.home a:visited,
+#sidelist li.home a:visited
+{
+color:#815e8c;
+}
+#sidelist li a:hover,
+#sidelist li.home a:hover
+{
+color:#fff;
+}
+
+//-->
