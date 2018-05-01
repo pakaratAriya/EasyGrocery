@@ -26,7 +26,7 @@
               $statement->execute();
               $data[$tableNames[$i]] = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
-          }catch(PDOException $e){
+          } catch(PDOException $e) {
             echo "<p style='color: red;'>From the SQL code: $sql</p>";
             $error = $e->getMessage();
             echo "<p style='color: red;'>$error</p>";

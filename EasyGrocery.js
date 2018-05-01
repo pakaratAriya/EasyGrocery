@@ -55,11 +55,10 @@ $(".submit").on("click",function(event){
       data: {output: 'json'},
       success: function(data) {
           localStorage.setItem("queryData",JSON.stringify(data));
-          
           document.location = "secondpage.html";
 
     },
-    error: function(jqXHR, textStatus, errorThrown) {
+    error: function(errorThrown) {
       console.log(errorThrown);
     }
   });
@@ -150,10 +149,6 @@ function sortData(data){
     sortedData[d]['min'] = parseFloat(data[d][0]['calories']);
     sortedData[d]['max'] = parseFloat(data[d][0]['calories']);
     for (let i = 0; i < data[d].length; i++){
-      sortedData[d]['max'] = (sortedData[d]['max'] > parseFloat(data[d][i]['calories'])) ?
-          sortedData[d]['max'] : parseFloat(data[d][i]['calories']);
-      sortedData[d]['min'] = (sortedData[d]['min'] < parseFloat(data[d][i]['calories'])) ?
-          sortedData[d]['min'] : parseFloat(data[d][i]['calories']);
       if(sortedData[d]['max'] < parseFloat(data[d][i]['calories'])){
         sortedData[d]['max'] = parseFloat(data[d][i]['calories']);
       }
