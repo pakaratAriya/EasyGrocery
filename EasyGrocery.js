@@ -4,29 +4,32 @@ var gender = "male";
 var age = "2-13";
 var queryData;
 var totalCost = 0.00;
-var ageChoice=0;
 var neededCal;
 var sortedData = new Object();
 var selectedFood = new Object();
-// calories that the per son need
-
-
-
-var necCal = 0;
 var calData = {male: {}, female: {}};
-  
 var femaleCal = [ 1666, 2000, 1800 ];
 var maleCal = [ 1733, 2800, 2600 ];
-for (var i = 0; i < maleCal.length; i++){
+var youngProportion = [ 0.152, 0.31, 0.176, 0.139, 0.223];
+var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
+
+for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
 }
+
+
+//================================================== selection for the first page. ==========================================//
+
+//-------------------------------------------------- select the gender for the individual ----------------------------------//
 
 $(".genderSelection").on("click", function(event){
   $(".genderSelection").removeClass("selectedGender");
   $(this).addClass("selectedGender");
   gender = $(this).attr("value");
 });
+
+//-------------------------------------------------- select the age for the individual ----------------------------------//
 
 $(".ageSelection").on("click", function(event){
   $(".ageSelection").removeClass("selectedAge");
@@ -35,11 +38,10 @@ $(".ageSelection").on("click", function(event){
   selectCalories();
 });
 
+//-------------------------------------------------- select the gender for the individual ----------------------------------//
 
-  
 $(".submit").on("click",function(event){
   userName = $("#userName").val();
-
   event.preventDefault();
   selectCalories();
   localStorage.setItem("userName",userName);
@@ -61,24 +63,26 @@ $(".submit").on("click",function(event){
       console.log(errorThrown);
     }
   });
-  
-  
 });
 
+//================================================= selection for the second page. ==========================================//
 
-function createTable(data){
-  
+//---------------------------------------------- Create data from the data. -------------------------------------------------//
 
+function createData(data){
+  // sort all the data by calories.
   sortData(data);
+  // pick the item randomly to fulfill the calories that the user needs.
   getFoodData();
-  for (var d in selectedFood){
-    var st = "<p>" + d + "</p>";
-    for (var i = 0; i < selectedFood[d]['data'].length; i++){
+  for (let d in selectedFood){
+    let st = "<p>" + d + "</p>";
+    for (let i = 0; i < selectedFood[d]['data'].length; i++){
       st += "<img class='img foodImg' cost='" + selectedFood[d]['data'][i]['cost'] + "' cal='" + selectedFood[d]['data'][i]['calories'] + "' value='" + selectedFood[d]['data'][i]['name'] + "' src='" + selectedFood[d]['data'][i]['img'] +"'/>";
     }
     $("#" + d).html(st);
   }
   
+  //------------------------------------------------- Select and deselect the food items ---------------------------------//
   
   $(".foodImg").on("click", function(event){
     if($(this).hasClass("selectedFood")){
@@ -90,15 +94,18 @@ function createTable(data){
     }
     $(this).toggleClass("selectedFood");
     calculateCalories();
-});
-
-    
+  });    
 }
+
+//-------------------------------------- Show the result of calories that the user needs ------------------------------------//
+
 
 function calculateCalories(){
   $("#calories").html("Total Calories: " + calSum);;
   $("#bot").html("<p>The total estamated cost is:  <span id='cost'> " + totalCost.toFixed(2) + "</span> </p>")
 }
+
+//----------------------------- Generate the information if the html page is "secondpage.html" ------------------------------//
 
 $(document).ready(function() {
   if(window.location.pathname.split("/").pop() == "secondpage.html"){
@@ -110,13 +117,14 @@ $(document).ready(function() {
     $("#username").html(userName);
     $("#gender").html(gender);
     $("#age").html(age);
-    createTable(queryData);
+    createData(queryData);
   }
-  
 });
 
+//---------------------------------------- Select the calories by the first page -------------------------------------------//
+
 function selectCalories(){
-  var ageIndex = 0;
+  let ageIndex = 0;
   switch (age) {
     case "2-13":
       ageIndex = 0;
@@ -131,15 +139,17 @@ function selectCalories(){
   neededCal = calData[gender][ageIndex];
 }
 
-function sortData(data){
-  var restrictedIndex = new Array();
+//--------------------------------------------  sort all the data by calories. ----------------------------------------------//
 
-  for (var d in data){
+function sortData(data){
+  let restrictedIndex = new Array();
+
+  for (let d in data){
     sortedData[d] = new Object();
     sortedData[d]['data'] = new Array();
     sortedData[d]['min'] = parseFloat(data[d][0]['calories']);
     sortedData[d]['max'] = parseFloat(data[d][0]['calories']);
-    for (var i = 0; i < data[d].length; i++){
+    for (let i = 0; i < data[d].length; i++){
       sortedData[d]['max'] = (sortedData[d]['max'] > parseFloat(data[d][i]['calories'])) ?
           sortedData[d]['max'] : parseFloat(data[d][i]['calories']);
       sortedData[d]['min'] = (sortedData[d]['min'] < parseFloat(data[d][i]['calories'])) ?
@@ -152,12 +162,12 @@ function sortData(data){
       }
     }
     
-    for (var i = 0; i < data[d].length; i++){
+    for (let i = 0; i < data[d].length; i++){
       
       
-      var minValue = parseFloat(sortedData[d]['max']);
+      let minValue = parseFloat(sortedData[d]['max']);
       
-      for (var j = 0; j < data[d].length; j++) {
+      for (let j = 0; j < data[d].length; j++) {
         if (minValue >= parseFloat(data[d][j]['calories']) && !restrictedIndex.includes(j)) {
           sortedData[d]['data'][i] = data[d][j];
           minValue = parseFloat(data[d][j]['calories']);
@@ -171,28 +181,37 @@ function sortData(data){
 
 }
 
+//----------------------- pick the item randomly to fulfill the calories that the user needs. -----------------------------//
+
 function getFoodData(){
-  var calRemaining = new Array();
-  var calIndex = 0;
-  for (var i = 0; i < 5; i++){
-    calRemaining[i] = neededCal/5;   
+  let calRemaining = new Array();
+  let calIndex = 0;
+  let calFactor = 0;
+  for (let i = 0; i < 5; i++){
+    if (age = "19-51+") {
+      calFactor = adultProportion[i];
+    } else {
+      calFactor = youngProportion[i];
+    }
+    calRemaining[i] = neededCal * calFactor;  
+    console.log(calRemaining[i]);
   }
-  var foodIndex =0;
-  for (var d in sortedData){
+  let foodIndex =0;
+  for (let d in sortedData){ 
     selectedFood[d] = new Object();
     selectedFood[d]['data'] = new Array();
     foodIndex = 0;
     while (calRemaining[calIndex] > sortedData[d]['min']) {
-      var maxIndex = 0;
+      let maxIndex = 0;
           
-      for (var i in sortedData[d]['data']) {
+      for (let i in sortedData[d]['data']) {
         if(sortedData[d]['data'][i]['calories'] <= calRemaining[calIndex]) {
           maxIndex++;
         } else {
           break;
         }
       }
-      var randIndex = Math.floor(Math.random() * maxIndex);
+      let randIndex = Math.floor(Math.random() * maxIndex);
       selectedFood[d]['data'][foodIndex] = sortedData[d]['data'][randIndex];
       
       calRemaining[calIndex] -= parseFloat(selectedFood[d]['data'][foodIndex]['calories']);
