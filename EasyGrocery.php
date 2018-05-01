@@ -22,9 +22,11 @@
             
             for($i = 0; $i < 5; $i++){
               $sql[$i] = "SELECT * FROM $tableNames[$i]";
+              // $sql[0] = "SELECT * FROM meat";
               $statement = $conn->prepare($sql[$i]);
               $statement->execute();
               $data[$tableNames[$i]] = $statement->fetchAll(PDO::FETCH_ASSOC);
+              //$data[meat] = {{"ID"=>"1", "name"...},{"ID"=>"2","name"=>"}
             }
           } catch(PDOException $e) {
             echo "<p style='color: red;'>From the SQL code: $sql</p>";

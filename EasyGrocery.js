@@ -66,6 +66,22 @@ $(".submit").on("click",function(event){
 
 //================================================= selection for the second page. ==========================================//
 
+//----------------------------- Generate the information WHEN 'secondpage.html' is opened ------------------------------//
+
+$(document).ready(function() {
+  if(window.location.pathname.split("/").pop() == "secondpage.html"){
+    age = localStorage.getItem("age");
+    gender = localStorage.getItem("gender");
+    userName = localStorage.getItem("userName");
+    neededCal = localStorage.getItem("neededCal");
+    queryData = JSON.parse(localStorage.getItem("queryData"));
+    $("#username").html(userName);
+    $("#gender").html(gender);
+    $("#age").html(age);
+    createData(queryData);
+  }
+});
+
 //---------------------------------------------- Create data from the data. -------------------------------------------------//
 
 function createData(data){
@@ -103,22 +119,6 @@ function calculateCalories(){
   $("#calories").html("Total Calories: " + calSum);;
   $("#bot").html("<p>The total estamated cost is:  <span id='cost'> " + totalCost.toFixed(2) + "</span> </p>")
 }
-
-//----------------------------- Generate the information if the html page is "secondpage.html" ------------------------------//
-
-$(document).ready(function() {
-  if(window.location.pathname.split("/").pop() == "secondpage.html"){
-    age = localStorage.getItem("age");
-    gender = localStorage.getItem("gender");
-    userName = localStorage.getItem("userName");
-    neededCal = localStorage.getItem("neededCal");
-    queryData = JSON.parse(localStorage.getItem("queryData"));
-    $("#username").html(userName);
-    $("#gender").html(gender);
-    $("#age").html(age);
-    createData(queryData);
-  }
-});
 
 //---------------------------------------- Select the calories by the first page -------------------------------------------//
 
