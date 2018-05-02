@@ -38,7 +38,7 @@ $(".ageSelection").on("click", function(event){
   selectCalories();
 });
 
-//-------------------------------------------------- select the gender for the individual ----------------------------------//
+//-------------------------------------------------- go to the second page ----------------------------------//
 
 $(".submit").on("click",function(event){
   userName = $("#userName").val();
