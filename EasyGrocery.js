@@ -27,6 +27,14 @@ $(".genderSelection").on("click", function(event){
   $(".genderSelection").removeClass("selectedGender");
   $(this).addClass("selectedGender");
   gender = $(this).attr("value");
+  
+  // $(this).css({
+  //     transition : 'background-color 0.5s ease-in-out',
+  //     "background-color": "green",
+  //     "color": "white"
+  // });
+
+
 });
 
 //-------------------------------------------------- select the age for the individual ----------------------------------//
@@ -38,7 +46,7 @@ $(".ageSelection").on("click", function(event){
   selectCalories();
 });
 
-//-------------------------------------------------- select the gender for the individual ----------------------------------//
+//-------------------------------------------------- go to the second page ----------------------------------//
 
 $(".submit").on("click",function(event){
   userName = $("#userName").val();
