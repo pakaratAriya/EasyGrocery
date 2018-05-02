@@ -90,10 +90,30 @@ function createData(data){
   // pick the item randomly to fulfill the calories that the user needs.
   getFoodData();
   for (let d in selectedFood){
-    let st = "<p>" + d + "</p>";
+    let temp = d[0].uppercase + d.substring(1);
+    let st = "<p>" + temp + "</p>";
     for (let i = 0; i < selectedFood[d]['data'].length; i++){
-      st += "<img class='img foodImg' cost='" + selectedFood[d]['data'][i]['cost'] + "' cal='" + selectedFood[d]['data'][i]['calories'] + "' value='" + selectedFood[d]['data'][i]['name'] + "' src='" + selectedFood[d]['data'][i]['img'] +"'/>";
-    }
+      st += "<div class='img foodBlock' cost='"
+      + selectedFood[d]['data'][i]['cost']
+      + "cal="
+      + selectedFood[d]['data'][i]['calories']
+      + " value="
+      + selectedFood[d]['data'][i]['name']
+      + " src="
+      + selectedFood[d]['data'][i]['img']
+      + "><img class='img foodImg' cost="
+      + selectedFood[d]['data'][i]['cost']
+      + " cal="
+      + selectedFood[d]['data'][i]['calories']
+      + " value="
+      + selectedFood[d]['data'][i]['name']
+      + " src="
+      + selectedFood[d]['data'][i]['img']
+      + "><h6>"
+      + selectedFood[d]['data'][i]['name']
+      + "</h6></div>";
+
+
     $("#" + d).html(st);
   }
 

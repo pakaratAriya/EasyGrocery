@@ -72,10 +72,10 @@ and (max-device-width : 667px) {
 	}
 	#nav h2 {
 		font-weight: 900;
-		padding: 0.5em;
-		padding-top: 1em;
-		font-size: 6.6em;
-		letter-spacing: 0.03em;
+		padding: 30px;
+		padding-top: 100px;
+		font-size: 100px;
+		letter-spacing: 5px;
 		text-shadow: 2px 2px 4px #000000;
 	}
 

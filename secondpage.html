@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="secondPage.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Catamaran:100,200,300,500,600,700,800,900" rel="stylesheet">
         <title>SecondPage</title>
     </head>
 
@@ -13,14 +14,20 @@
             </div>
 
             <div id="info">
-                <p>Name: Gender: Age:</p>
-                <p id="data"> <span id="username">Name</span>
-                              <span id="gender">Gender</span>
-                              <span id="age">Age</span> </p>
+                <p id="data">
+                  Name <span id="username" class="userInfo">Name</span> Gender <span id="gender" class="userInfo">Gender</span> Age <span id="age" class="userInfo">Age</span>
+                </p>
             </div>
 
             <div id="grains">
-                
+              <p>grains</p>
+
+              <img class="img foodImg" cost="33" cal="33" value="food" src="picture/Dairy/cheese.jpg">
+              <img class="img foodImg" cost="33" cal="33" value="food" src="picture/Dairy/cheese.jpg">
+              <img class="img foodImg" cost="33" cal="33" value="food" src="picture/Dairy/cheese.jpg">
+              <img class="img foodImg" cost="33" cal="33" value="food" src="picture/Dairy/cheese.jpg">
+
+              <div class="img foodBlock" cost="33" cal="33" value="food" src="picture/Dairy/mushroom.png"><img class="img foodImg" cost="33" cal="33" value="food" src="picture/veggies_and_fruits/mushroom.png"><h6>cottage cheese</h6></div>
             </div>
 
             <div id="dairy">
@@ -36,14 +43,15 @@
             </div>
 
             <div id="bot">
-                    <p>The total estamated cost is:  <span id="cost">0</span> </p>
+              <p>Total Estamated Cost : <span id="cost">0</span> </p>
+
             </div>
 
         </div>
 
-        
 
-       
+
+
         <script src="EasyGrocery.js"></script>
     </body>
 

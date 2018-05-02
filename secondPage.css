@@ -1,93 +1,141 @@
+*{
+	font-family: 'Catamaran', sans-serif;
+  margin: 0;
+}
+body {
+	height: 100%;
+	text-align: center;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
 .selectedFood {
   opacity: 0.5;
 }
 
 #main{
-  margin-bottom: 100px;
+
 }
 
-.foodImg {
-  width: 50px;
-  height: 50px;
-  border: 1.2px solid;
-}
+
 
 #title{
-    background-color: rgb(15, 161, 15);
-    height: 140px;
+  color: white;
+  padding-bottom: 10px;
+  text-align: center;
+  background: #56ab2f;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#title > p{
-    text-align: center;
-    padding-top: 5px;
-    font-weight: bold;
-    font-size: 25px;
-    color: white;
-}
 
 #info{
-    background-color: rgb(16, 241, 16);
-    height: 160px;
-    
-
+  background-color: #eeeeee;
+  margin-top: -10px;
+  padding: 30px;
 }
 
-#info > p{
-    margin-top: 0%;
-    margin-bottom: 0%;
-    word-spacing: 30px;
-    padding-top: 10px; 
-    text-align: center;
+#info p{
 }
 
 #data{
-    text-align: center;
 }
 
 #username{
-    padding-right: 16px; 
 }
 
 #gender{
-    padding-right: 2px; 
 }
 
 #grains, #dairy, #meat, #veggies_and_fruits, #other{
-   margin-top: 10px;
-   padding-left: 10%;
 }
 
-@media screen and (min-width: 900px){
-    #grains, #dairy, #meat, #veggies_and_fruits, #other{
-        margin-top: 10px;
-        padding-left: 20%;
-     }
-}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 667px) {
+  #grains, #dairy, #meat, #veggies_and_fruits, #other{
+    width: 800px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: 130px;
+  }
+  #grains p, #dairy p, #meat p, #veggies_and_fruits p, #other p{
+    text-align: left;
+    padding: 5px;
+    margin: 0;
+    font-size: 50px;
+    font-weight: 200;
+  }
 
-#grains > p, #dairy > p, #meat > p, #veggies_and_fruits > p, #other > p{
-    margin: 0%;
-}
-
-
-#bot{
-    background-color: rgb(15, 161, 15);
-    height: 40px;
-    width: 100%; 
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    
-}
-
-#bot > p{
-    /* padding-left: 25%; */
+  .foodImg {
+    padding: 5px;
+    float: left;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 0px solid none;
     text-align: center;
-    font-size: 15px;
+  }
+  .foodBlock{
+    margin: 5px;
+    align-items:center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 150px;
+    height: 190px;
+    border: 0px solid none;
+    background-color: lightgreen;
+  }
+  .foodBlock h6{
+    display: flex;
+    text-align: center;
+    line-height: 100%;
+    font-size: 30px;
+    font-weight: 100;
+  }
+
+  #title p {
     color: white;
+    font-weight: 900;
+		padding: 30px;
+    padding-bottom: 10px;
+		font-size: 70px;
+		letter-spacing: 5px;
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+  #info p{
+    font-weight: 400;
+    font-size: 35px;
+  }
+  .userInfo{
+    font-weight: 200;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #bot{
+      background-color: rgb(15, 161, 15);
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+      padding-bottom: 35px;
+  }
+
+  #bot p{
+      text-align: center;
+      font-weight: 100;
+      font-size: 40px;
+      color: white;
+  }
+
+  #cost{
+      padding-left: 10px;
+      font-weight: 500;
+      font-size: 55px;
+  }
 }
-
-#cost{
-    padding-left: 5px;
-}
-
-
