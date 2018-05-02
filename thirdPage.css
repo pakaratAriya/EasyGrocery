@@ -1,0 +1,52 @@
+#title{
+    background-color: rgb(15, 161, 15);
+    height: 40px;
+}
+
+#title > p{
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+#grains, #dairy, #meat, #veggies_and_fruits, #other{
+    margin-top: 10px;
+    padding-left: 10%;
+    height: 80px;
+ }
+
+#bot{
+    background-color: rgb(15, 161, 15);
+    height: 40px;
+    width: 100%; 
+    position: fixed;
+    bottom: 0;
+    left: 0;  
+}
+
+#undo{
+    float: left;
+   /*  padding-left: 20%; */
+    margin-left: 20%;
+    margin-top: 0px;
+    font-size: 20px;
+    /*background-color: aqua;*/
+    border: none;
+}
+
+#next{
+    float: right;
+    /* padding-right: 20%; */
+    margin-right: 20%;
+    margin-top: 0px;
+    font-size: 20px;
+    /*background-color: aqua;*/
+    border: none;
+}
+
+.progress {
+    margin: 20px auto;
+    width: 50%;
+}
