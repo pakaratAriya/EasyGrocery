@@ -1,4 +1,3 @@
-
 #main{
     height: 100%;
 	text-align: center;
@@ -22,8 +21,15 @@
 
 #grains, #dairy, #meat, #veggies_and_fruits, #other{
     margin-top: 50px;
-    
  }
+
+ #grains > p, #dairy > p, #meat > p, #veggies_and_fruits > p, #other > p{
+     text-align: left;
+     padding-left: 30px;
+     font-size: 4em;
+ }
+
+ 
 
 #bot{
     height: 40px;
@@ -36,21 +42,23 @@
 #undo{
     float: left;
     margin-left: 20%;
-    margin-top: 0px;
-    font-size: 20px;
+    transform: translateY(-70px);
+    font-size: 40px;
     border: none;
-    
+    height: 100px;
+    width: 140px;
 }
 
 #next{
     float: right;
-    /* padding-right: 20%; */
     margin-right: 20%;
+    transform: translateY(-70px);
     margin-top: 0px;
-    font-size: 20px;
-    /*background-color: aqua;*/
+    font-size: 40px;
     border: none;
-}
+    height: 100px;
+    width: 140px;
+}   
 
 .progress {
     margin: 20px auto;
