@@ -37,7 +37,7 @@ $("#customizePage").on("click",function(event){
       data: {output: 'json'},
       success: function(data) {
           localStorage.setItem("queryData",JSON.stringify(data));
-          document.location = "thridpage.html";
+          document.location = "thirdpage.html";
 
     },
     error: function(errorThrown) {
