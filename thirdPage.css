@@ -17,9 +17,9 @@
     height: 80px;
  }
 
- #bot{
+#bot{
     background-color: rgb(15, 161, 15);
-    height: 40px;
+    height: 60px;
     width: 100%; 
     position: fixed;
     bottom: 0;
