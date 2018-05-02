@@ -98,36 +98,36 @@ function createData(data){
   // pick the item randomly to fulfill the calories that the user needs.
   getFoodData();
   for (let d in selectedFood){
-    let temp = d[0].uppercase + d.substring(1);
-    let st = "<p>" + temp + "</p>";
+    let st = "<p class='label'>" + d + "</p><div class='forRow'>";
     for (let i = 0; i < selectedFood[d]['data'].length; i++){
       st += "<div class='img foodBlock' cost='"
       + selectedFood[d]['data'][i]['cost']
-      + "cal="
+      + "' cal='"
       + selectedFood[d]['data'][i]['calories']
-      + " value="
+      + "' value='"
       + selectedFood[d]['data'][i]['name']
-      + " src="
+      + "' src='"
       + selectedFood[d]['data'][i]['img']
-      + "><img class='img foodImg' cost="
+      + "'><img class='img foodImg' cost='"
       + selectedFood[d]['data'][i]['cost']
-      + " cal="
+      + "' cal='"
       + selectedFood[d]['data'][i]['calories']
-      + " value="
+      + "' value='"
       + selectedFood[d]['data'][i]['name']
-      + " src="
+      + "' src='"
       + selectedFood[d]['data'][i]['img']
-      + "><h6>"
+      + "' ><h6>"
       + selectedFood[d]['data'][i]['name']
       + "</h6></div>";
 
 
     $("#" + d).html(st);
   }
+    st + "</div>";
 
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
-  $(".foodImg").on("click", function(event){
+  $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum -= ($(this).attr("cal"));
       totalCost -= parseFloat($(this).attr("cost"));
@@ -243,4 +243,3 @@ function getFoodData(){
     calIndex++;
   }
 }
-

@@ -27,7 +27,7 @@ name VARCHAR(30),
 calories VARCHAR(30),
 img VARCHAR(150),
 cost VARCHAR(30),
-PRIMARY KEY (ID)x 
+PRIMARY KEY (ID)
 );
 
 CREATE TABLE Veggies_and_fruits (
@@ -48,65 +48,64 @@ cost VARCHAR(30),
 PRIMARY KEY (ID)
 );
 
-INSERT INTO Grains (name, calories, img, cost) VALUES ("bread", "256", "./picture/Grains/bread.jpg", "2.78");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("rice", "130", "./picture/Grains/rice.jpg", "21.48");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("oatmeal", "68", "./picture/Grains/oatmeal.jpg", "2.48");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("buckwheat", "343", "./picture/Grains/buckwheat.jpg", "3.37");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("popcorn", "375", "./picture/Grains/popcorn.jpg", "4.98");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("millet", "189", "./picture/Grains/popcorn.jpg", "6.78");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("quinoa", "156", "./picture/Grains/quinoa.jpg", "3.98");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("teff", "180", "./picture/Grains/teff.png","1.98");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("barley", "176", "./picture/Grains/barley.jpg", "3.42");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("farro", "200", "./picture/Grains/farro.jpg", "3.28");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("amaranth", "375", "./picture/Grains/amaranth.jpg", "1.7");
-INSERT INTO Grains (name, calories, img, cost) VALUES ("oats", "150", "./picture/Grains/popcorn.jpg", "2.38");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("bread", "256", "./icon/Grains/bread.png", "2.78");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("rice", "130", "./icon/Grains/rice.png", "21.48");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("oatmeal", "68", "./icon/Grains/oatmeal.png", "2.48");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("buckwheat", "343", "./icon/Grains/buckwheat.png", "3.37");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("popcorn", "375", "./icon/Grains/popcorn.png", "4.98");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("millet", "189", "./icon/Grains/popcorn.png", "6.78");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("quinoa", "156", "./icon/Grains/quinoa.png", "3.98");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("teff", "180", "./icon/Grains/teff.png","1.98");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("barley", "176", "./icon/Grains/barley.png", "3.42");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("farro", "200", "./icon/Grains/farro.png", "3.28");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("amaranth", "375", "./icon/Grains/amaranth.png", "1.7");
+INSERT INTO Grains (name, calories, img, cost) VALUES ("oats", "150", "./icon/Grains/popcorn.png", "2.38");
 
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("milk", "42", "./picture/Dairy/milk.jpg", "2.95");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("cheese", "402", "./picture/Dairy/cheese.jpg", "5.99");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("yogurt", "59", "./picture/Dairy/yogurt.jpg", "4.98");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("sour cream", "193", "./picture/Dairy/sourcream.jpg", "1.98");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("cream cheese", "342", "./picture/Dairy/creamcheese.jpg", "3.84");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("cottage cheese", "98", "./picture/Dairy/cottagecheese.jpg", "5.47");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("egg nog", "88", "./picture/Dairy/eggnog.jpg", "6.00");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("ice cream", "207", "./picture/Dairy/icecream.jpg", "3.99");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("kefir", "148", "./picture/Dairy/kefir.jpg", "4.68");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("rice milk", "58", "./picture/Dairy/riceMilk.png", "2.68");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("tzatziki", "112", "./picture/Dairy/tzatziki.jpg", "4.28");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("soy milk", "49", "./picture/Dairy/soyMilk.jpg", "2.98");
-INSERT INTO Dairy(name, calories, img, cost) VALUES ("coconut milk", "223", "./picture/Dairy/coconutMilk.jpg", "4.68");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("milk", "42", "./icon/Dairy/milk.png", "2.95");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("cheese", "402", "./icon/Dairy/cheese.png", "5.99");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("yogurt", "59", "./icon/Dairy/yogurt.png", "4.98");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("sour cream", "193", "./icon/Dairy/sourcream.png", "1.98");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("cream cheese", "342", "./icon/Dairy/creamcheese.png", "3.84");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("cottage cheese", "98", "./icon/Dairy/cottagecheese.png", "5.47");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("egg nog", "88", "./icon/Dairy/eggnog.png", "6.00");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("ice cream", "207", "./icon/Dairy/icecream.png", "3.99");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("kefir", "148", "./icon/Dairy/kefir.png", "4.68");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("rice milk", "58", "./icon/Dairy/riceMilk.png", "2.68");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("tzatziki", "112", "./icon/Dairy/tzatziki.png", "4.28");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("soy milk", "49", "./icon/Dairy/soyMilk.png", "2.98");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("coconut milk", "223", "./icon/Dairy/coconutMilk.png", "4.68");
 
-INSERT INTO Meat(name, calories, img, cost) VALUES ("beef", "250", "./picture/Meat/beef.jpg", "5.44");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("pork", "242", "./picture/Meat/pork.jpg", "5.00");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("lamb", "294", "./picture/Meat/lamb.jpg", "9.01");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("chicken", "239", "./picture/Meat/chicken.jpg", "7.62");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("veal", "172", "./picture/Meat/veal.jpg", "18.87");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("liver", "165", "./picture/Meat/liver.jpg", "3.97");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("bacon", "541", "./picture/Meat/bacon.png", "5.98");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("turkey", "189", "./picture/Meat/turkey.jpg", "7.60");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("shrimp", "99", "./picture/Meat/ham.jpg", "13.98");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("salmon", "208", "./picture/Meat/salmon.jpg", "26.30");
-INSERT INTO Meat(name, calories, img, cost) VALUES ("cod", "82", "./picture/Meat/cod.jpg", "9.49");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("beef", "250", "./icon/Meat/beef.png", "5.44");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("pork", "242", "./icon/Meat/pork.png", "5.00");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("lamb", "294", "./icon/Meat/lamb.png", "9.01");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("chicken", "239", "./icon/Meat/chicken.png", "7.62");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("veal", "172", "./icon/Meat/veal.png", "18.87");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("liver", "165", "./icon/Meat/liver.png", "3.97");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("bacon", "541", "./icon/Meat/bacon.png", "5.98");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("turkey", "189", "./icon/Meat/turkey.png", "7.60");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("shrimp", "99", "./icon/Meat/ham.png", "13.98");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("salmon", "208", "./icon/Meat/salmon.png", "26.30");
+INSERT INTO Meat(name, calories, img, cost) VALUES ("cod", "82", "./icon/Meat/cod.png", "9.49");
 
 
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("apple", "52", "./picture/veggies_and_fruits/apple.jpg", "1.05");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("banana", "89", "./picture/veggies_and_fruits/banana.jpg", "1.68");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("celery", "16", "./picture/veggies_and_fruits/celery.jpg", "2.97");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("tomato", "18", "./picture/veggies_and_fruits/tomato.jpg", "1.39");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("apricots", "51.6", "./picture/veggies_and_fruits/apricots.jpg", "8.48");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("oranges", "18", "./picture/veggies_and_fruits/oranges.jpg", "1.39");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("tomato", "37.4", "./picture/veggies_and_fruits/tomato.jpg", "5.98");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("papaya", "26.1", "./picture/veggies_and_fruits/papaya.jpg", "4.98");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("lettuce", "15", "./picture/veggies_and_fruits/lettuce.jpg", "2.47");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("broccoli crowns","31", "./picture/Veggies_and_fruits/broccoli.png", 
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("apple", "52", "./icon/veggies_and_fruits/apple.png", "1.05");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("banana", "89", "./icon/veggies_and_fruits/banana.png", "1.68");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("celery", "16", "./icon/veggies_and_fruits/celery.png", "2.97");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("tomato", "18", "./icon/veggies_and_fruits/tomato.png", "1.39");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("apricots", "51.6", "./icon/veggies_and_fruits/apricots.png", "8.48");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("oranges", "18", "./icon/veggies_and_fruits/oranges.png", "1.39");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("tomato", "37.4", "./icon/veggies_and_fruits/tomato.png", "5.98");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("papaya", "26.1", "./icon/veggies_and_fruits/papaya.png", "4.98");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("lettuce", "15", "./icon/veggies_and_fruits/lettuce.png", "2.47");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("broccoli crowns","31", "./icon/Veggies_and_fruits/broccoli.png",
 "1,24");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("asparagus", "20", "./picture/Veggies_and_fruits/asparagus.png", "3.88");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("cherries", "39", "./picture/veggies_and_fruits/cherries.jpg", "7.98");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("blackberries", "25.25", "./picture/veggies_and_fruits/blackberries.jpg", "4.98");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("blackcurrants", "28", "./picture/veggies_and_fruits/blackcurrant.jpg", "4.89");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("avocado", "160", "./picture/veggies_and_fruits/avocado.jpg", "0.97");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("asparagus", "20", "./icon/Veggies_and_fruits/asparagus.png", "3.88");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("cherries", "39", "./icon/veggies_and_fruits/cherries.png", "7.98");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("blackberries", "25.25", "./icon/veggies_and_fruits/blackberries.png", "4.98");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("blackcurrants", "28", "./icon/veggies_and_fruits/blackcurrant.png", "4.89");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("avocado", "160", "./icon/veggies_and_fruits/avocado.png", "0.97");
 
 
-INSERT INTO Other(name, calories, img, cost) VALUES ("tofu", "76", "./picture/Other/tofu.jpg", "2.50");
-INSERT INTO Other(name, calories, img, cost) VALUES ("ice cream", "207", "./picture/Other/iceCream.jpg", "4.98");
-INSERT INTO Other(name, calories, img, cost) VALUES ("oragne juice", "45", "./picture/Other/oragneJuice.jpg", "3.92");
-
+INSERT INTO Other(name, calories, img, cost) VALUES ("tofu", "76", "./icon/Other/tofu.png", "2.50");
+INSERT INTO Other(name, calories, img, cost) VALUES ("ice cream", "207", "./icon/Other/iceCream.png", "4.98");
+INSERT INTO Other(name, calories, img, cost) VALUES ("oragne juice", "45", "./icon/Other/oragneJuice.png", "3.92");
