@@ -138,7 +138,6 @@ and (max-device-width : 667px) {
 	.ageGroupBlock{
 		display: inline-block;
 		margin: 0px -2px 15px -2px;
-		display: inline-block;
 		color: grey;
 		text-align: center;
 		width: 170px;

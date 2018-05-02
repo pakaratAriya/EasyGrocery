@@ -1,9 +1,13 @@
+*{
+    font-family: 'Catamaran', sans-serif;
+}
+
 #title{
     background-color: rgb(15, 161, 15);
     height: 40px;
 }
 
-#title > p{
+#title > p {
     text-align: center;
     padding-top: 5px;
     font-weight: bold;
@@ -49,4 +53,14 @@
 .progress {
     margin: 20px auto;
     width: 50%;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 667px) {
+    body {
+        background-color: black;
+    }
+
+
 }
