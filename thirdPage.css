@@ -32,7 +32,7 @@
     margin-left: 20%;
     margin-top: 8px;
     font-size: 20px;
-    background-color: aqua;
+    /*background-color: aqua;*/
     border: none;
 }
 
@@ -42,16 +42,11 @@
     margin-right: 20%;
     margin-top: 8px;
     font-size: 20px;
-    background-color: aqua;
+    /*background-color: aqua;*/
     border: none;
 }
 
 .progress {
     margin: 20px auto;
     width: 50%;
-}
-
-.progress-bar {
-    width: 40%;
-    background-color: blue;
 }
