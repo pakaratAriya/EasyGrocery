@@ -1,5 +1,10 @@
+
+
+
+*{
+	font-family: 'Catamaran', sans-serif;
+}
 #content {
-	/*width: 400px;*/
 	text-align: center;
 }
 
@@ -9,19 +14,18 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
-	background-color: green;
-}
 
-.genderBlock {
-	color: white;
-	margin: 0px 10px;
-	/*background-color: orange;*/
-	width: 100px;
-	height: 80px;
 }
 
 body {
+	height: 100%;
 	text-align: center;
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 #name {
@@ -32,27 +36,189 @@ body {
 	margin-top: 50px;
 }
 
-.ageGroupBlock {
-	/*margin-top: 50px;*/
-	margin: 0px 0px;
-	/*padding-bottom: 110px;*/
-	height: 90px;
-	width: 80px;
-	background-color: #4dff4d;
-	color: white;
+#submitButton {
+	display: inline-block;
+	color: black;
 }
 
-#submitButton {
-	background-color: red;
-	color: white;
-	transform: translate(85px, 40px);
-	border-radius: 50%;
+.genderBlock {
+	color: black;
+	margin: 0px 10px;
 }
 
 .selectedGender {
-	background-color: deepskyblue;
+	border: 2px solid #56ab2f;
+}
+
+.ageGroupBlock {
+	margin: 0px 0px;
+	color: black;
 }
 
 .selectedAge {
-	background-color: orange;
+	border: 2px solid #56ab2f;
+}
+
+#headerWithIcon {
+
+}
+
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 667px) {
+	body{
+
+	}
+	#nav h2 {
+		font-weight: 900;
+		padding: 0.5em;
+		padding-top: 1em;
+		font-size: 6.6em;
+		letter-spacing: 0.03em;
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+	#userInputPageForm{
+		display: inline-block;
+		width: 735px;
+		border-radius: 3em;
+		background-color: white;
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+	}
+
+	#userInputPageForm h3{
+		font-size: 5em;
+		padding: 40px 0 10px 0;
+		color: #56ab2f;
+		margin-bottom: 50px;
+		font-weight: 800;
+	}
+	#name label{
+		font-weight: 300;
+		font-size: 4em;
+	}
+
+	#userName {
+		width: 280px;
+		font-size: 3.5em;
+		font-weight: 200;
+		text-align: center;
+		border: 2px solid none;
+
+	}
+
+	.genderBlock {
+		margin: 30px -2px 5px -2px;
+		display: inline-block;
+		color: grey;
+		font-weight: 200;
+		font-size: 4em;
+		text-align: center;
+		width: 250px;
+		padding-left: 25px;
+		padding-right: 25px;
+		background-color: white;
+		border: 2px solid grey;
+	}
+	.genderBlock:nth-of-type(1){
+		border-top-left-radius: 40px;
+		border-bottom-left-radius: 40px;
+	}
+	.genderBlock:nth-of-type(2){
+		border-left: 0px;
+		border-top-right-radius: 40px;
+		border-bottom-right-radius: 40px;
+	}
+	.selectedGender {
+		color:white;
+		background-color: #56ab2f;
+		border: 2px solid #56ab2f;
+	}
+	.ageGroupBlock{
+		display: inline-block;
+		margin: 0px -2px 15px -2px;
+		display: inline-block;
+		color: grey;
+		text-align: center;
+		width: 170px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background-color: white;
+		border: 2px solid grey;
+	}
+	.ageGroupBlock:nth-of-type(1){
+		border-top-left-radius: 40px;
+		border-bottom-left-radius: 40px;
+	}
+	.ageGroupBlock:nth-of-type(2){
+		border-right: 0px;
+		border-left: 0px;
+		width: 160px;
+	}
+	.ageGroupBlock:nth-of-type(3){
+		border-top-right-radius: 40px;
+		border-bottom-right-radius: 40px;
+	}
+	.ageGroupBlock h4{
+		font-size: 3em;
+		font-weight: 200;
+	}
+	.ageGroupBlock h5{
+		font-size: 2em;
+		font-weight: 100;
+	}
+	.selectedAge{
+		color:white;
+		background-color: #56ab2f;
+		border: 2px solid #56ab2f;
+	}
+
+	.underLine{
+		margin-left: 20px;
+		display: inline-block;
+		border-bottom: 2px solid black;
+	}
+	#nextStepsButtomForm{
+		margin-top: 60px;
+		width:100%;
+		border-bottom-left-radius: 3em;
+		border-bottom-right-radius: 3em;
+	}
+	.nextButtomsGroup {
+		margin: -1px;
+		border: 0px;
+		padding:0px;
+		display: inline-block;
+		background-color: #fc4a1a;
+		color: black;
+		height: 210px;
+	}
+	.nextButtomsGroup:nth-of-type(1){
+		width: 50%;
+		border-bottom-left-radius: 3em;
+
+	}
+	.nextButtomsGroup:nth-of-type(2){
+		width: 50%;
+		border-bottom-right-radius: 3em;
+	}
+	#nextStepsButtomForm h3{
+		padding: 0px;
+		margin:0px;
+		font-size: 3.5em;
+		color:white;
+	}
+	#nextStepsButtomForm img{
+		margin: 20px;
+		height: 90px;
+	}
+	#nextStepsButtomForm span{
+		padding-top: -15px;
+		font-weight: 100;
+		font-size: 0.7em;
+
+	}
+
+
 }
