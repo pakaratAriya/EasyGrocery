@@ -139,7 +139,7 @@ function createData(data){
     calculateCalories();
   });
 }
-
+}
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
 
 
@@ -243,4 +243,4 @@ function getFoodData(){
     calIndex++;
   }
 }
-}
+
