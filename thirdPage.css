@@ -28,12 +28,20 @@
 
 #undo{
     float: left;
-    padding-left: 20%;
-    font-size: 25px;
+   /*  padding-left: 20%; */
+    margin-left: 20%;
+    margin-top: 8px;
+    font-size: 20px;
+    background-color: aqua;
+    border: none;
 }
 
 #next{
     float: right;
-    padding-right: 20%;
-    font-size: 25px;
+    /* padding-right: 20%; */
+    margin-right: 20%;
+    margin-top: 8px;
+    font-size: 20px;
+    background-color: aqua;
+    border: none;
 }
