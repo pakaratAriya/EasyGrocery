@@ -22,7 +22,7 @@ for (let i = 0; i < maleCal.length; i++){
 //================================================== selection for the first page. ==========================================//
 //-------------------------------------------------- go to the third page ----------------------------------//
 
-$("#customizePage").on("click",function(event){
+$(".selectionButton").on("click",function(event){
   userName = $("#userName").val();
   event.preventDefault();
   selectCalories();
@@ -61,6 +61,7 @@ $(document).ready(function() {
     $("#gender").html(gender);
     $("#age").html(age);
     createData(queryData);
+    console.log('hello');
   }
 });
 
@@ -68,10 +69,11 @@ $(document).ready(function() {
 
 function createData(data){
   for (let d in data){
+    console.log(d);
     let st = "<p>" + d + "</p>";
     for (let i = 0; i < selectedFood[d]['data'].length; i++){
       st += "<img class='img foodImg' cost='" + selectedFood[d]['data'][i]['cost'] + "' cal='" + selectedFood[d]['data'][i]['calories'] + "' value='" + selectedFood[d]['data'][i]['name'] + "' src='" + selectedFood[d]['data'][i]['img'] +"'/>";
     }
     $("#" + d).html(st);
   }
-
+}
