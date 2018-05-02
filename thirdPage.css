@@ -1,39 +1,44 @@
-#title{
-    background-color: rgb(15, 161, 15);
-    height: 40px;
+#main{
+    height: 100%;
+	text-align: center;
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	margin: 0;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 #title > p{
-    text-align: center;
-    padding-top: 5px;
-    font-weight: bold;
-    font-size: 25px;
+    font-weight: 900;
+	padding: 0.5em;
+	padding-top: 1em;
+	font-size: 6.6em;
+	letter-spacing: 0.03em;
+    text-shadow: 2px 2px 4px #000000;
     color: white;
 }
 
 #grains, #dairy, #meat, #veggies_and_fruits, #other{
-    margin-top: 10px;
-    padding-left: 10%;
-    height: 80px;
+    margin-top: 50px;
+    
  }
 
 #bot{
-    background-color: rgb(15, 161, 15);
     height: 40px;
     width: 100%; 
     position: fixed;
     bottom: 0;
-    left: 0;  
+    left: 0;   
 }
 
 #undo{
     float: left;
-   /*  padding-left: 20%; */
     margin-left: 20%;
     margin-top: 0px;
     font-size: 20px;
-    /*background-color: aqua;*/
     border: none;
+    
 }
 
 #next{
@@ -50,3 +55,4 @@
     margin: 20px auto;
     width: 50%;
 }
+
