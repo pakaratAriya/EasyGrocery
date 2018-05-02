@@ -27,7 +27,7 @@ $(".genderSelection").on("click", function(event){
   $(".genderSelection").removeClass("selectedGender");
   $(this).addClass("selectedGender");
   gender = $(this).attr("value");
-  
+
   // $(this).css({
   //     transition : 'background-color 0.5s ease-in-out',
   //     "background-color": "green",
@@ -242,5 +242,5 @@ function getFoodData(){
     }
     calIndex++;
   }
-
+}
 }
