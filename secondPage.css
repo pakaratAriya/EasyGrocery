@@ -2,10 +2,16 @@
   opacity: 0.5;
 }
 
+#main{
+  margin-bottom: 100px;
+}
+
 .foodImg {
   width: 50px;
   height: 50px;
+  border: 1.2px solid;
 }
+
 #title{
     background-color: rgb(15, 161, 15);
     height: 40px;
@@ -48,6 +54,7 @@
 
 #grains, #dairy, #meat, #veggies_and_fruits, #other{
    margin-top: 10px;
+   padding-left: 10%;
 }
 
 @media screen and (min-width: 900px){
@@ -58,12 +65,7 @@
 }
 
 #grains > p, #dairy > p, #meat > p, #veggies_and_fruits > p, #other > p{
-    padding-left: 20px;
     margin: 0%;
-}
-
-.img{
-    padding-left: 20px;
 }
 
 
@@ -71,7 +73,7 @@
     background-color: rgb(15, 161, 15);
     height: 40px;
     width: 100%; 
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     
