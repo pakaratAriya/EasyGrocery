@@ -45,3 +45,13 @@
     background-color: aqua;
     border: none;
 }
+
+.progress {
+    margin: 20px auto;
+    width: 50%;
+}
+
+.progress-bar {
+    width: 40%;
+    background-color: blue;
+}
