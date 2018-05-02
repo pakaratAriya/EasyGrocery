@@ -19,7 +19,7 @@
 
 #bot{
     background-color: rgb(15, 161, 15);
-    height: 60px;
+    height: 40px;
     width: 100%; 
     position: fixed;
     bottom: 0;
@@ -30,7 +30,7 @@
     float: left;
    /*  padding-left: 20%; */
     margin-left: 20%;
-    margin-top: 8px;
+    margin-top: 0px;
     font-size: 20px;
     /*background-color: aqua;*/
     border: none;
@@ -40,7 +40,7 @@
     float: right;
     /* padding-right: 20%; */
     margin-right: 20%;
-    margin-top: 8px;
+    margin-top: 0px;
     font-size: 20px;
     /*background-color: aqua;*/
     border: none;
