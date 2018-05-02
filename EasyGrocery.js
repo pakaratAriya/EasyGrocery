@@ -1,4 +1,4 @@
-var calSum=0;
+var calSum = 0;
 var userName;
 var gender = "male";
 var age = "2-13";
@@ -55,7 +55,7 @@ $(".submit").on("click",function(event){
       data: {output: 'json'},
       success: function(data) {
           localStorage.setItem("queryData",JSON.stringify(data));
-          
+
           document.location = "secondpage.html";
 
     },
@@ -81,9 +81,9 @@ function createData(data){
     }
     $("#" + d).html(st);
   }
-  
+
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
-  
+
   $(".foodImg").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum -= ($(this).attr("cal"));
@@ -94,7 +94,7 @@ function createData(data){
     }
     $(this).toggleClass("selectedFood");
     calculateCalories();
-  });    
+  });
 }
 
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
@@ -161,12 +161,12 @@ function sortData(data){
         sortedData[d]['min'] = parseFloat(data[d][i]['calories']);
       }
     }
-    
+
     for (let i = 0; i < data[d].length; i++){
-      
-      
+
+
       let minValue = parseFloat(sortedData[d]['max']);
-      
+
       for (let j = 0; j < data[d].length; j++) {
         if (minValue >= parseFloat(data[d][j]['calories']) && !restrictedIndex.includes(j)) {
           sortedData[d]['data'][i] = data[d][j];
@@ -193,17 +193,17 @@ function getFoodData(){
     } else {
       calFactor = youngProportion[i];
     }
-    calRemaining[i] = neededCal * calFactor;  
+    calRemaining[i] = neededCal * calFactor;
     console.log(calRemaining[i]);
   }
   let foodIndex =0;
-  for (let d in sortedData){ 
+  for (let d in sortedData){
     selectedFood[d] = new Object();
     selectedFood[d]['data'] = new Array();
     foodIndex = 0;
     while (calRemaining[calIndex] > sortedData[d]['min']) {
       let maxIndex = 0;
-          
+
       for (let i in sortedData[d]['data']) {
         if(sortedData[d]['data'][i]['calories'] <= calRemaining[calIndex]) {
           maxIndex++;
@@ -213,7 +213,7 @@ function getFoodData(){
       }
       let randIndex = Math.floor(Math.random() * maxIndex);
       selectedFood[d]['data'][foodIndex] = sortedData[d]['data'][randIndex];
-      
+
       calRemaining[calIndex] -= parseFloat(selectedFood[d]['data'][foodIndex]['calories']);
       foodIndex++;
     }
@@ -221,5 +221,3 @@ function getFoodData(){
   }
 
 }
-
-  
