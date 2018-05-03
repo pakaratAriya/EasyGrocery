@@ -80,6 +80,8 @@ and (max-device-width : 667px) {
     height: 195px;
     border: 0px solid none;
 		background: #f7b733;
+	transition: background-color 0.3s ease-in-out;
+
 
   }
   .foodBlock h6{
