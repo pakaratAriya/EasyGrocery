@@ -65,40 +65,11 @@ $(document).ready(function() {
   }
 });
 
-//---------------------------------------------- Create data from the data. -------------------------------------------------//
 
 function createData(data){
   for (let d in data){
     calSum[d] = 0;
-// // <<<<<<< HEAD
-//
-//     let st = "<div class='labelRowWithProg'><p class='catName'>" + d + "</p>";
-//     //progress-bar-striped active progBar role='progressbar'
-//     st += "<div class='progress'><div class='progress-bar  active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div></div>";
-//     for (let i = 0; i < data[d].length; i++){
-//       st += "<div class='img foodBlock' cost='"
-//       + data[d][i]['cost']
-//       + "' cal='"
-//       + data[d][i]['calories']
-//       + "' value='"
-//       + data[d][i]['name']
-//       + "' src='"
-//       + data[d][i]['img']
-//       + "' catagory='" + d
-//       + "'><img class='img foodImg' cost='"
-//       + data[d][i]['cost']
-//       + "' cal='"
-//       + data[d][i]['calories']
-//       + "' value='"
-//       + data[d][i]['name']
-//       + "' src='"
-//       + data[d][i]['img']
-//       + "' ><h6>"
-//       + data[d][i]['name']
-//       + "</h6></div>";
-//
-//
-// =======
+
     sortedData[d] = new Array();
 
     let st = "<div class='labelRowWithProg'><p class='catName'>" + d + "</p>";
@@ -111,9 +82,6 @@ function createData(data){
       sortedData[d][i]['cal'] = data[d][i]['calories'];
       sortedData[d][i]['cost'] = data[d][i]['cost'];
       sortedData[d][i]['index'] = i;
-      //Notes for Game: I put those img into a <div> so i rewrite partial code here.
-      // st += "<img class='img foodImg foodBlock' cost='" + data[d][i]['cost'] + "' cal='" + data[d][i]['calories'] + "' value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"' catagory='" + d + "' index='" + i + "' id='data" + d + i + "'/><span id='span" + d + i + "'>" + sortedData[d][i]['count'] + "</span>";
-
 
       st += "<div class='img foodBlock' cost='"
       + data[d][i]['cost']
@@ -121,9 +89,7 @@ function createData(data){
       + data[d][i]['calories']
       + "' value='"
       + data[d][i]['name']
-      + "' src='"
-      + data[d][i]['img']
-      + "' catagory='" + d + "' index='" + i + "' id='data" + d + i +
+      + "' catagory='" + d + "' index='" + i + "' id='data" + d + i
       + "'><img class='img foodImg' cost='"
       + data[d][i]['cost']
       + "' cal='"
@@ -132,12 +98,12 @@ function createData(data){
       + data[d][i]['name']
       + "' src='"
       + data[d][i]['img']
-      + "' catagory='" + d + "' index='" + i + "'/><h6>"
+      + "' catagory='" + d + "' index='" + i
+      + "'/><h6>"
       + data[d][i]['name']
       + "</h6>"
-      + "<span id='span" + d + i + "'>" + sortedData[d][i]['count'] + "</span></div>";
+      + "<span id='span" + d + i + "' class='itemCounter'>" + sortedData[d][i]['count'] + "</span></div>";
 
-// >>>>>>> 939ec87c5baeb703fe9c4ab73e4f78e0c41bf8fe
     }
     $("#" + d).html(st);
 
