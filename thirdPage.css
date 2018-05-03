@@ -63,3 +63,8 @@
 #next{
   bottom: 90px;
 }
+.itemCounter{
+  font-size: 30px;
+  font-weight: 100;
+  color: white;
+}

@@ -73,7 +73,7 @@ function createData(data){
     sortedData[d] = new Array();
 
     let st = "<div class='labelRowWithProg'><p class='catName'>" + d + "</p>";
-    st += "<div class='progress'><div class='progress-bar  active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div></div>";
+    st += "<div class='progress'><div class='progress-bar active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div></div>";
     for (let i = 0; i < data[d].length; i++){
       sortedData[d][i] = new Object();
       sortedData[d][i]['name'] = data[d][i]['name'];
