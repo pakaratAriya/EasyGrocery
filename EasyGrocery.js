@@ -127,7 +127,9 @@ function createData(data){
 
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
-  $(".foodBlock").on("click", function(event){
+
+}
+    $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum -= ($(this).attr("cal"));
       totalCost -= parseFloat($(this).attr("cost"));
@@ -138,7 +140,6 @@ function createData(data){
     $(this).toggleClass("selectedFood");
     calculateCalories();
   });
-}
 }
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
 
@@ -217,7 +218,6 @@ function getFoodData(){
       calFactor = youngProportion[i];
     }
     calRemaining[i] = neededCal * calFactor;
-    console.log(calRemaining[i]);
   }
   let foodIndex =0;
   for (let d in sortedData){

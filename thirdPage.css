@@ -61,6 +61,11 @@
 }   
 
 .progress {
-    margin: 20px auto;
-    width: 50%;
+    margin: 20px 20px;
+    width: 60%;
+  display: inline-block;
+}
+
+.catName {
+  display: inline-block;
 }

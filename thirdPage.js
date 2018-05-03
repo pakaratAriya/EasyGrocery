@@ -1,4 +1,4 @@
-var calSum = 0;
+var calSum = new Object;
 var userName;
 var gender = "male";
 var age = "2-13";
@@ -12,7 +12,8 @@ var femaleCal = [ 1666, 2000, 1800 ];
 var maleCal = [ 1733, 2800, 2600 ];
 var youngProportion = [ 0.152, 0.31, 0.176, 0.139, 0.223];
 var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
-
+var calories = new Object;
+var calRemaining = new Array();
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
@@ -51,7 +52,7 @@ $(".selectionButton").on("click",function(event){
 //----------------------------- Generate the information WHEN 'thirdPage.html' is opened ------------------------------//
 
 $(document).ready(function() {
-  if(window.location.pathname.split("/").pop() == "thirdPage.html"){
+  if(window.location.pathname.split("/").pop() == "thirdpage.html"){
     age = localStorage.getItem("age");
     gender = localStorage.getItem("gender");
     userName = localStorage.getItem("userName");
@@ -69,11 +70,50 @@ $(document).ready(function() {
 
 function createData(data){
   for (let d in data){
-    console.log(d);
-    let st = "<p>" + d + "</p>";
-    for (let i = 0; i < selectedFood[d]['data'].length; i++){
-      st += "<img class='img foodImg' cost='" + selectedFood[d]['data'][i]['cost'] + "' cal='" + selectedFood[d]['data'][i]['calories'] + "' value='" + selectedFood[d]['data'][i]['name'] + "' src='" + selectedFood[d]['data'][i]['img'] +"'/>";
+    calSum[d] = 0;
+    
+    let st = "<p class='catName'>" + d + "</p>";
+    st += "<div class='progress'><div class='progress-bar progress-bar-striped active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div>";
+    for (let i = 0; i < data[d].length; i++){
+      st += "<img class='img foodImg foodBlock' cost='" + data[d][i]['cost'] + "' cal='" + data[d][i]['calories'] + "' value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"' catagory='" + d + "'/>";
     }
     $("#" + d).html(st);
+    
   }
+  $(".foodBlock").on("click", function(event){
+      if($(this).hasClass("selectedFood")){
+        calSum[$(this).attr('catagory')] -= parseFloat($(this).attr("cal"));
+        totalCost -= parseFloat($(this).attr("cost"));
+      } else {
+        calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
+        totalCost += parseFloat($(this).attr("cost"));
+      }
+      $(this).toggleClass("selectedFood");
+      calculateCalories($(this).attr('catagory'));
+    });
+}
+
+function calculateCalories(proCat){
+   $("#prog" + proCat).css('width',getFoodData(proCat) + "%");
+}
+
+function getFoodData(proCat){
+
+  let calIndex = 0;
+  let calFactor = 0;
+  let percent = 0;
+  let i = 0;
+  for (let x in calSum){
+    if (age = "19-51+") {
+      calFactor = adultProportion[i];
+    } else {
+      calFactor = youngProportion[i];
+    }
+    calRemaining[i] = neededCal * calFactor;
+    if (x == proCat) {
+      percent = calSum[proCat]/calRemaining[i]*100;
+    }
+    i++;
+  }
+  return percent;
 }
