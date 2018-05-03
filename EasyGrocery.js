@@ -87,6 +87,7 @@ $(document).ready(function() {
     $("#gender").html(gender);
     $("#age").html(age);
     createData(queryData);
+
   }
 });
 
@@ -120,26 +121,29 @@ function createData(data){
       + selectedFood[d]['data'][i]['name']
       + "</h6></div>";
 
+      totalCost += parseFloat(selectedFood[d]['data'][i]['cost']);  
+      console.log(totalCost);
 
     $("#" + d).html(st);
   }
     st + "</div>";
-
+    calculateCalories();
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
 
 }
     $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
-      calSum -= ($(this).attr("cal"));
-      totalCost -= parseFloat($(this).attr("cost"));
-    } else {
       calSum += ($(this).attr("cal"));
       totalCost += parseFloat($(this).attr("cost"));
+    } else {
+      calSum -= ($(this).attr("cal"));
+      totalCost -= parseFloat($(this).attr("cost"));
     }
     $(this).toggleClass("selectedFood");
     calculateCalories();
-  });
+
+  });  
 }
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
 
