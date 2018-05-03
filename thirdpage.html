@@ -1,77 +1,60 @@
 <!DOCTYPE>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="thirdPage.css">
+
       <link rel="stylesheet" type="text/css" href="secondPage.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title>ThirdPage</title>
+      <link rel="stylesheet" type="text/css" href="thirdPage2.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Catamaran:100,200,300,500,600,700,800,900" rel="stylesheet">
+      <title>ThirdPage</title>
     </head>
 
     <body>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <div id = "main">
             <div id="title">
+                <a href="index.html" id="lastPageBtn"><img src="./icon/left-chevron.png" alt="left-chevron"/></a>
                 <p>Easy Grocery</p>
+                <a rel="#" id="nextPageBtn"><img src="./icon/right-chevron.png" alt="right-chevron"/></a>
             </div>
 
-        
-            <div id="grains"> 
-                <p>Grains</p>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>    
+            <div id="info">
+                <p id="data">
+                  Name <span id="username" class="userInfo">Name</span> Gender <span id="gender" class="userInfo">Gender</span> Age <span id="age" class="userInfo">Age</span>
+                </p>
             </div>
-        
+
+
+            <div id="grains">
+                <p class="label">Grains</p>
+                <img src="https://dummyimage.com/100x100/000/fff"/>
+            </div>
+
             <div id="dairy">
-                <p>Dairy</p>
+                <p class="label">Dairy</p>
                 <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/> 
             </div>
-        
+
             <div id="meat">
-                <p>Meat and alternatives</p>
+                <p class="label">Meat & Alternatives</p>
                 <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/> 
             </div>
-        
+
             <div id="veggies_and_fruits">
-                <p>Veggies and fruits</p>
+                <p class="label">Veggies & Fruits</p>
                 <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/> 
             </div>
-        
+
             <div id="other">
-                <p>Other</p>
+                <p class="label">Other</p>
                 <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/>
-                <img src="https://dummyimage.com/100x100/000/fff"/> 
             </div>
-        
-            <div id="bot">
-                <button type="button" class="btn btn-primary" id="undo">Undo</button>
-                <button type="button" class="btn btn-primary" id="next">Next</button>
 
-                <!-- <button id="undo">Undo</button>
-                <button id="next">Next</button> -->
+            <button type="button" class="button" id="redo"><img src="./icon/redo.png" class="redoNextIcon" alt="redo"/></button>
+            <button type="button" class="button" id="next"><img src="./icon/next.png" class="redoNextIcon" alt="next"/></button>
 
-                
-            </div>
-        
+            <div id="whiteSpace"></div>
+
         </div>
         <script src="thirdPage.js"></script>
 

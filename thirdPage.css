@@ -1,12 +1,5 @@
 #main{
-    height: 100%;
-	text-align: center;
-	background: #56ab2f;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	margin: 0;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+
 }
 
 #title > p{
@@ -29,14 +22,14 @@
      font-size: 4em;
  }
 
- 
+
 
 #bot{
     height: 40px;
-    width: 100%; 
+    width: 100%;
     position: fixed;
     bottom: 0;
-    left: 0;   
+    left: 0;
 }
 
 #undo{
@@ -58,7 +51,7 @@
     border: none;
     height: 100px;
     width: 140px;
-}   
+}
 
 .progress {
     margin: 20px 20px;
@@ -67,5 +60,10 @@
 }
 
 .catName {
-  display: inline-block;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 1px;
+  margin: 0;
+  font-size: 50px;
+  font-weight: 200;
 }

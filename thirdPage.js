@@ -71,14 +71,36 @@ $(document).ready(function() {
 function createData(data){
   for (let d in data){
     calSum[d] = 0;
-    
-    let st = "<p class='catName'>" + d + "</p>";
-    st += "<div class='progress'><div class='progress-bar progress-bar-striped active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div>";
+
+    let st = "<div class='labelRowWithProg'><p class='catName'>" + d + "</p>";
+    //progress-bar-striped active progBar role='progressbar'
+    st += "<div class='progress'><div class='progress-bar  active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div></div>";
     for (let i = 0; i < data[d].length; i++){
-      st += "<img class='img foodImg foodBlock' cost='" + data[d][i]['cost'] + "' cal='" + data[d][i]['calories'] + "' value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"' catagory='" + d + "'/>";
+      st += "<div class='img foodBlock' cost='"
+      + data[d][i]['cost']
+      + "' cal='"
+      + data[d][i]['calories']
+      + "' value='"
+      + data[d][i]['name']
+      + "' src='"
+      + data[d][i]['img']
+      + "' catagory='" + d
+      + "'><img class='img foodImg' cost='"
+      + data[d][i]['cost']
+      + "' cal='"
+      + data[d][i]['calories']
+      + "' value='"
+      + data[d][i]['name']
+      + "' src='"
+      + data[d][i]['img']
+      + "' ><h6>"
+      + data[d][i]['name']
+      + "</h6></div>";
+
+
     }
     $("#" + d).html(st);
-    
+
   }
   $(".foodBlock").on("click", function(event){
       if($(this).hasClass("selectedFood")){
@@ -94,7 +116,8 @@ function createData(data){
 }
 
 function calculateCalories(proCat){
-   $("#prog" + proCat).css('width',getFoodData(proCat) + "%");
+   $("#prog" + proCat).css("width", (getFoodData(proCat) + "%"));
+
 }
 
 function getFoodData(proCat){
