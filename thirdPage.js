@@ -6,7 +6,7 @@ var queryData;
 var totalCost = 0.00;
 var neededCal;
 var sortedData = new Object();
-var selectedFood = new Object();
+var selectedFood = new Array();
 var calData = {male: {}, female: {}};
 var femaleCal = [ 1666, 2000, 1800 ];
 var maleCal = [ 1733, 2800, 2600 ];
@@ -62,7 +62,6 @@ $(document).ready(function() {
     $("#gender").html(gender);
     $("#age").html(age);
     createData(queryData);
-    console.log('hello');
   }
 });
 
@@ -71,27 +70,45 @@ $(document).ready(function() {
 function createData(data){
   for (let d in data){
     calSum[d] = 0;
+    sortedData[d] = new Array();
     
     let st = "<p class='catName'>" + d + "</p>";
     st += "<div class='progress'><div class='progress-bar progress-bar-striped active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div>";
     for (let i = 0; i < data[d].length; i++){
-      st += "<img class='img foodImg foodBlock' cost='" + data[d][i]['cost'] + "' cal='" + data[d][i]['calories'] + "' value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"' catagory='" + d + "'/>";
+      sortedData[d][i] = new Object();
+      sortedData[d][i]['name'] = data[d][i]['name'];
+      sortedData[d][i]['count'] = 0;
+      sortedData[d][i]['catagory'] = d;
+      sortedData[d][i]['cal'] = data[d][i]['calories'];
+      sortedData[d][i]['cost'] = data[d][i]['cost'];
+      sortedData[d][i]['index'] = i;
+      st += "<img class='img foodImg foodBlock' cost='" + data[d][i]['cost'] + "' cal='" + data[d][i]['calories'] + "' value='" + data[d][i]['name'] + "' src='" + data[d][i]['img'] +"' catagory='" + d + "' index='" + i + "' id='data" + d + i + "'/><span id='span" + d + i + "'>" + sortedData[d][i]['count'] + "</span>";
     }
     $("#" + d).html(st);
     
   }
   $(".foodBlock").on("click", function(event){
-      if($(this).hasClass("selectedFood")){
-        calSum[$(this).attr('catagory')] -= parseFloat($(this).attr("cal"));
-        totalCost -= parseFloat($(this).attr("cost"));
-      } else {
-        calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
-        totalCost += parseFloat($(this).attr("cost"));
-      }
-      $(this).toggleClass("selectedFood");
-      calculateCalories($(this).attr('catagory'));
-    });
+    calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
+    totalCost += parseFloat($(this).attr("cost"));
+    $(this).addClass("selectedFood");
+    var count = ++sortedData[$(this).attr('catagory')][$(this).attr('index')]['count'];
+    calculateCalories($(this).attr('catagory'));
+    selectedFood.push(sortedData[$(this).attr('catagory')][$(this).attr('index')]);
+    $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
+  });
 }
+
+$("#undo").on("click", function(event){
+    var temp = selectedFood.pop();
+    calSum[temp['catagory']] -= temp['cal'];
+    totalCost -= temp['cost'];
+    var count = --sortedData[temp['catagory']][temp['index']]['count'];
+    calculateCalories(temp['catagory']);
+    $('#span' + temp['catagory'] + temp['index']).html(count);
+    if (count == 0){
+      $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
+    }
+  });
 
 function calculateCalories(proCat){
    $("#prog" + proCat).css('width',getFoodData(proCat) + "%");
