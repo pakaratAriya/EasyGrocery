@@ -109,6 +109,9 @@ function createData(data){
 
   }
   $(".foodBlock").on("click", function(event){
+    if (getFoodData($(this).attr('catagory')) >= 100) {
+      return;
+    }
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
     $(this).addClass("selectedFood");
@@ -135,6 +138,8 @@ function calculateCalories(proCat){
    $("#prog" + proCat).css("width", (getFoodData(proCat) + "%"));
 
 }
+
+
 
 function getFoodData(proCat){
 
