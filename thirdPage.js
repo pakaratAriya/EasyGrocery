@@ -6,14 +6,14 @@ var queryData;
 var totalCost = 0.00;
 var neededCal;
 var sortedData = new Object();
-var selectedFood = new Array();
 var calData = {male: {}, female: {}};
 var femaleCal = [ 1666, 2000, 1800 ];
 var maleCal = [ 1733, 2800, 2600 ];
 var youngProportion = [ 0.152, 0.31, 0.176, 0.139, 0.223];
 var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
-var calories = new Object;
+var calories = new Object();
 var calRemaining = new Array();
+var foodSelection = new Array();
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
@@ -27,10 +27,12 @@ $(".selectionButton").on("click",function(event){
   userName = $("#userName").val();
   event.preventDefault();
   selectCalories();
+  loadFromSelection = true;
   localStorage.setItem("userName",userName);
   localStorage.setItem("age",age);
   localStorage.setItem("gender",gender);
   localStorage.setItem("neededCal", neededCal)
+  localStorage.setItem("loadFromSelection", loadFromSelection);
   $.ajax({
       url: "EasyGrocery.php",
       dataType: "json",
@@ -57,6 +59,7 @@ $(document).ready(function() {
     gender = localStorage.getItem("gender");
     userName = localStorage.getItem("userName");
     neededCal = localStorage.getItem("neededCal");
+    loadFromSelection = localStorage.getItem("loadFromSelection");
     queryData = JSON.parse(localStorage.getItem("queryData"));
     $("#username").html(userName);
     $("#gender").html(gender);
@@ -117,13 +120,13 @@ function createData(data){
     $(this).addClass("selectedFood");
     var count = ++sortedData[$(this).attr('catagory')][$(this).attr('index')]['count'];
     calculateCalories($(this).attr('catagory'));
-    selectedFood.push(sortedData[$(this).attr('catagory')][$(this).attr('index')]);
+    foodSelection.push(sortedData[$(this).attr('catagory')][$(this).attr('index')]);
     $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
   });
 }
 
 $("#undo").on("click", function(event){
-    var temp = selectedFood.pop();
+    var temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['cal'];
     totalCost -= temp['cost'];
     var count = --sortedData[temp['catagory']][temp['index']]['count'];
@@ -132,6 +135,12 @@ $("#undo").on("click", function(event){
     if (count == 0){
       $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
     }
+  });
+
+$("#next").on("click", function(event){
+    localStorage.setItem("foodSelection", JSON.stringify(foodSelection));
+    localStorage.setItem("loadFromSelection", loadFromSelection);
+    document.location = "secondpage.html";
   });
 
 function calculateCalories(proCat){

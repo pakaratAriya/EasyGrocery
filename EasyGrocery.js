@@ -12,6 +12,8 @@ var femaleCal = [ 1666, 2000, 1800 ];
 var maleCal = [ 1733, 2800, 2600 ];
 var youngProportion = [ 0.152, 0.31, 0.176, 0.139, 0.223];
 var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
+var loadFromSelection = false;
+var foodSelection = new Object();
 
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
@@ -51,11 +53,13 @@ $(".ageSelection").on("click", function(event){
 $(".submit").on("click",function(event){
   userName = $("#userName").val();
   event.preventDefault();
+  loadFromSelection = false;
   selectCalories();
   localStorage.setItem("userName",userName);
   localStorage.setItem("age",age);
   localStorage.setItem("gender",gender);
-  localStorage.setItem("neededCal", neededCal)
+  localStorage.setItem("neededCal", neededCal);
+  localStorage.setItem("loadFromSelection", loadFromSelection);
   $.ajax({
       url: "EasyGrocery.php",
       dataType: "json",
@@ -64,7 +68,6 @@ $(".submit").on("click",function(event){
       success: function(data) {
           localStorage.setItem("queryData",JSON.stringify(data));
           document.location = "secondpage.html";
-
     },
     error: function(errorThrown) {
       console.log(errorThrown);
@@ -83,6 +86,8 @@ $(document).ready(function() {
     userName = localStorage.getItem("userName");
     neededCal = localStorage.getItem("neededCal");
     queryData = JSON.parse(localStorage.getItem("queryData"));
+    loadFromSelection = localStorage.getItem("loadFromSelection");
+    foodSelection = JSON.parse(localStorage.getItem("foodSelection"));
     $("#username").html(userName);
     $("#gender").html(gender);
     $("#age").html(age);
@@ -94,12 +99,20 @@ $(document).ready(function() {
 //---------------------------------------------- Create data from the data. -------------------------------------------------//
 
 function createData(data){
-  // sort all the data by calories.
-  sortData(data);
-  // pick the item randomly to fulfill the calories that the user needs.
-  getFoodData();
+  if (!loadFromSelection) {
+    // sort all the data by calories.
+    sortData(data);
+    // pick the item randomly to fulfill the calories that the user needs.
+    getFoodData();
+  } else {
+    sortDataFromSelection(foodSelection);
+  }
+
   for (let d in selectedFood){
     let st = "<p class='label'>" + d + "</p><div class='forRow'>";
+    if (selectedFood[d]['data'] == 0){
+      $("#" + d).html("");
+    }
     for (let i = 0; i < selectedFood[d]['data'].length; i++){
       st += "<div class='img foodBlock' cost='"
       + selectedFood[d]['data'][i]['cost']
@@ -126,7 +139,6 @@ function createData(data){
 
     $("#" + d).html(st);
   }
-    st + "</div>";
     calculateCalories();
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
@@ -245,5 +257,17 @@ function getFoodData(){
       foodIndex++;
     }
     calIndex++;
+  }
+}
+
+function sortDataFromSelection(data){
+  for (let d in queryData){
+    selectedFood[d] = new Object();
+    selectedFood[d]['data'] = new Array();
+  }
+  for (let i = 0; i < data.length; i++) {
+    let d = data[i]['catagory'];
+    let num = selectedFood[data[i]['catagory']]['data'].length;
+    selectedFood[d]['data'][num] = queryData[d][data[i]['index']];
   }
 }
