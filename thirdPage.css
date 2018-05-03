@@ -1,62 +1,15 @@
-#main{
-
+.labelRowWithProg{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-#title > p{
-    font-weight: 900;
-	padding: 0.5em;
-	padding-top: 1em;
-	font-size: 6.6em;
-	letter-spacing: 0.03em;
-    text-shadow: 2px 2px 4px #000000;
-    color: white;
-}
-
-#grains, #dairy, #meat, #veggies_and_fruits, #other{
-    margin-top: 50px;
- }
-
- #grains > p, #dairy > p, #meat > p, #veggies_and_fruits > p, #other > p{
-     text-align: left;
-     padding-left: 30px;
-     font-size: 4em;
- }
-
-
-
-#bot{
-    height: 40px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-#undo{
-    float: left;
-    margin-left: 20%;
-    transform: translateY(-70px);
-    font-size: 40px;
-    border: none;
-    height: 100px;
-    width: 140px;
-}
-
-#next{
-    float: right;
-    margin-right: 20%;
-    transform: translateY(-70px);
-    margin-top: 0px;
-    font-size: 40px;
-    border: none;
-    height: 100px;
-    width: 140px;
-}
-
 .progress {
-    margin: 20px 20px;
-    width: 60%;
+  margin: 10px 10px;
+  margin-top: 18px;
+  height: 30px;
+  width: 400px;
   display: inline-block;
+  background-color: grey;
 }
 
 .catName {
@@ -66,4 +19,47 @@
   margin: 0;
   font-size: 50px;
   font-weight: 200;
+}
+
+#bot{
+    background-color: none;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0px;
+    padding-bottom: 0px;
+}
+
+#bot p{
+    text-align: center;
+    font-weight: 100;
+    font-size: 40px;
+    color: white;
+}
+.button{
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #dd1818;
+  border-radius: 100%;
+  border: 0px solid grey;
+  font-size: 40px;
+  font-weight: 300;
+  right: 55px;
+  box-shadow: 1px 1px 4px #000000;
+}
+.redoNextIcon{
+  width: 50px;
+}
+#undo{
+  bottom: 210px;
+  padding-left: 5px;
+}
+#next{
+  bottom: 90px;
 }
