@@ -14,6 +14,8 @@ body {
 
 
 #title{
+	position: relative;
+	width: 100%;
   color: white;
   padding-bottom: 10px;
   text-align: center;
@@ -54,16 +56,21 @@ and (max-device-width : 667px) {
     margin-left: auto;
 		margin-right: auto;
 		text-align: left;
-		background-color: red;
   }
+
   .label{
     text-align: left;
-    padding: 5px;
+    padding-top: 5px;
+		padding-bottom: 1px;
     margin: 0;
     font-size: 50px;
     font-weight: 200;
   }
-
+	.forRow{
+		display: block;
+		width: 100%;
+		float: left;
+	}
   .foodImg {
     padding: 5px;
 		padding-top: 15px;
@@ -75,20 +82,26 @@ and (max-device-width : 667px) {
   .foodBlock{
 		margin: 5px;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:center;
     width: 150px;
     height: 195px;
     border: 0px solid none;
-    background-color: lightgreen;
+		background: #f7b733;
+
   }
   .foodBlock h6{
-		background-color: yellow;
-		width: 100%;
+		width: 150px;
 		height:60px;
-		display: inline-block;
-    line-height: 100%;
+		display: inline-flex;
+    line-height: 30px;
     font-size: 30px;
     font-weight: 100;
+		justify-content: center;
+		align-items:center;
+		color: white;
   }
 	.selectedFood{
 		background-color: darkgreen;
@@ -105,6 +118,7 @@ and (max-device-width : 667px) {
 	}
 
   #info p{
+		text-align: center;
     font-weight: 400;
     font-size: 35px;
   }
@@ -135,4 +149,10 @@ and (max-device-width : 667px) {
       font-weight: 500;
       font-size: 55px;
   }
+	#whiteSpace{
+		display: flex;
+		width: 100%;
+		background-color: white;
+		height: 160px;
+	}
 }

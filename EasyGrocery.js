@@ -146,7 +146,7 @@ function createData(data){
 
 function calculateCalories(){
   $("#calories").html("Total Calories: " + calSum);;
-  $("#bot").html("<p>The total estamated cost is:  <span id='cost'> " + totalCost.toFixed(2) + "</span> </p>")
+  $("#bot").html("<p>Total Estamated Cost : <span id='cost'> " + totalCost.toFixed(2) + "</span> </p>")
 }
 
 //---------------------------------------- Select the calories by the first page -------------------------------------------//
