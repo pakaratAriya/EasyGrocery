@@ -97,9 +97,9 @@ INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("orange", "18"
 INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("tomato", "37.4", "./icon/veggies_and_fruits/tomato.png", "5.98");
 INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("papaya", "26.1", "./icon/veggies_and_fruits/papaya.png", "4.98");
 INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("lettuce", "15", "./icon/veggies_and_fruits/lettuce.png", "2.47");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("broccoli crowns","31", "./icon/Veggies_and_fruits/broccoli.png",
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("broccoli crowns","31", "./icon/veggies_and_fruits/broccoli.png",
 "1,24");
-INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("asparagus", "20", "./icon/Veggies_and_fruits/asparagus.png", "3.88");
+INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("asparagus", "20", "./icon/veggies_and_fruits/asparagus.png", "3.88");
 INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("cherries", "39", "./icon/veggies_and_fruits/cherries.png", "7.98");
 INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("blackberries", "25.25", "./icon/veggies_and_fruits/blackberries.png", "4.98");
 INSERT INTO Veggies_and_fruits(name, calories, img, cost) VALUES ("blackcurrants", "28", "./icon/veggies_and_fruits/blackcurrant.png", "4.89");
