@@ -7,7 +7,7 @@
 
 #notMobile{
 	position: relative;
-	width:
+	width:100%;
 	top: 0;
 	padding: 3px;
 	color: #f7ff00;
@@ -38,6 +38,7 @@ body {
 }
 
 #name {
+	border: none;
 	margin: 30px 0px;
 }
 
