@@ -4,6 +4,15 @@
 *{
 	font-family: 'Catamaran', sans-serif;
 }
+
+#notMobile{
+	position: relative;
+	width:
+	top: 0;
+	padding: 3px;
+	color: #f7ff00;
+	background-color: #b20a2c;
+}
 #content {
 	text-align: center;
 }
@@ -63,10 +72,6 @@ body {
 
 }
 
-
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 667px) {
 	body{
 
 	}
@@ -220,6 +225,15 @@ and (max-device-width : 667px) {
 		font-size: 0.7em;
 
 	}
+	.indexWhiteSpaceButtom{
+		height:300px;
+	}
 
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 667px) {
 
+	#notMobile{
+		display: none;
+	}
 }
