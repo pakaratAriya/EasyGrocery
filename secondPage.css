@@ -14,20 +14,15 @@ body {
 	background-color: #b20a2c;
 }
 
-#instruction1{
-	position: relative;      
-	top: 0;
-	padding: 3px;
-	color: red;
-    font-size: 35px;
-}
+#tipstitle{
+  font-size: 40px;
+  color: rgb(87, 171, 47);
+  margin: 0;
+} 
 
-#instruction2{
-	position: relative;      
-	top: 0;
-	color: red;
-    font-size: 27px;
-    margin-top: -15px;
+#dis{
+  font-size: 30px;
+  margin: 0;
 }
 
 #main{
