@@ -78,10 +78,20 @@ body {
 	}
 	#nav h2 {
 		font-weight: 900;
-		padding: 30px;
 		padding-top: 100px;
+        margin-bottom: 0px;
 		font-size: 100px;
 		letter-spacing: 5px;
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+    #nav h3 {
+        color: white;
+        margin-top: 0px;
+        padding-bottom: 70px;
+		font-weight: 600;
+		font-size: 35px;
+		letter-spacing: 1px;
 		text-shadow: 2px 2px 4px #000000;
 	}
 
@@ -93,13 +103,26 @@ body {
 		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5)
 	}
 
-	#userInputPageForm h3{
+	#userInputPageForm h1{
 		font-size: 5em;
 		padding: 40px 0 10px 0;
 		color: #56ab2f;
-		margin-bottom: 50px;
 		font-weight: 800;
 	}
+    
+    #smallHeader h2{
+        padding: 0px;
+        margin-bottom: -15px;
+        font-size: 2em;
+		color: #56ab2f;
+		font-weight: 800;
+	}
+
+    #smallHeader{
+        margin-top: -25px;
+        margin-bottom: 50px;
+	}
+
 	#name label{
 		font-weight: 300;
 		font-size: 4em;
