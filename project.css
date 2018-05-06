@@ -4,6 +4,14 @@
 *{
 	font-family: 'Catamaran', sans-serif;
 }
+#notMobile{
+	position: relative;
+	width:
+	top: 0;
+	padding: 3px;
+	color: #f7ff00;
+	background-color: #b20a2c;
+}
 #content {
 	text-align: center;
 }

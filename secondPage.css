@@ -5,7 +5,14 @@
 body {
 
 }
-
+#notMobile{
+	position: relative;
+	width:
+	top: 0;
+	padding: 3px;
+	color: #f7ff00;
+	background-color: #b20a2c;
+}
 
 #main{
 	height: 100%;
@@ -36,9 +43,7 @@ body {
 #grains, #dairy, #meat, #veggies_and_fruits, #other{
 }
 
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 667px) {
+
   #grains, #dairy, #meat, #veggies_and_fruits, #other{
     width: 820px;
     height: auto;
@@ -65,7 +70,7 @@ and (max-device-width : 667px) {
     padding: 5px;
 		padding-top: 15px;
     display: inline-block;
-    width: 100px;
+    max-width: 150px;
     height: 100px;
     border: 0px solid none;
   }
@@ -172,5 +177,11 @@ and (max-device-width : 667px) {
 		width: 100%;
 		background-color: white;
 		height: 160px;
+	}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 667px) {
+	#notMobile{
+		display: none;
 	}
 }
