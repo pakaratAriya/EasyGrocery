@@ -11,6 +11,22 @@
   display: inline-block;
   background-color: grey;
 }
+#tips{
+  padding-top: 20px;
+  height: 150px;
+  background-color: white;
+} 
+
+#tipstitle{
+  font-size: 40px;
+  color: rgb(87, 171, 47);
+  margin: 0;
+} 
+
+#dis{
+  font-size: 30px;
+  margin: 0;
+}
 
 .catName {
   text-align: left;
