@@ -70,7 +70,8 @@ body {
 		padding-bottom: 1px;
     margin: 0;
     font-size: 50px;
-    font-weight: 200;
+    font-weight: 600;
+    color: #56ab2f;
   }
 	.forRow{
 		display: block;
