@@ -99,8 +99,7 @@ $(document).ready(function() {
 //---------------------------------------------- Create data from the data. -------------------------------------------------//
 
 function createData(data){
-  if (loadFromSelection == "false") {
-
+  if (!loadFromSelection) {
     // sort all the data by calories.
     sortData(data);
     // pick the item randomly to fulfill the calories that the user needs.
@@ -136,6 +135,7 @@ function createData(data){
       + "</h6></div>";
 
       totalCost += parseFloat(selectedFood[d]['data'][i]['cost']);  
+      console.log(totalCost);
 
     $("#" + d).html(st);
   }
