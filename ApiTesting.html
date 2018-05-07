@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Project</title>
+	<!--Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Catamaran:100,200,300,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<div id="notMobile">
+		<h3>OOPS! Not support Desktop version.</h3>
+	</div>
+
+	<div id="content">
+		<div id="nav">
+			<h2 id="headerWithIcon">EasyGrocery</h2>
+		</div>
+
+		<div id="userInputPageForm">
+
+			<h3>Start Planning</h3>
+			<div id="name">
+				<form>
+					<label>Name</label>
+					<div class="underLine"><input id="userName" type="text" placeholder="Your name" value="" required></div>
+				</form>
+			</div>
+
+			<div id="gender">
+				<button class="genderBlock genderSelection selectedGender" value="male">
+					<p>Male</p>
+				</button>
+				<button class="genderBlock genderSelection" value="female">
+					<p>Female</p>
+				</button>
+			</div>
+
+			<div id="ageGroupDiv">
+				<button class="ageGroupBlock ageSelection selectedAge" value="2-13">
+					<h4>Child</h4>
+					<h5>2-13</h5>
+				</button>
+				<button class="ageGroupBlock ageSelection" value="14-18">
+					<h4>Teen</h4>
+					<h5>14-18</h5>
+				</button>
+				<button class="ageGroupBlock ageSelection" value="19-51+">
+					<h4>Adult</h4>
+					<h5>19-51+</h5>
+				</button>
+			</div>
+
+			<div id="nextStepsButtomForm">
+					<button id="submitButton" class="submit nextButtomsGroup">
+						<img src="icon/lightbulb.png" alt="inpiration">
+						<h3>Inspiration</h3>
+						<!--<br/><span>Generate a random list</span>-->
+					</button>
+					<button id="selectionButton" class="selectionButton nextButtomsGroup">
+						<img src="icon/checklist.png" alt="lists">
+						<h3>Selection</h3>
+						<!--<br/><span>Pick your food</span>-->
+					</button>
+			</div>
+		</div>
+
+
+	</div>
+	<script src="EasyGrocery.js"></script>
+  <script src="thirdPage.js"></script>
+	<div class="indexWhiteSpaceButtom"></div>
+
+
+</body>
+
+</html>

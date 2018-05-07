@@ -74,6 +74,7 @@ INSERT INTO Dairy(name, calories, img, cost) VALUES ("rice milk", "58", "./icon/
 INSERT INTO Dairy(name, calories, img, cost) VALUES ("tzatziki", "112", "./icon/Dairy/tzatziki.png", "4.28");
 INSERT INTO Dairy(name, calories, img, cost) VALUES ("soy milk", "49", "./icon/Dairy/soyMilk.png", "2.98");
 INSERT INTO Dairy(name, calories, img, cost) VALUES ("coconut milk", "223", "./icon/Dairy/coconutMilk.png", "4.68");
+INSERT INTO Dairy(name, calories, img, cost) VALUES ("egg", "155", "./icon/Dairy/egg.png", "4.78");
 
 INSERT INTO Meat(name, calories, img, cost) VALUES ("beef", "250", "./icon/Meat/beef.png", "5.44");
 INSERT INTO Meat(name, calories, img, cost) VALUES ("pork", "242", "./icon/Meat/pork.png", "5.00");
