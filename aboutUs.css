@@ -1,0 +1,37 @@
+#title{
+	background: #56ab2f;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#title p {
+    display: inline-block;
+    color: white;
+    font-weight: 900;
+    padding-left: 350px;
+    font-size: 60px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.person{
+    padding-top: 25px;
+    text-align: center;
+}
+
+img{
+    border-radius: 100px;
+    width: 200px;
+    height: 220px;
+}
+
+.person > p{
+    font-size: 25px;
+}
+
+#bot{
+    background-color: rgb(15, 161, 15);
+    width: 100%;
+    padding-top: 35px;
+    height: 60px;
+} 
