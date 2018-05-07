@@ -261,7 +261,8 @@ body {
 		display: inline-block;
 		margin: -1px;
 		border: 0px;
-		padding:0px;
+		padding-top: 50px;
+		padding-bottom: 50px;
 		margin-top: 320px;
 		display: inline-block;
 		background-color: #fc4a1a;
@@ -269,7 +270,11 @@ body {
 		height: 150px;
 		font-size: 50px;
 		color: white;
+	}
 
+	.optional:visited, .optional:active, .optional:link {
+		color: white;
+		text-decoration: none;
 	}
 
 	.optional:nth-of-type(1) {
