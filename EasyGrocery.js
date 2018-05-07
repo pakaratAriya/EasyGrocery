@@ -135,7 +135,6 @@ function createData(data){
       + "</h6></div>";
 
       totalCost += parseFloat(selectedFood[d]['data'][i]['cost']);  
-      console.log(totalCost);
 
     $("#" + d).html(st);
   }
