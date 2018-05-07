@@ -8,7 +8,7 @@
     display: inline-block;
     color: white;
     font-weight: 900;
-    padding-left: 350px;
+    padding-left: 230px;
     font-size: 60px;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px #000000;
@@ -35,3 +35,11 @@ img{
     padding-top: 35px;
     height: 60px;
 } 
+
+#lastPageBtn img{
+    margin-left: 50px;
+    transform: translateY(10px);
+    width: 70px;
+    height: 70px;
+    opacity: 0.9;
+}
