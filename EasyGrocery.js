@@ -99,7 +99,7 @@ $(document).ready(function() {
 //---------------------------------------------- Create data from the data. -------------------------------------------------//
 
 function createData(data){
-  if (!loadFromSelection) {
+  if (loadFromSelection == 'false') {
     // sort all the data by calories.
     sortData(data);
     // pick the item randomly to fulfill the calories that the user needs.
@@ -187,7 +187,6 @@ function selectCalories(){
 
 function sortData(data){
   let restrictedIndex = new Array();
-
   for (let d in data){
     sortedData[d] = new Object();
     sortedData[d]['data'] = new Array();
@@ -213,7 +212,6 @@ function sortData(data){
           minValue = parseFloat(data[d][j]['calories']);
           restrictedIndex[i] = j;
         }
-
       }
     }
     restrictedIndex = new Array();
