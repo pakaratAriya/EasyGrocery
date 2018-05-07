@@ -100,7 +100,8 @@ body {
 		width: 735px;
 		border-radius: 3em;
 		background-color: white;
-		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+        
 	}
 
 	#userInputPageForm h1{
@@ -120,7 +121,7 @@ body {
 
     #smallHeader{
         margin-top: -25px;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
 	}
 
 	#name label{
@@ -138,7 +139,7 @@ body {
 	}
 
 	.genderBlock {
-		margin: 30px -2px 5px -2px;
+		margin: 0px -2px 5px -2px;
 		display: inline-block;
 		color: grey;
 		font-weight: 200;
@@ -286,6 +287,10 @@ body {
 		width: 50%;
 		/*border-bottom-right-radius: 3em;*/
 	}
+    #fbLoginDiv img{
+      width: 430px;
+      height: 200px;
+    }
 
 
 @media only screen
