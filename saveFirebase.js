@@ -24,3 +24,19 @@ $(".saveData").on("click", function(){
     }
   }
 });
+
+
+$(".loadData").on("click", function(){
+  firebase.database().ref('Game').on('value', function(snapshot) {
+    let loadedData = snapshot.val();
+     
+    for (let d in queryData){
+      let index = 0;
+      for(let i in loadedData[d]) {
+        selectedFood[d]['data'][index] = loadedData[d][i];
+        index++;
+      }
+    }
+    displayFoodItems(selectedFood);
+  })
+});
