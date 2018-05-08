@@ -128,6 +128,7 @@ function createData(data){
 }
 
 $("#undo").on("click", function(event){
+  if(foodSelection.length > 0) {
     var temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['cal'];
     totalCost -= temp['cost'];
@@ -137,6 +138,8 @@ $("#undo").on("click", function(event){
     if (count == 0){
       $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
     }
+  }
+    
   });
 
 $("#next").on("click", function(event){
