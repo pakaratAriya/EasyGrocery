@@ -268,3 +268,4 @@ function sortDataFromSelection(data){
     selectedFood[d]['data'][num] = queryData[d][data[i]['index']];
   }
 }
+
