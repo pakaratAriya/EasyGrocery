@@ -14,6 +14,8 @@ var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
 var calories = new Object();
 var calRemaining = new Array();
 var foodSelection = new Array();
+
+
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
@@ -126,6 +128,7 @@ function createData(data){
 }
 
 $("#undo").on("click", function(event){
+  if(foodSelection.length > 0) {
     var temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['cal'];
     totalCost -= temp['cost'];
@@ -135,6 +138,8 @@ $("#undo").on("click", function(event){
     if (count == 0){
       $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
     }
+  }
+    
   });
 
 $("#next").on("click", function(event){

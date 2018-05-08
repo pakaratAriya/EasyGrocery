@@ -30,13 +30,6 @@ $(".genderSelection").on("click", function(event){
   $(this).addClass("selectedGender");
   gender = $(this).attr("value");
 
-  // $(this).css({
-  //     transition : 'background-color 0.5s ease-in-out',
-  //     "background-color": "green",
-  //     "color": "white"
-  // });
-
-
 });
 
 //-------------------------------------------------- select the age for the individual ----------------------------------//
@@ -99,8 +92,7 @@ $(document).ready(function() {
 //---------------------------------------------- Create data from the data. -------------------------------------------------//
 
 function createData(data){
-  if (loadFromSelection == "false") {
-
+  if (loadFromSelection == 'false') {
     // sort all the data by calories.
     sortData(data);
     // pick the item randomly to fulfill the calories that the user needs.
@@ -108,42 +100,49 @@ function createData(data){
   } else {
     sortDataFromSelection(foodSelection);
   }
-
-  for (let d in selectedFood){
-    let st = "<p class='label'>" + d + "</p><div class='forRow'>";
-    if (selectedFood[d]['data'] == 0){
-      $("#" + d).html("");
-    }
-    for (let i = 0; i < selectedFood[d]['data'].length; i++){
-      st += "<div class='img foodBlock' cost='"
-      + selectedFood[d]['data'][i]['cost']
-      + "' cal='"
-      + selectedFood[d]['data'][i]['calories']
-      + "' value='"
-      + selectedFood[d]['data'][i]['name']
-      + "' src='"
-      + selectedFood[d]['data'][i]['img']
-      + "'><img class='img foodImg' cost='"
-      + selectedFood[d]['data'][i]['cost']
-      + "' cal='"
-      + selectedFood[d]['data'][i]['calories']
-      + "' value='"
-      + selectedFood[d]['data'][i]['name']
-      + "' src='"
-      + selectedFood[d]['data'][i]['img']
-      + "' ><h6>"
-      + selectedFood[d]['data'][i]['name']
-      + "</h6></div>";
-
-      totalCost += parseFloat(selectedFood[d]['data'][i]['cost']);  
-
-    $("#" + d).html(st);
-  }
+  displayFoodItems(selectedFood);
+  
     calculateCalories();
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
 
 }
+  
+  function displayFoodItems(myFoodData){
+        console.log(myFoodData);
+    for (let d in myFoodData){
+    let st = "<p class='label'>" + d + "</p><div class='forRow'>";
+    if (myFoodData[d]['data'] == 0){
+      $("#" + d).html("");
+    }
+    for (let i = 0; i < myFoodData[d]['data'].length; i++){
+      st += "<div class='img foodBlock' cost='"
+      + myFoodData[d]['data'][i]['cost']
+      + "' cal='"
+      + myFoodData[d]['data'][i]['calories']
+      + "' value='"
+      + myFoodData[d]['data'][i]['name']
+      + "' src='"
+      + myFoodData[d]['data'][i]['img']
+      + "'><img class='img foodImg' cost='"
+      + myFoodData[d]['data'][i]['cost']
+      + "' cal='"
+      + myFoodData[d]['data'][i]['calories']
+      + "' value='"
+      + myFoodData[d]['data'][i]['name']
+      + "' src='"
+      + myFoodData[d]['data'][i]['img']
+      + "' ><h6>"
+      + myFoodData[d]['data'][i]['name']
+      + "</h6></div>";
+
+      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);  
+
+    $("#" + d).html(st);
+  }
+  }
+  
+  
     $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum += ($(this).attr("cal"));
@@ -187,7 +186,6 @@ function selectCalories(){
 
 function sortData(data){
   let restrictedIndex = new Array();
-
   for (let d in data){
     sortedData[d] = new Object();
     sortedData[d]['data'] = new Array();
@@ -213,7 +211,6 @@ function sortData(data){
           minValue = parseFloat(data[d][j]['calories']);
           restrictedIndex[i] = j;
         }
-
       }
     }
     restrictedIndex = new Array();
@@ -271,3 +268,6 @@ function sortDataFromSelection(data){
     selectedFood[d]['data'][num] = queryData[d][data[i]['index']];
   }
 }
+
+  
+
