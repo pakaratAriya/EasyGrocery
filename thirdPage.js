@@ -15,6 +15,8 @@ var calories = new Object();
 var calRemaining = new Array();
 var foodSelection = new Array();
 
+var counter = 0;
+
 
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
@@ -114,9 +116,20 @@ function createData(data){
 
   }
   $(".foodBlock").on("click", function(event){
+    if ($(this).attr('value') == 'egg') {
+      counter++;
+      if (counter == 5) {
+        $('.foodImg[value=egg]').css({
+         transition: 'all .3s ease-in',
+         transform: 'scale(10)'
+        });
+      }
+    }
+
     if (getFoodData($(this).attr('catagory')) >= 100) {
       return;
     }
+
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
     $(this).addClass("selectedFood");
@@ -126,6 +139,8 @@ function createData(data){
     $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
   });
 }
+
+
 
 $("#undo").on("click", function(event){
   if(foodSelection.length > 0) {
