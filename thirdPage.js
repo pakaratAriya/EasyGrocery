@@ -14,6 +14,8 @@ var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
 var calories = new Object();
 var calRemaining = new Array();
 var foodSelection = new Array();
+
+
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
