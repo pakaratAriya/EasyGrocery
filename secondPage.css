@@ -64,6 +64,11 @@ body {
 		text-align: left;
   }
 
+  #saveData{
+    width:85px;
+    height:85px;
+    margin-right: 90px;
+  }
   .label{
     text-align: left;
     padding-top: 5px;
