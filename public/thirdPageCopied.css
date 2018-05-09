@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .progress {
   margin: 10px 10px;
   margin-top: 18px;
@@ -12,22 +11,6 @@
   display: inline-block;
   background-color: grey;
 }
-#tips{
-  padding-top: 20px;
-  /* height: 150px; */
-  background-color: white;
-} 
-
-#tipstitle{
-  font-size: 40px;
-  color: rgb(87, 171, 47);
-  margin: 0;
-} 
-
-#dis{
-  font-size: 30px;
-  margin: 0;
-}
 
 .catName {
   text-align: left;
@@ -35,8 +18,7 @@
   padding-bottom: 1px;
   margin: 0;
   font-size: 50px;
-  font-weight: 600;
-  color: #56ab2f;
+  font-weight: 200;
 }
 
 #bot{
@@ -74,20 +56,10 @@
 .redoNextIcon{
   width: 50px;
 }
-#undo{
+#redo{
   bottom: 210px;
   padding-left: 5px;
 }
 #next{
   bottom: 90px;
-}
-.itemCounter{
-  display: inline-block;
-  max-width: 150px;
-  max-height:30px;
-  font-size: 30px;
-  line-height: 25px;
-  font-weight: 100;
-  padding-bottom: 5px;
-  color: white;
 }

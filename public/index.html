@@ -3,7 +3,7 @@
 
 <head>
 	<title>Project</title>
-	<meta name="viewport" content="user-scalable=no"/>
+  <meta name="viewport" content="user-scalable=no"/>
 	<!--Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Catamaran:100,200,300,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="index.css">
@@ -11,43 +11,43 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 
-	<!-- the initialization snippet for Firebase project. -->
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyBJFLfz0UPcmM9puZA_rdiWBbpaFC3lDAo",
-	    authDomain: "easygroce-59546.firebaseapp.com",
-	    databaseURL: "https://easygroce-59546.firebaseio.com",
-	    projectId: "easygroce-59546",
-	    storageBucket: "easygroce-59546.appspot.com",
-	    messagingSenderId: "1091864811394"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+		<!-- the initialization snippet for Firebase project. -->
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBJFLfz0UPcmM9puZA_rdiWBbpaFC3lDAo",
+		    authDomain: "easygroce-59546.firebaseapp.com",
+		    databaseURL: "https://easygroce-59546.firebaseio.com",
+		    projectId: "easygroce-59546",
+		    storageBucket: "easygroce-59546.appspot.com",
+		    messagingSenderId: "1091864811394"
+		  };
+		  firebase.initializeApp(config);
+		</script>
 
-	<!-- the code below initializes the sign-in widget from firebaseUI web. -->
-	  <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
-	  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
-	  <script type="text/javascript">
-	    // FirebaseUI config.
-	    var uiConfig = {
-	      signInSuccessUrl: 'loggedIn.html',
-	      signInOptions: [
-	        // Leave the lines as is for the providers you want to offer your users.
-	        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-	        firebase.auth.EmailAuthProvider.PROVIDER_ID,
-	      ],
-	      // Terms of service url.
-	      tosUrl: '<your-tos-url>'
-	    };
+		<!-- the code below initializes the sign-in widget from firebaseUI web. -->
+		  <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+		  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+		  <script type="text/javascript">
+		    // FirebaseUI config.
+		    var uiConfig = {
+		      signInSuccessUrl: 'loggedIn.html',
+		      signInOptions: [
+		        // Leave the lines as is for the providers you want to offer your users.
+		        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+		        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+		      ],
+		      // Terms of service url.
+		      tosUrl: '<your-tos-url>'
+		    };
 
-	    // Initialize the FirebaseUI Widget using Firebase.
-	    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-	    // The start method will wait until the DOM is loaded.
-	    ui.start('#firebaseui-auth-container', uiConfig);
-	  </script>
+		    // Initialize the FirebaseUI Widget using Firebase.
+		    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+		    // The start method will wait until the DOM is loaded.
+		    ui.start('#firebaseui-auth-container', uiConfig);
+		  </script>
 
-</head>
+	</head>
 
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -68,6 +68,10 @@
               <h2>Generate a random list or select your own items</h2>
               <h2>based on your nutritional requirement.</h2>
           </div>
+
+        <!-- <div id="fbLoginDiv">
+            <img src="icon/fbButton.png">
+        </div> -->
 
 			<div id="name">
 				<!-- <form>
@@ -117,22 +121,20 @@
 
 		</div>
 
-
-
-		<div id="loadDiv">
-			<img id="loadData" src="icon/load.png">
-		</div>
-		<div id="optionalButtons">
+      <div id="loadDiv">
+        <img id="loadData" src="icon/load.png">
+      </div>
+	<div id="optionalButtons">
 		<a href="aboutUs.html" class="optional">About Us</a>
 		<a href="howItWorks.html" class="optional">How It Works</a>
-		</div>
+	</div>
 
-		</div>
-		<script src="EasyGrocery.js"></script>
-		<script src="thirdPage.js"></script>
-		<div class="indexWhiteSpaceButtom"></div>
+	</div>
+	<script src="EasyGrocery.js"></script>
+  <script src="thirdPage.js"></script>
+	<div class="indexWhiteSpaceButtom"></div>
 
 
-		</body>
+</body>
 
-		</html>
+</html>

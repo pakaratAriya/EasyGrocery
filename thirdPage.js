@@ -38,7 +38,7 @@ $(".selectionButton").on("click",function(event){
   localStorage.setItem("neededCal", neededCal)
   localStorage.setItem("loadFromSelection", loadFromSelection);
   $.ajax({
-      url: "EasyGrocery.php",
+      url: "https://easygroce-59546.firebaseio.com/.json",
       dataType: "json",
       type: "GET",
       data: {output: 'json'},
@@ -154,7 +154,7 @@ $("#undo").on("click", function(event){
       $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
     }
   }
-    
+
   });
 
 $("#next").on("click", function(event){

@@ -34,7 +34,6 @@ body {
 }
 
 #info{
-
   background-color: #eeeeee;
   margin-top: 150px;
   padding: 30px;
@@ -84,6 +83,7 @@ body {
     transform: translateY(200px);
     font-size: 12px;
 		font-weight: 200;
+		padding-bottom: 30px;
   }
 
   #content p{
@@ -143,6 +143,7 @@ body {
   }
 
 	footer{
+		padding-top: 20px;
 		display: flex;
 		transform: translateY(240px);
 		justify-content:center;

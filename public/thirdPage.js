@@ -14,6 +14,10 @@ var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
 var calories = new Object();
 var calRemaining = new Array();
 var foodSelection = new Array();
+
+var counter = 0;
+
+
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
@@ -34,7 +38,7 @@ $(".selectionButton").on("click",function(event){
   localStorage.setItem("neededCal", neededCal)
   localStorage.setItem("loadFromSelection", loadFromSelection);
   $.ajax({
-      url: "EasyGrocery.php",
+      url: "https://easygroce-59546.firebaseio.com/.json",
       dataType: "json",
       type: "GET",
       data: {output: 'json'},
@@ -112,9 +116,20 @@ function createData(data){
 
   }
   $(".foodBlock").on("click", function(event){
+    if ($(this).attr('value') == 'egg') {
+      counter++;
+      if (counter == 5) {
+        $('.foodImg[value=egg]').css({
+         transition: 'all .3s ease-in',
+         transform: 'scale(10)'
+        });
+      }
+    }
+
     if (getFoodData($(this).attr('catagory')) >= 100) {
       return;
     }
+
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
     $(this).addClass("selectedFood");
@@ -125,7 +140,10 @@ function createData(data){
   });
 }
 
+
+
 $("#undo").on("click", function(event){
+  if(foodSelection.length > 0) {
     var temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['cal'];
     totalCost -= temp['cost'];
@@ -135,6 +153,8 @@ $("#undo").on("click", function(event){
     if (count == 0){
       $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
     }
+  }
+
   });
 
 $("#next").on("click", function(event){
