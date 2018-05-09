@@ -44,7 +44,6 @@ $(".ageSelection").on("click", function(event){
 //-------------------------------------------------- go to the second page ----------------------------------//
 
 $(".submit").on("click",function(event){
-  userName = $("#userName").val();
   event.preventDefault();
   loadFromSelection = false;
   selectCalories();
@@ -109,7 +108,6 @@ function createData(data){
 }
 
   function displayFoodItems(myFoodData){
-        console.log(myFoodData);
     for (let d in myFoodData){
     let st = "<p class='label'>" + d + "</p><div class='forRow'>";
     if (myFoodData[d]['data'] == 0){
@@ -265,6 +263,6 @@ function sortDataFromSelection(data){
   for (let i = 0; i < data.length; i++) {
     let d = data[i]['catagory'];
     let num = selectedFood[data[i]['catagory']]['data'].length;
-    selectedFood[d]['data'][num] = queryData[d][data[i]['index']];
+    selectedFood[d]['data'][num] = queryData[d][data[i]['ID'] - 1];
   }
 }

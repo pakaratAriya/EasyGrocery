@@ -54,6 +54,9 @@
 						firebase.auth().onAuthStateChanged(function(user){
 							if (user) {
 								document.getElementById("userLoggedIn").textContent = 'Welcome ' + user.displayName + '';
+                                userName = user.displayName;
+                              console.log(userName);
+                              localStorage.setItem("userName",userName);
 							} else {
 								console.log("no user signed in");
 							}
@@ -99,12 +102,14 @@
 					<!--<br/><span>Pick your food</span>-->
 				</button>
 			</div>
-
-
+            <div id="loadDiv">
+                <img id="loadData" src="icon/load.png">
+            </div>
+            
 		</div>
 
-
-
+        
+      
 	<div id="optionalButtons">
 		<a href="#" class="optional">About Us</a>
 		<a href="howItWorks.html" class="optional">How It Works</a>
@@ -114,19 +119,10 @@
 	<script src="EasyGrocery.js"></script>
 
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyBJFLfz0UPcmM9puZA_rdiWBbpaFC3lDAo",
-	    authDomain: "easygroce-59546.firebaseapp.com",
-	    databaseURL: "https://easygroce-59546.firebaseio.com",
-	    projectId: "easygroce-59546",
-	    storageBucket: "easygroce-59546.appspot.com",
-	    messagingSenderId: "1091864811394"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+
+  <script src="saveFirebase.js"></script>
   <script src="thirdPage.js"></script>
+  
 	<div class="indexWhiteSpaceButtom"></div>
 
 

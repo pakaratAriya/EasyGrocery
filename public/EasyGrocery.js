@@ -1,5 +1,5 @@
 var calSum = 0;
-var userName;
+var userName = "";
 var gender = "male";
 var age = "2-13";
 var queryData;
