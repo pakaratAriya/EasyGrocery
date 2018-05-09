@@ -1,5 +1,4 @@
 var calSum = new Object;
-var userName;
 var gender = "male";
 var age = "2-13";
 var queryData;
@@ -28,7 +27,6 @@ for (let i = 0; i < maleCal.length; i++){
 //-------------------------------------------------- go to the third page ----------------------------------//
 
 $(".selectionButton").on("click",function(event){
-  userName = $("#userName").val();
   event.preventDefault();
   selectCalories();
   loadFromSelection = true;
@@ -38,7 +36,7 @@ $(".selectionButton").on("click",function(event){
   localStorage.setItem("neededCal", neededCal)
   localStorage.setItem("loadFromSelection", loadFromSelection);
   $.ajax({
-      url: "EasyGrocery.php",
+      url: "https://easygroce-59546.firebaseio.com/.json",
       dataType: "json",
       type: "GET",
       data: {output: 'json'},
@@ -133,11 +131,14 @@ function createData(data){
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
     $(this).addClass("selectedFood");
-    var count = ++sortedData[$(this).attr('catagory')][$(this).attr('index')]['count'];
+    let count = ++sortedData[$(this).attr('catagory')][$(this).attr('index')]['count'];
     calculateCalories($(this).attr('catagory'));
-    foodSelection.push(sortedData[$(this).attr('catagory')][$(this).attr('index')]);
+    let sendingFood = data[$(this).attr('catagory')][$(this).attr('index')];
+    sendingFood['catagory'] = $(this).attr('catagory');
+    foodSelection.push(sendingFood);
     $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
   });
+  
 }
 
 
@@ -160,6 +161,7 @@ $("#undo").on("click", function(event){
 $("#next").on("click", function(event){
     localStorage.setItem("foodSelection", JSON.stringify(foodSelection));
     localStorage.setItem("loadFromSelection", loadFromSelection);
+    localStorage.setItem("userName",userName);
     document.location = "secondpage.html";
   });
 

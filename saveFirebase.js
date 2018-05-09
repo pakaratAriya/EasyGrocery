@@ -12,31 +12,53 @@
 
   var firebaseRef = firebase.database().ref();
 
-$(".saveData").on("click", function(){
-  let userName = "Game";
-  for (let d in selectedFood){
-    for (let i = 0; i < selectedFood[d]['data'].length; i++) {
-      for (let x in selectedFood[d]['data'][i]) {
-        console.log(x + ": " + selectedFood[d]['data'][i][x]);
-        let pathName = userName + "/" + d + "/" + selectedFood[d]['data'][i]['name'] + "/" + x;
-        firebaseRef.child(pathName).set(selectedFood[d]['data'][i][x]);
+$(document).ready(function(){
+      userName = localStorage.getItem("userName");
+});
+
+$("#saveData").on("click", function(){
+  if(userName != "undefined"){
+    firebaseRef.child(userName).remove();
+    for (let d in selectedFood){
+      for (let i = 0; i < selectedFood[d]['data'].length; i++) {
+        for (let x in selectedFood[d]['data'][i]) {
+          let pathName = userName + "/" + d + "/" + i + "/"  + x;
+          firebaseRef.child(pathName).set(selectedFood[d]['data'][i][x]); 
+        }
       }
     }
+    window.alert("Saved successfully");
+  } else {
+    window.alert("Please log in Facebook");
   }
+  
 });
 
 
-$(".loadData").on("click", function(){
-  firebase.database().ref('Game').on('value', function(snapshot) {
+$("#loadData").on("click", function(){
+  if (userName == "undefined"){
+    return;
+  }
+  foodSelection = new Array();
+  firebase.database().ref(userName).on('value', function(snapshot) {
     let loadedData = snapshot.val();
-     
-    for (let d in queryData){
-      let index = 0;
+    for (let d in loadedData){
+      selectedFood[d] = new Object();
+      selectedFood[d]['data'] = new Array();
       for(let i in loadedData[d]) {
-        selectedFood[d]['data'][index] = loadedData[d][i];
-        index++;
+        loadedData[d][i]['catagory'] = d;
+        foodSelection.push(loadedData[d][i]);
+        for(let x in loadedData[d][i]){
+          selectedFood[d]['data'][i] = new Object();
+          selectedFood[d]['data'][i] = loadedData[d][i][x];
+          
+        }
       }
     }
-    displayFoodItems(selectedFood);
+    loadFromSelection = true;
+    localStorage.setItem("loadFromSelection",loadFromSelection);
+
+    localStorage.setItem("foodSelection", JSON.stringify(foodSelection));
+    document.location = "secondpage.html";
   })
 });
