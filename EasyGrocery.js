@@ -100,13 +100,13 @@ function createData(data){
     sortDataFromSelection(foodSelection);
   }
   displayFoodItems(selectedFood);
-  
+
     calculateCalories();
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
 
 }
-  
+
   function displayFoodItems(myFoodData){
     for (let d in myFoodData){
     let st = "<p class='label'>" + d + "</p><div class='forRow'>";
@@ -134,13 +134,13 @@ function createData(data){
       + myFoodData[d]['data'][i]['name']
       + "</h6></div>";
 
-      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);  
+      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);
 
     $("#" + d).html(st);
   }
   }
-  
-  
+
+
     $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum += ($(this).attr("cal"));
@@ -152,7 +152,7 @@ function createData(data){
     $(this).toggleClass("selectedFood");
     calculateCalories();
 
-  });  
+  });
 }
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
 
@@ -266,6 +266,3 @@ function sortDataFromSelection(data){
     selectedFood[d]['data'][num] = queryData[d][data[i]['ID'] - 1];
   }
 }
-
-  
-

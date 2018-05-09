@@ -154,7 +154,7 @@ $("#undo").on("click", function(event){
       $('#data' + temp['catagory'] + (temp['ID'] - 1)).removeClass('selectedFood');
     }
   }
-    
+
   });
 
 $("#next").on("click", function(event){

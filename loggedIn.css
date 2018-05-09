@@ -1,26 +1,16 @@
-
-*{
-	font-family: 'Catamaran', sans-serif;
-}
-
-#notMobile{
-	position: relative;
-	width:100%;
-	top: 0;
-	padding: 3px;
-	color: #f7ff00;
-	background-color: #b20a2c;
-}
 #content {
 	text-align: center;
 }
 
-#nav h2 {
-	color: white;
-	margin-top: 0;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	text-align: center;
+#nav p {
+    display: inline-block;
+    color: white;
+    font-weight: 900;
+    padding: 30px;
+    font-size: 80px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #000000;
+    
 
 }
 
@@ -75,11 +65,30 @@ body {
 
 	}
       
-  #loadData{
-    margin-top: 90px;
-    padding-bottom: 0px;
-    margin-bottom:-200px;
+  #loadDiv{
+    margin-top: 40px;
+    width: 100%;
+    clear: both;
+    display: table;
   }
+
+  #loadDiv div{
+      height: 10px;
+      background-color: #56ab2f;
+  }
+
+  #loadDiv h2{
+    font-size: 4em;
+    color: #56ab2f;
+    font-weight: 300;
+  }
+
+  #loadDiv img{
+      float: left;
+      width: 33.33%;
+      padding: 15px;
+  }
+
 	#nav h2 {
 		font-weight: 900;
 		padding-top: 100px;
@@ -104,12 +113,14 @@ body {
 		width: 735px;
 		border-radius: 3em;
 		background-color: white;
-		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+        height: 1100px;
         
 	}
 
 	#userInputPageForm h1{
-		font-size: 5em;
+        font-size: 5em;
+        height: 600px;
 		padding: 40px 0 10px 0;
 		color: #56ab2f;
 		font-weight: 800;
@@ -130,7 +141,8 @@ body {
 
 	#name label{
 		font-weight: 300;
-		font-size: 4em;
+        font-size: 4em;
+        color: #56ab2f;
 	}
 
 	#userName {
@@ -305,3 +317,4 @@ and (max-device-width : 667px) {
 		display: none;
 	}
 }
+ 
