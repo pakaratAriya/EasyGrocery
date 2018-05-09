@@ -141,18 +141,17 @@ function createData(data){
   
 }
 
-
-
 $("#undo").on("click", function(event){
   if(foodSelection.length > 0) {
+    
     var temp = foodSelection.pop();
-    calSum[temp['catagory']] -= temp['cal'];
+    calSum[temp['catagory']] -= temp['calories'];
     totalCost -= temp['cost'];
-    var count = --sortedData[temp['catagory']][temp['index']]['count'];
-    calculateCalories(temp['catagory']);
-    $('#span' + temp['catagory'] + temp['index']).html(count);
+    var count = --sortedData[temp['catagory']][temp['ID'] - 1]['count'];
+    calculateCalories(temp['catagory']);;
+    $('#span' + temp['catagory'] + (temp['ID'] - 1)).html(count);
     if (count == 0){
-      $('#data' + temp['catagory'] + temp['index']).removeClass('selectedFood');
+      $('#data' + temp['catagory'] + (temp['ID'] - 1)).removeClass('selectedFood');
     }
   }
     
