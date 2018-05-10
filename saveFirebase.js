@@ -34,6 +34,7 @@ $("#saveData").on("click", function(){
   
 });
 
+// copied loaded food iteam(from user databse) to selectedFood and selectedFood.
 
 $("#loadData").on("click", function(){
   if (userName == "undefined"){
@@ -43,21 +44,13 @@ $("#loadData").on("click", function(){
   firebase.database().ref(userName).on('value', function(snapshot) {
     let loadedData = snapshot.val();
     for (let d in loadedData){
-      selectedFood[d] = new Object();
-      selectedFood[d]['data'] = new Array();
       for(let i in loadedData[d]) {
         loadedData[d][i]['catagory'] = d;
         foodSelection.push(loadedData[d][i]);
-        for(let x in loadedData[d][i]){
-          selectedFood[d]['data'][i] = new Object();
-          selectedFood[d]['data'][i] = loadedData[d][i][x];
-          
-        }
       }
     }
     loadFromSelection = true;
     localStorage.setItem("loadFromSelection",loadFromSelection);
-
     localStorage.setItem("foodSelection", JSON.stringify(foodSelection));
     document.location = "secondpage.html";
   })

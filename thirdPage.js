@@ -1,10 +1,5 @@
 var calSum = new Object;
-var gender = "male";
-var age = "2-13";
-var queryData;
 var totalCost = 0.00;
-var neededCal;
-var sortedData = new Object();
 var calData = {male: {}, female: {}};
 var femaleCal = [ 1666, 2000, 1800 ];
 var maleCal = [ 1733, 2800, 2600 ];
@@ -13,6 +8,7 @@ var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
 var calories = new Object();
 var calRemaining = new Array();
 var foodSelection = new Array();
+var dataCounter = new Object();
 
 var counter = 0;
 
@@ -70,24 +66,19 @@ $(document).ready(function() {
   }
 });
 
+// ------------------------------- Get the data from database and display them in grid form ----------------------------//
 
 function createData(data){
   for (let d in data){
     calSum[d] = 0;
 
-    sortedData[d] = new Array();
+    dataCounter[d] = new Array();
 
     let st = "<div class='labelRowWithProg'><p class='catName'>" + d + "</p>";
     st += "<div class='progress'><div class='progress-bar progress-bar-striped active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div></div>";
     for (let i = 0; i < data[d].length; i++){
-      sortedData[d][i] = new Object();
-      sortedData[d][i]['name'] = data[d][i]['name'];
-      sortedData[d][i]['count'] = 0;
-      sortedData[d][i]['catagory'] = d;
-      sortedData[d][i]['cal'] = data[d][i]['calories'];
-      sortedData[d][i]['cost'] = data[d][i]['cost'];
-      sortedData[d][i]['index'] = i;
-
+      dataCounter[d][i] = 0;
+      
       st += "<div class='img foodBlock' cost='"
       + data[d][i]['cost']
       + "' cal='"
@@ -95,24 +86,19 @@ function createData(data){
       + "' value='"
       + data[d][i]['name']
       + "' catagory='" + d + "' index='" + i + "' id='data" + d + i
-      + "'><img class='img foodImg' cost='"
-      + data[d][i]['cost']
-      + "' cal='"
-      + data[d][i]['calories']
-      + "' value='"
+      + "'><img class='img foodImg' "
+      + "value='"
       + data[d][i]['name']
       + "' src='"
       + data[d][i]['img']
-      + "' catagory='" + d + "' index='" + i
       + "'/><h6>"
       + data[d][i]['name']
       + "</h6>"
-      + "<span id='span" + d + i + "' class='itemCounter'>" + sortedData[d][i]['count'] + "</span></div>";
-
+      + "<span id='span" + d + i + "' class='itemCounter'>0</span></div>";
     }
     $("#" + d).html(st);
-
   }
+  // ----------------------- work when the user click the food img -> add the item into foodSelection --------------------//
   $(".foodBlock").on("click", function(event){
     if ($(this).attr('value') == 'egg') {
       counter++;
@@ -123,7 +109,7 @@ function createData(data){
         });
       }
     }
-
+    // stop adding if the percentage is over 100 (99.99 is fine)
     if (getFoodData($(this).attr('catagory')) >= 100) {
       return;
     }
@@ -131,7 +117,7 @@ function createData(data){
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
     $(this).addClass("selectedFood");
-    let count = ++sortedData[$(this).attr('catagory')][$(this).attr('index')]['count'];
+    let count = ++dataCounter[$(this).attr('catagory')][$(this).attr('index')];
     calculateCalories($(this).attr('catagory'));
     let sendingFood = data[$(this).attr('catagory')][$(this).attr('index')];
     sendingFood['catagory'] = $(this).attr('catagory');
@@ -141,13 +127,15 @@ function createData(data){
   
 }
 
+// ------------------------------- delete the latest item that the user just chose ----------------------------//
+
 $("#undo").on("click", function(event){
   if(foodSelection.length > 0) {
     
     var temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['calories'];
     totalCost -= temp['cost'];
-    var count = --sortedData[temp['catagory']][temp['ID'] - 1]['count'];
+    var count = --dataCounter[temp['catagory']][temp['ID'] - 1];
     calculateCalories(temp['catagory']);;
     $('#span' + temp['catagory'] + (temp['ID'] - 1)).html(count);
     if (count == 0){
@@ -156,6 +144,7 @@ $("#undo").on("click", function(event){
   }
 
   });
+// ------------------------------- go to next page when user press next ----------------------------//
 
 $("#next").on("click", function(event){
     localStorage.setItem("foodSelection", JSON.stringify(foodSelection));
@@ -169,7 +158,7 @@ function calculateCalories(proCat){
 
 }
 
-
+// -------------------------------- calculate how many percentage of all selected items ------------------------------//
 
 function getFoodData(proCat){
 
