@@ -16,13 +16,14 @@ $(document).ready(function(){
       userName = localStorage.getItem("userName");
 });
 
-$("#saveData").on("click", function(){
+$(".saveData").on("click", function(){
   if(userName != "undefined"){
+    let saveNumber = $(this).attr("value");
     firebaseRef.child(userName).remove();
     for (let d in selectedFood){
       for (let i = 0; i < selectedFood[d]['data'].length; i++) {
         for (let x in selectedFood[d]['data'][i]) {
-          let pathName = userName + "/" + d + "/" + i + "/"  + x;
+          let pathName = userName + "/" + saveNumber + "/" + d + "/" + i + "/"  + x;
           firebaseRef.child(pathName).set(selectedFood[d]['data'][i][x]); 
         }
       }
@@ -40,8 +41,10 @@ $("#loadData").on("click", function(){
   if (userName == "undefined"){
     return;
   }
+  let saveNumber = $(this).attr("value");
+  let pathName = userName + saveNumber;
   foodSelection = new Array();
-  firebase.database().ref(userName).on('value', function(snapshot) {
+  firebase.database().ref(pathName).on('value', function(snapshot) {
     let loadedData = snapshot.val();
     for (let d in loadedData){
       for(let i in loadedData[d]) {

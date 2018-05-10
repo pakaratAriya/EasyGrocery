@@ -268,4 +268,4 @@ function sortDataFromSelection(data){
     let num = selectedFood[data[i]['catagory']]['data'].length;
     selectedFood[d]['data'][num] = queryData[d][data[i]['ID'] - 1];
   }
-}
+} 
