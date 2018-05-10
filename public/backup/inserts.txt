@@ -1,0 +1,29 @@
+INSERT INTO Grains (name, calories) VALUES ("bread", "256");
+INSERT INTO Grains (name, calories) VALUES ("rice", "130");
+INSERT INTO Grains (name, calories) VALUES ("oatmeal", "68");
+INSERT INTO Grains (name, calories) VALUES ("buckwheat", "343");
+INSERT INTO Grains (name, calories) VALUES ("popcorn", "375");
+
+INSERT INTO Dairy(name, calories) VALUES ("milk", "42");
+INSERT INTO Dairy(name, calories) VALUES ("cheese", "402");
+INSERT INTO Dairy(name, calories) VALUES ("yogurt", "59");
+INSERT INTO Dairy(name, calories) VALUES ("sour cream", "193");
+INSERT INTO Dairy(name, calories) VALUES ("cream cheese", "342");
+
+INSERT INTO Meat(name, calories) VALUES ("beef", "250");
+INSERT INTO Meat(name, calories) VALUES ("pork", "242");
+INSERT INTO Meat(name, calories) VALUES ("lamb", "294");
+INSERT INTO Meat(name, calories) VALUES ("chicken", "239");
+INSERT INTO Meat(name, calories) VALUES ("veal", "172");
+
+INSERT INTO Veggies_and_fruits(name, calories) VALUES ("apple", "52");
+INSERT INTO Veggies_and_fruits(name, calories) VALUES ("banana", "89");
+INSERT INTO Veggies_and_fruits(name, calories) VALUES ("celery", "16");
+INSERT INTO Veggies_and_fruits(name, calories) VALUES ("tomato", "18");
+INSERT INTO Veggies_and_fruits(name, calories) VALUES ("lettuce", "15");
+
+INSERT INTO Other(name, calories) VALUES ("salmon", "208");
+INSERT INTO Other(name, calories) VALUES ("cod", "82");
+INSERT INTO Other(name, calories) VALUES ("tofu", "76");
+INSERT INTO Other(name, calories) VALUES ("avocado", "160");
+INSERT INTO Other(name, calories) VALUES ("ham", "145");

@@ -5,7 +5,7 @@
 	<title>Project</title>
 	<!--Google fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Catamaran:100,200,300,500,600,700,800,900" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="loggedIn.css">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -29,23 +29,22 @@
 
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<div id="notMobile">
+	<!-- <div id="notMobile">
 		<h3>OOPS! Not support Desktop version.</h3>
-	</div>
+	</div> -->
 
 	<div id="content">
+
 		<div id="nav">
-			<h2 id="headerWithIcon">EasyGrocery</h2>
-            <h3>Nutrition Based Shopping List Generator</h3>
+			<p>EasyGrocery</p>
 		</div>
 
 		<div id="userInputPageForm">
-
-			<h1>Create Shopping List</h1>
-            <div id="smallHeader">
-              <h2>Generate a random list or select your own items</h2>
-              <h2>based on your nutritional requirement.</h2>
-          </div>
+			<!-- <h2>Create Shopping List</h2> -->
+            <!-- <div id="smallHeader">
+                 <h2>Generate a random list or select your own items</h2>
+                 <h2>based on your nutritional requirement.</h2>
+            </div> -->
 
 			<div id="name">
 				<form>
@@ -54,6 +53,8 @@
 						firebase.auth().onAuthStateChanged(function(user){
 							if (user) {
 								document.getElementById("userLoggedIn").textContent = 'Welcome ' + user.displayName + '';
+                                userName = user.displayName;
+                                localStorage.setItem("userName",userName);
 							} else {
 								console.log("no user signed in");
 							}
@@ -99,13 +100,21 @@
 					<!--<br/><span>Pick your food</span>-->
 				</button>
 			</div>
-
-
+            <div id="loadData" >
+				<!-- <img id="loadData" src="icon/load.png"> -->
+				<div></div>
+				<h2>Your Lists</h2>
+				<img id="list1" src="shopping-list.png"/>
+				<img id="list2" src="shopping-list.png"/>
+				<img id="list3" src="shopping-list.png"/>
+            </div>
+            
 		</div>
 
-
-
+        
+      
 	<div id="optionalButtons">
+		
 		<a href="#" class="optional">About Us</a>
 		<a href="howItWorks.html" class="optional">How It Works</a>
 	</div>
@@ -114,19 +123,10 @@
 	<script src="EasyGrocery.js"></script>
 
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyBJFLfz0UPcmM9puZA_rdiWBbpaFC3lDAo",
-	    authDomain: "easygroce-59546.firebaseapp.com",
-	    databaseURL: "https://easygroce-59546.firebaseio.com",
-	    projectId: "easygroce-59546",
-	    storageBucket: "easygroce-59546.appspot.com",
-	    messagingSenderId: "1091864811394"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+
+  <script src="saveFirebase.js"></script>
   <script src="thirdPage.js"></script>
+  
 	<div class="indexWhiteSpaceButtom"></div>
 
 
