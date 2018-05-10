@@ -42,6 +42,11 @@ $("#openSaveData").on("click", function(){
     $("#saveContent").fadeToggle("slow","linear");
 });
 
+$("#openLoadData").on("click", function(){
+  $("#content").toggleClass("blur");
+  $("#lists").fadeToggle("slow","linear");
+});
+
 $(".cancelSaveBtn").on("click", function(){
     $("#main").toggleClass("blur");
     $("#saveContent").fadeToggle("slow","linear");
@@ -49,12 +54,14 @@ $(".cancelSaveBtn").on("click", function(){
 
 // copied loaded food iteam(from user databse) to selectedFood and selectedFood.
 
-$("#loadData").on("click", function(){
+$(".loadBtn").on("click", function(){
+  let saveNumber = $(this).attr("value");
+  console.log(saveNumber);
   if (userName == "undefined"){
     return;
   }
-  let saveNumber = $(this).attr("value");
-  let pathName = userName + saveNumber;
+  
+  let pathName = userName + "/" + saveNumber;
   foodSelection = new Array();
   firebase.database().ref(pathName).on('value', function(snapshot) {
     let loadedData = snapshot.val();
