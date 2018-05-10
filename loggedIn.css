@@ -243,12 +243,12 @@ body {
 	}
 	.nextButtomsGroup:nth-of-type(1){
 		width: 50%;
-		border-bottom-left-radius: 3em;
+		/*border-bottom-left-radius: 3em;*/
 
 	}
 	.nextButtomsGroup:nth-of-type(2){
 		width: 50%;
-		border-bottom-right-radius: 3em;
+		/*border-bottom-right-radius: 3em;*/
 	}
 	#nextStepsButtomForm h3{
 		padding: 0px;
