@@ -115,7 +115,7 @@ body {
   #cancel{
 	height: 50px;
 	width: 150px;
-	background-color: #fc4a1a;
+	background-color: #56ab2f;
 	position: absolute;
 	top: 320px;
 	left: 300px; 
@@ -126,7 +126,7 @@ body {
   #openLoadData{
 	  height: 50px;
 	  width: 150px;
-	  background-color: #fc4a1a;
+	  background-color: #56ab2f;
 	  border-radius: 25px;
   }
 
