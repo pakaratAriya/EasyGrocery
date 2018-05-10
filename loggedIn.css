@@ -272,7 +272,7 @@ body {
 
 	#optionalButtons {
 		height: 50px;
-	}
+    }
 
 	.optional {
 		display: inline-block;
