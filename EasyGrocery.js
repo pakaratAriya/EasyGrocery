@@ -13,7 +13,7 @@ var maleCal = [ 1733, 2800, 2600 ];
 var youngProportion = [ 0.152, 0.31, 0.176, 0.139, 0.223];
 var adultProportion = [ 0.205, 0.285, 0.123, 0.16, 0.227 ];
 var loadFromSelection = false;
-var foodSelection = new Object();
+var foodSelection = new Array();
 
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
@@ -92,6 +92,7 @@ $(document).ready(function() {
 
 function createData(data){
   if (loadFromSelection == 'false') {
+    // random function
     // sort all the data by calories.
     sortData(data);
     // pick the item randomly to fulfill the calories that the user needs.
@@ -100,13 +101,13 @@ function createData(data){
     sortDataFromSelection(foodSelection);
   }
   displayFoodItems(selectedFood);
-
-    calculateCalories();
+  
+  calculateCalories();
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
 
 }
-
+  
   function displayFoodItems(myFoodData){
     for (let d in myFoodData){
     let st = "<p class='label'>" + d + "</p><div class='forRow'>";
@@ -134,13 +135,13 @@ function createData(data){
       + myFoodData[d]['data'][i]['name']
       + "</h6></div>";
 
-      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);
+      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);  
 
-    $("#" + d).html(st);
+      $("#" + d).html(st);
+    }
   }
-  }
-
-
+  
+  
     $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum += ($(this).attr("cal"));
@@ -152,7 +153,7 @@ function createData(data){
     $(this).toggleClass("selectedFood");
     calculateCalories();
 
-  });
+  });  
 }
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
 
@@ -255,6 +256,8 @@ function getFoodData(){
   }
 }
 
+// ---------- Convert information from thirdPage.js or firebase to selectedFood in the proper format to display it-------//
+
 function sortDataFromSelection(data){
   for (let d in queryData){
     selectedFood[d] = new Object();
@@ -265,4 +268,4 @@ function sortDataFromSelection(data){
     let num = selectedFood[data[i]['catagory']]['data'].length;
     selectedFood[d]['data'][num] = queryData[d][data[i]['ID'] - 1];
   }
-}
+} 
