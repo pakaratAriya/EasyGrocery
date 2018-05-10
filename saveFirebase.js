@@ -52,6 +52,11 @@ $(".cancelSaveBtn").on("click", function(){
     $("#saveContent").fadeToggle("slow","linear");
 });
 
+$(".cancelLoadBtn").on("click", function(){
+    $("#content").toggleClass("blur");
+  $("#lists").fadeToggle("slow","linear");
+});
+
 // copied loaded food iteam(from user databse) to selectedFood and selectedFood.
 
 $(".loadBtn").on("click", function(){
