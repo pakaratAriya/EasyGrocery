@@ -72,10 +72,10 @@ body {
     display: table;
   }
 
-  #loadDiv div{
+  /* #loadData div{
       height: 10px;
       background-color: #56ab2f;
-  }
+  } */
 
   #loadDiv h2{
     font-size: 4em;
@@ -87,6 +87,21 @@ body {
       float: left;
       width: 33.33%;
       padding: 15px;
+  }
+
+  #lists{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 50%;
+	left: 25%;
+	display: none;
+	transition: 0.5s;
+  }
+
+  #openLoadData{
+	  height: 50px;
+	  width: 50px;
   }
 
 	#nav h2 {

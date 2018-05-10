@@ -42,6 +42,11 @@ $("#openSaveData").on("click", function(){
     $("#saveContent").fadeToggle("slow","linear");
 });
 
+$("#openLoadData").on("click", function(){
+  $("#content").toggleClass("blur");
+  $("#lists").fadeToggle("slow","linear");
+});
+
 $(".cancelSaveBtn").on("click", function(){
     $("#main").toggleClass("blur");
     $("#saveContent").fadeToggle("slow","linear");
