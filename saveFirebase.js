@@ -17,7 +17,7 @@ $(document).ready(function(){
 });
 
 $(".saveBtn").on("click", function(){
-
+  
   if(userName != "undefined"){
     let saveNumber = $(this).attr("value");
     firebaseRef.child(userName + "/" + saveNumber).remove();
