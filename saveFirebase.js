@@ -16,10 +16,11 @@ $(document).ready(function(){
       userName = localStorage.getItem("userName");
 });
 
-$(".saveData").on("click", function(){
+$(".saveBtn").on("click", function(){
+
   if(userName != "undefined"){
     let saveNumber = $(this).attr("value");
-    firebaseRef.child(userName).remove();
+    firebaseRef.child(userName + "/" + saveNumber).remove();
     for (let d in selectedFood){
       for (let i = 0; i < selectedFood[d]['data'].length; i++) {
         for (let x in selectedFood[d]['data'][i]) {
@@ -29,10 +30,21 @@ $(".saveData").on("click", function(){
       }
     }
     window.alert("Saved successfully");
+    $("#main").toggleClass("blur");
+    $("#saveContent").fadeToggle("slow","linear");
   } else {
     window.alert("Please log in Facebook");
   }
-  
+});
+
+$("#openSaveData").on("click", function(){
+    $("#main").toggleClass("blur");
+    $("#saveContent").fadeToggle("slow","linear");
+});
+
+$(".cancelSaveBtn").on("click", function(){
+    $("#main").toggleClass("blur");
+    $("#saveContent").fadeToggle("slow","linear");
 });
 
 // copied loaded food iteam(from user databse) to selectedFood and selectedFood.
