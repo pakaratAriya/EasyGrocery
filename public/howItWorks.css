@@ -81,7 +81,7 @@ body {
 		margin-right: auto;
     color: black;
     transform: translateY(200px);
-    font-size: 12px;
+    font-size: 24px;
 		font-weight: 200;
 		padding-bottom: 30px;
   }
@@ -95,6 +95,8 @@ body {
 		font-size: 24px;
 		font-weight: 200;
   }
+
+
 
   iframe{
     transform: translateX(215px) translateY(220px);
@@ -164,7 +166,7 @@ body {
     height: 200px;
 		margin-left: 50px;
   }
-  
+
   .bLayer{
     position:relative;
     z-index:-1;

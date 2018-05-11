@@ -1,40 +1,48 @@
-#title{
-	background: #56ab2f;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
 
-#title p {
-    display: inline-block;
-    color: white;
-    font-weight: 900;
-    padding-left: 230px;
-    font-size: 60px;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 4px #000000;
-}
 
 .person{
-    padding-top: 25px;
-    text-align: center;
+    display: inline-block;
+    position: relative;
+    justify-content:flex-start;
+    align-items: flex-start;
+    margin: -3px;
+    margin-top: -14px;
 }
 
-img{
-    border-radius: 100px;
-    width: 200px;
-    height: 220px;
+.person img{
+    width: 370px;
+    margin: 0;
+
+}
+.person p{
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 35px;
+  font-size: 30px;
+  line-height: 30.5px;
+  color: white;
+}
+#content p{
+  font-size: 30px;
+  font-weight: 600;
 }
 
-.person > p{
-    font-size: 25px;
+#content b{
+  font-size: 30px;
+  font-weight: 200;
 }
 
+#content{
+  text-align: center;
+  width: 100%;
+}
 #bot{
     background-color: rgb(15, 161, 15);
     width: 100%;
     padding-top: 35px;
     height: 60px;
-} 
+}
 
 #lastPageBtn img{
     margin-left: 50px;
@@ -42,4 +50,11 @@ img{
     width: 70px;
     height: 70px;
     opacity: 0.9;
+}
+
+
+#ueImg{
+  height: 350px;
+  margin: 0;
+  padding:30px;
 }

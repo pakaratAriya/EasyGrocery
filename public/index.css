@@ -74,7 +74,7 @@ body {
 	body{
 
 	}
-      
+
   #loadData{
     margin-top: 90px;
     padding-bottom: 0px;
@@ -105,22 +105,22 @@ body {
 		border-radius: 3em;
 		background-color: white;
 		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-        
+
 	}
 
 	#userInputPageForm h1{
-		font-size: 5em;
-		padding: 40px 0 10px 0;
+		font-size: 4.5em;
+		padding: 40px 0 35px 0;
 		color: #56ab2f;
-		font-weight: 800;
+		font-weight: 700;
 	}
-    
+
     #smallHeader h2{
         padding: 0px;
         margin-bottom: -15px;
         font-size: 2em;
 		color: #56ab2f;
-		font-weight: 800;
+		font-weight: 400;
 	}
 
     #smallHeader{
@@ -143,18 +143,22 @@ body {
 	}
 
 	.genderBlock {
-		margin: 0px -2px 5px -2px;
+		margin: 34px -2px 5px -2px;
 		display: inline-block;
 		color: grey;
 		font-weight: 200;
-		font-size: 4em;
+		font-size: 3em;
 		text-align: center;
 		width: 250px;
+		padding: 5px;
 		padding-left: 25px;
 		padding-right: 25px;
 		background-color: white;
 		border: 2px solid grey;
 		transition: background-color 0.3s ease-in-out;
+	}
+	.genderBlock p{
+		margin: 0;
 	}
 	.genderBlock:nth-of-type(1){
 		border-top-left-radius: 40px;
@@ -176,6 +180,7 @@ body {
 		color: grey;
 		text-align: center;
 		width: 170px;
+		padding:5px;
 		padding-left: 15px;
 		padding-right: 15px;
 		background-color: white;
@@ -196,10 +201,14 @@ body {
 		border-bottom-right-radius: 40px;
 	}
 	.ageGroupBlock h4{
-		font-size: 3em;
+		font-size: 2.8em;
+		margin: 0;
+		margin-top: 5px;
 		font-weight: 200;
 	}
 	.ageGroupBlock h5{
+		margin: 0;
+		margin-bottom: 5px;
 		font-size: 2em;
 		font-weight: 100;
 	}
@@ -241,8 +250,9 @@ body {
 	#nextStepsButtomForm h3{
 		padding: 0px;
 		margin:0px;
-		font-size: 3.5em;
+		font-size: 3.0em;
 		color:white;
+		font-weight: 400;
 	}
 	#nextStepsButtomForm img{
 		margin: 20px;
@@ -255,46 +265,71 @@ body {
 
 	}
 	.indexWhiteSpaceButtom{
-		height:300px;
+		height:100px;
 	}
 
 	#optionalButtons {
-		height: 50px;
+		width: 100%;
+		position: fixed;
+		bottom: 0px;
 	}
 
 	.optional {
 		display: inline-block;
 		margin: -1px;
 		border: 0px;
-		padding-top: 50px;
-		padding-bottom: 50px;
-		margin-top: 320px;
+		padding-top: 30px;
+		padding-bottom: 30px;
 		display: inline-block;
-		background-color: #fc4a1a;
+		background-color: #16222A;
 		color: black;
-		height: 150px;
-		font-size: 50px;
+		font-size: 38px;
+		font-weight: 300;
 		color: white;
-	}
-
-	.optional:visited, .optional:active, .optional:link {
-		color: white;
-		text-decoration: none;
-	}
-
-	.optional:nth-of-type(1) {
 		width: 50%;
-		/*border-bottom-left-radius: 3em;*/
 	}
 
-	.optional:nth-of-type(2) {
-		width: 50%;
-		/*border-bottom-right-radius: 3em;*/
-	}
     #fbLoginDiv img{
       width: 430px;
       height: 200px;
     }
+
+		#userLoginForm{
+			margin-top: 60px;
+			display: inline-block;
+			width: 735px;
+			height: 300px;
+			border-radius: 3em;
+			background-color: white;
+			box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+		}
+
+		#userLoginForm h1{
+			font-size: 4em;
+			padding: 20px 0 10px 0;
+			color: #56ab2f;
+			font-weight: 500;
+			color: #3A6073;
+			margin-bottom: 0;
+		}
+
+		#firebaseui-auth-content{
+			width: 600px;
+		}
+		.firebaseui-card-content{
+			width: 100%;
+			padding: 0;
+		}
+		.firebaseui-idp-button{
+			max-width: 100%;
+		}
+		.firebaseui-idp-text{
+			font-size: 25px;
+		}
+		.firebaseui-idp-icon{
+			height: 30px;
+			width: 30px;
+		}
 
 
 @media only screen

@@ -63,6 +63,9 @@ $(document).ready(function() {
     $("#gender").html(gender);
     $("#age").html(age);
     createData(queryData);
+    if (userName == 'undefined'){
+      $('#lastPageBtn').attr("href", "index.html");
+    }
   }
 });
 
@@ -78,7 +81,7 @@ function createData(data){
     st += "<div class='progress'><div class='progress-bar progress-bar-striped active progBar' id='prog" + d + "' role='progressbar' value='" + d + "' style='width:0%'></div></div></div>";
     for (let i = 0; i < data[d].length; i++){
       dataCounter[d][i] = 0;
-      
+
       st += "<div class='img foodBlock' cost='"
       + data[d][i]['cost']
       + "' cal='"
@@ -124,14 +127,14 @@ function createData(data){
     foodSelection.push(sendingFood);
     $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
   });
-  
+
 }
 
 // ------------------------------- delete the latest item that the user just chose ----------------------------//
 
 $("#undo").on("click", function(event){
   if(foodSelection.length > 0) {
-    
+
     var temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['calories'];
     totalCost -= temp['cost'];

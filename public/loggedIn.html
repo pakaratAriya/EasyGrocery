@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -34,7 +33,6 @@
 	</div> -->
 
 	<div id="content">
-
 		<div id="nav">
 			<p>EasyGrocery</p>
 		</div>
@@ -100,16 +98,16 @@
 					<!--<br/><span>Pick your food</span>-->
 				</button>
 			</div>
-            <div id="loadData" >
+            <div id="loadDiv" >
 				<!-- <img id="loadData" src="icon/load.png"> -->
 				<div></div>
 				<h2>Your Lists</h2>
-				<img id="list1" src="shopping-list.png"/>
-				<img id="list2" src="shopping-list.png"/>
-				<img id="list3" src="shopping-list.png"/>
+				<button id="openLoadData"></button>
             </div>
             
 		</div>
+
+		
 
         
       
@@ -120,6 +118,25 @@
 	</div>
 
 	</div>
+
+	<div id="lists">
+		<div>
+			<img class="loadBtn" value="list1" src="list.png"/>
+			<p class="text">List One</p>
+		</div>
+
+		<div>
+			<img class="loadBtn" value="list1" src="list.png"/>
+			<p class="text">List Two</p>
+		</div>
+
+		<div>
+			<img class="loadBtn" value="list1" src="list.png"/>
+			<p class="text">List Three</p>
+		</div>
+
+			<button id="cancel"></button>
+		</div>
 	<script src="EasyGrocery.js"></script>
 
 	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>

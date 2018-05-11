@@ -17,7 +17,7 @@ $(document).ready(function(){
 });
 
 $(".saveBtn").on("click", function(){
-
+  
   if(userName != "undefined"){
     let saveNumber = $(this).attr("value");
     firebaseRef.child(userName + "/" + saveNumber).remove();
@@ -42,9 +42,19 @@ $("#openSaveData").on("click", function(){
     $("#saveContent").fadeToggle("slow","linear");
 });
 
+$("#openLoadData").on("click", function(){
+  $("#content").toggleClass("blur");
+  $("#lists").fadeToggle("slow","linear");
+});
+
 $(".cancelSaveBtn").on("click", function(){
     $("#main").toggleClass("blur");
     $("#saveContent").fadeToggle("slow","linear");
+});
+
+$("#cancel").on("click", function(){
+    $("#content").toggleClass("blur");
+  $("#lists").fadeToggle("slow","linear");
 });
 
 // copied loaded food iteam(from user databse) to selectedFood and selectedFood.

@@ -84,7 +84,9 @@ $(document).ready(function() {
     $("#gender").html(gender);
     $("#age").html(age);
     createData(queryData);
-
+    if (userName == 'undefined'){
+      $('#lastPageBtn').attr("href", "index.html");
+    }
   }
 });
 
@@ -101,25 +103,31 @@ function createData(data){
     sortDataFromSelection(foodSelection);
   }
   displayFoodItems(selectedFood);
-  
+
   calculateCalories();
   //------------------------------------------------- Select and deselect the food items ---------------------------------//
 
 
 }
-  
+
   function displayFoodItems(myFoodData){
+    console.log(myFoodData);
     for (let d in myFoodData){
     let st = "<p class='label'>" + d + "</p><div class='forRow'>";
     if (myFoodData[d]['data'] == 0){
       $("#" + d).html("");
     }
     for (let i = 0; i < myFoodData[d]['data'].length; i++){
-      st += "<div class='img foodBlock' cost='"
+      st += "<div class='img foodBlock";
+      if (myFoodData[d]['data'][i]['isSelected'] == true){
+        st += " selectedFood";
+        totalCost -= parseFloat(myFoodData[d]['data'][i]['cost']);  
+      }
+      st +="' cost='"
       + myFoodData[d]['data'][i]['cost']
-      + "' cal='"
+      + "' catagory='" + d + "' cal='"
       + myFoodData[d]['data'][i]['calories']
-      + "' value='"
+      + "' index='" + i + "' value='"
       + myFoodData[d]['data'][i]['name']
       + "' src='"
       + myFoodData[d]['data'][i]['img']
@@ -135,25 +143,27 @@ function createData(data){
       + myFoodData[d]['data'][i]['name']
       + "</h6></div>";
 
-      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);  
+      totalCost += parseFloat(myFoodData[d]['data'][i]['cost']);
 
       $("#" + d).html(st);
     }
   }
-  
-  
+
+
     $(".foodBlock").on("click", function(event){
     if($(this).hasClass("selectedFood")){
       calSum += ($(this).attr("cal"));
       totalCost += parseFloat($(this).attr("cost"));
+      selectedFood[$(this).attr("catagory")]['data'][$(this).attr("index")]['isSelected'] = false;
     } else {
       calSum -= ($(this).attr("cal"));
       totalCost -= parseFloat($(this).attr("cost"));
+      selectedFood[$(this).attr("catagory")]['data'][$(this).attr("index")]['isSelected'] = true;
     }
     $(this).toggleClass("selectedFood");
     calculateCalories();
 
-  });  
+  });
 }
 //-------------------------------------- Show the result of calories that the user needs ------------------------------------//
 
@@ -248,7 +258,7 @@ function getFoodData(){
       }
       let randIndex = Math.floor(Math.random() * maxIndex);
       selectedFood[d]['data'][foodIndex] = sortedData[d]['data'][randIndex];
-
+      selectedFood[d]['data'][foodIndex]['isSelected'] = false;
       calRemaining[calIndex] -= parseFloat(selectedFood[d]['data'][foodIndex]['calories']);
       foodIndex++;
     }
@@ -259,7 +269,7 @@ function getFoodData(){
 // ---------- Convert information from thirdPage.js or firebase to selectedFood in the proper format to display it-------//
 
 function sortDataFromSelection(data){
-  for (let d in queryData){
+  for (let d in queryData) {
     selectedFood[d] = new Object();
     selectedFood[d]['data'] = new Array();
   }
@@ -267,5 +277,6 @@ function sortDataFromSelection(data){
     let d = data[i]['catagory'];
     let num = selectedFood[data[i]['catagory']]['data'].length;
     selectedFood[d]['data'][num] = queryData[d][data[i]['ID'] - 1];
+    selectedFood[d]['data'][num]['isSelected'] = data[i]['isSelected'];
   }
-} 
+}

@@ -72,10 +72,10 @@ body {
     display: table;
   }
 
-  #loadDiv div{
+  /* #loadData div{
       height: 10px;
       background-color: #56ab2f;
-  }
+  } */
 
   #loadDiv h2{
     font-size: 4em;
@@ -87,6 +87,52 @@ body {
       float: left;
       width: 33.33%;
       padding: 15px;
+  }
+
+  #lists{
+	position: absolute;
+	top: 800px;
+	left: 120px; 
+	display: none;
+	transition: 0.5s;
+  }
+
+  #lists img{
+	  height: 250px;
+	  width: 250px;
+	  
+  }
+
+  #lists div{
+	  float: left;
+  }
+
+  .text{
+	  font-size: 40px;
+	  font-weight: 600;
+  }
+
+  #cancel{
+	height: 50px;
+	width: 150px;
+	background-color: #fc4a1a;
+	position: absolute;
+	top: 320px;
+	left: 300px; 
+	border-radius: 25px;
+	
+  }
+
+  #openLoadData{
+	  height: 50px;
+	  width: 150px;
+	  background-color: #fc4a1a;
+	  border-radius: 25px;
+  }
+
+  .blur {
+	filter: blur(8px);
+	transition: 0.5s;
   }
 
 	#nav h2 {
@@ -243,12 +289,12 @@ body {
 	}
 	.nextButtomsGroup:nth-of-type(1){
 		width: 50%;
-		border-bottom-left-radius: 3em;
+		/*border-bottom-left-radius: 3em;*/
 
 	}
 	.nextButtomsGroup:nth-of-type(2){
 		width: 50%;
-		border-bottom-right-radius: 3em;
+		/*border-bottom-right-radius: 3em;*/
 	}
 	#nextStepsButtomForm h3{
 		padding: 0px;
