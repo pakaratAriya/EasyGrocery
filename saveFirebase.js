@@ -52,7 +52,7 @@ $(".cancelSaveBtn").on("click", function(){
     $("#saveContent").fadeToggle("slow","linear");
 });
 
-$(".cancelLoadBtn").on("click", function(){
+$("#cancel").on("click", function(){
     $("#content").toggleClass("blur");
   $("#lists").fadeToggle("slow","linear");
 });
