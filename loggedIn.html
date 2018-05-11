@@ -1,3 +1,21 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @Maximuzzzzx
+Sign out
+0
+0 0 pakaratAriya/EasyGrocery
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+EasyGrocery/loggedIn.html
+a39fc24  21 hours ago
+@Maximuzzzzx Maximuzzzzx made lists appear
+@pakaratAriya @Maximuzzzzx @lucahsieh
+      
+154 lines (124 sloc)  4.27 KB
 <!DOCTYPE html>
 <html>
 
@@ -99,21 +117,21 @@
 					<!--<br/><span>Pick your food</span>-->
 				</button>
 			</div>
-            <div id="loadData" >
+            <div id="loadDiv" >
 				<!-- <img id="loadData" src="icon/load.png"> -->
 				<div></div>
 				<h2>Your Lists</h2>
-				<img id="list1" src="shopping-list.png"/>
-				<img id="list2" src="shopping-list.png"/>
-				<img id="list3" src="shopping-list.png"/>
+				<button id="openLoadData"></button>
             </div>
-
+            
 		</div>
 
+		
 
-
+        
+      
 	<div id="optionalButtons">
-
+		
 		<a href="#" class="optional">About Us</a>
 		<a href="howItWorks.html" class="optional">How It Works</a>
 	</div>
@@ -127,16 +145,16 @@
 		</div>
 
 		<div>
-			<img class="loadBtn" value="list2" src="list.png"/>
+			<img class="loadBtn" value="list1" src="list.png"/>
 			<p class="text">List Two</p>
 		</div>
 
 		<div>
-			<img class="loadBtn" value="list3" src="list.png"/>
+			<img class="loadBtn" value="list1" src="list.png"/>
 			<p class="text">List Three</p>
 		</div>
 
-			<button class="cancelLoadBtn">Cancel</button>
+			<button id="cancel"></button>
 		</div>
 	<script src="EasyGrocery.js"></script>
 
@@ -144,7 +162,7 @@
 
   <script src="saveFirebase.js"></script>
   <script src="thirdPage.js"></script>
-
+  
 	<div class="indexWhiteSpaceButtom"></div>
 
 

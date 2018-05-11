@@ -1,3 +1,21 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @Maximuzzzzx
+Sign out
+0
+0 0 pakaratAriya/EasyGrocery
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
+EasyGrocery/loggedIn.css
+a39fc24  21 hours ago
+@Maximuzzzzx Maximuzzzzx made lists appear
+@Maximuzzzzx @larry9315
+      
+366 lines (315 sloc)  5.92 KB
 #content {
 	text-align: center;
 }
@@ -10,7 +28,7 @@
     font-size: 80px;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px #000000;
-
+    
 
 }
 
@@ -64,7 +82,7 @@ body {
 	body{
 
 	}
-
+      
   #loadDiv{
     margin-top: 40px;
     width: 100%;
@@ -72,10 +90,10 @@ body {
     display: table;
   }
 
-  #loadDiv div{
+  /* #loadData div{
       height: 10px;
       background-color: #56ab2f;
-  }
+  } */
 
   #loadDiv h2{
     font-size: 4em;
@@ -92,7 +110,7 @@ body {
   #lists{
 	position: absolute;
 	top: 800px;
-	left: 120px;
+	left: 120px; 
 	display: none;
 	transition: 0.5s;
   }
@@ -100,7 +118,7 @@ body {
   #lists img{
 	  height: 250px;
 	  width: 250px;
-
+	  
   }
 
   #lists div{
@@ -112,21 +130,21 @@ body {
 	  font-weight: 600;
   }
 
-  .cancelLoadBtn{
+  #cancel{
 	height: 50px;
 	width: 150px;
-	background-color: #56ab2f;
+	background-color: #fc4a1a;
 	position: absolute;
 	top: 320px;
-	left: 300px;
+	left: 300px; 
 	border-radius: 25px;
-
+	
   }
 
   #openLoadData{
 	  height: 50px;
 	  width: 150px;
-	  background-color: #56ab2f;
+	  background-color: #fc4a1a;
 	  border-radius: 25px;
   }
 
@@ -161,7 +179,7 @@ body {
 		background-color: white;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
         height: 1100px;
-
+        
 	}
 
 	#userInputPageForm h1{
@@ -171,7 +189,7 @@ body {
 		color: #56ab2f;
 		font-weight: 800;
 	}
-
+    
     #smallHeader h2{
         padding: 0px;
         margin-bottom: -15px;
@@ -289,12 +307,12 @@ body {
 	}
 	.nextButtomsGroup:nth-of-type(1){
 		width: 50%;
-		border-bottom-left-radius: 3em;
+		/*border-bottom-left-radius: 3em;*/
 
 	}
 	.nextButtomsGroup:nth-of-type(2){
 		width: 50%;
-		border-bottom-right-radius: 3em;
+		/*border-bottom-right-radius: 3em;*/
 	}
 	#nextStepsButtomForm h3{
 		padding: 0px;
@@ -363,3 +381,4 @@ and (max-device-width : 667px) {
 		display: none;
 	}
 }
+ 
