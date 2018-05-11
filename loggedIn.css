@@ -10,7 +10,7 @@
     font-size: 80px;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px #000000;
-    
+
 
 }
 
@@ -64,7 +64,7 @@ body {
 	body{
 
 	}
-      
+
   #loadDiv{
     margin-top: 40px;
     width: 100%;
@@ -87,6 +87,52 @@ body {
       float: left;
       width: 33.33%;
       padding: 15px;
+  }
+
+  #lists{
+	position: absolute;
+	top: 800px;
+	left: 120px;
+	display: none;
+	transition: 0.5s;
+  }
+
+  #lists img{
+	  height: 250px;
+	  width: 250px;
+
+  }
+
+  #lists div{
+	  float: left;
+  }
+
+  .text{
+	  font-size: 40px;
+	  font-weight: 600;
+  }
+
+  .cancelLoadBtn{
+	height: 50px;
+	width: 150px;
+	background-color: #56ab2f;
+	position: absolute;
+	top: 320px;
+	left: 300px;
+	border-radius: 25px;
+
+  }
+
+  #openLoadData{
+	  height: 50px;
+	  width: 150px;
+	  background-color: #56ab2f;
+	  border-radius: 25px;
+  }
+
+  .blur {
+	filter: blur(8px);
+	transition: 0.5s;
   }
 
 	#nav h2 {
@@ -115,7 +161,7 @@ body {
 		background-color: white;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
         height: 1100px;
-        
+
 	}
 
 	#userInputPageForm h1{
@@ -125,7 +171,7 @@ body {
 		color: #56ab2f;
 		font-weight: 800;
 	}
-    
+
     #smallHeader h2{
         padding: 0px;
         margin-bottom: -15px;
@@ -317,4 +363,3 @@ and (max-device-width : 667px) {
 		display: none;
 	}
 }
- 

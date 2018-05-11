@@ -111,17 +111,23 @@ function createData(data){
 }
 
   function displayFoodItems(myFoodData){
+    console.log(myFoodData);
     for (let d in myFoodData){
     let st = "<p class='label'>" + d + "</p><div class='forRow'>";
     if (myFoodData[d]['data'] == 0){
       $("#" + d).html("");
     }
     for (let i = 0; i < myFoodData[d]['data'].length; i++){
-      st += "<div class='img foodBlock' cost='"
+      st += "<div class='img foodBlock";
+      if (myFoodData[d]['data'][i]['isSelected'] == true){
+        st += " selectedFood";
+        totalCost -= parseFloat(myFoodData[d]['data'][i]['cost']);  
+      }
+      st +="' cost='"
       + myFoodData[d]['data'][i]['cost']
-      + "' cal='"
+      + "' catagory='" + d + "' cal='"
       + myFoodData[d]['data'][i]['calories']
-      + "' value='"
+      + "' index='" + i + "' value='"
       + myFoodData[d]['data'][i]['name']
       + "' src='"
       + myFoodData[d]['data'][i]['img']
@@ -148,9 +154,11 @@ function createData(data){
     if($(this).hasClass("selectedFood")){
       calSum += ($(this).attr("cal"));
       totalCost += parseFloat($(this).attr("cost"));
+      selectedFood[$(this).attr("catagory")]['data'][$(this).attr("index")]['isSelected'] = false;
     } else {
       calSum -= ($(this).attr("cal"));
       totalCost -= parseFloat($(this).attr("cost"));
+      selectedFood[$(this).attr("catagory")]['data'][$(this).attr("index")]['isSelected'] = true;
     }
     $(this).toggleClass("selectedFood");
     calculateCalories();
@@ -250,7 +258,7 @@ function getFoodData(){
       }
       let randIndex = Math.floor(Math.random() * maxIndex);
       selectedFood[d]['data'][foodIndex] = sortedData[d]['data'][randIndex];
-
+      selectedFood[d]['data'][foodIndex]['isSelected'] = false;
       calRemaining[calIndex] -= parseFloat(selectedFood[d]['data'][foodIndex]['calories']);
       foodIndex++;
     }
@@ -261,7 +269,7 @@ function getFoodData(){
 // ---------- Convert information from thirdPage.js or firebase to selectedFood in the proper format to display it-------//
 
 function sortDataFromSelection(data){
-  for (let d in queryData){
+  for (let d in queryData) {
     selectedFood[d] = new Object();
     selectedFood[d]['data'] = new Array();
   }
@@ -269,5 +277,6 @@ function sortDataFromSelection(data){
     let d = data[i]['catagory'];
     let num = selectedFood[data[i]['catagory']]['data'].length;
     selectedFood[d]['data'][num] = queryData[d][data[i]['ID'] - 1];
+    selectedFood[d]['data'][num]['isSelected'] = data[i]['isSelected'];
   }
 }
