@@ -86,6 +86,11 @@
         <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
         <script src="EasyGrocery.js"></script>
         <script src="./saveFirebase.js"></script>
+        <script>
+          if (username == 'undefined'){
+            $('#lastPageBtn').attr("href", "index.html");
+          }
+        </script>
     </body>
 
 
