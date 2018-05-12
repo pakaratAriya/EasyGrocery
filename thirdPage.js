@@ -106,10 +106,44 @@ function createData(data){
     if ($(this).attr('value') == 'egg') {
       counter++;
       if (counter == 5) {
-        $('.foodImg[value=egg]').css({
-         transition: 'all .3s ease-in',
-         transform: 'scale(10)'
-        });
+        $("#main").toggleClass("blur");
+        $("#easterEgg").attr("style","display:block;");
+        $("#eggImg").attr("style","width:0px;");
+        $("#eggImg")
+          .animate({width: "700px"}, 1000)
+          .animate({width: "600px"}, 500)
+          .animate({width: "600px"}, 1000,
+              function(){
+                $("#eggImg").attr("src","icon/easteregg/animals1.png");})
+          .animate({width: "600px"}, 1500,
+              function(){
+                $("#eggImg").attr("src","icon/easteregg/chicken.png");
+                $("#easterEgg").animate({left: "-900px"}, 4000);})
+          .animate({width: "600px"}, 4000,
+              function(){
+                $("#easterEgg").attr("style","display:none;");
+                $("#main").toggleClass("blur");
+              })
+
+          // .animate({rotate: "10"},500)
+          // .animate({rotate: "20"},500)
+          // .animate({width: "700px"}, 1000)
+        // $("#eggImg").attr("src","icon/easteregg/animals1.png");
+          // .animate({rotate: "-=20deg"},100);
+          // .animate({rotate: "+=10deg"},100);
+        // $("#eggImg").css('-webkit-transform','rotate(10deg)');
+        // $("#eggImg").css('-webkit-transform','rotate(-10deg)');
+          // .animate({transform: "rotate(20deg)"}, 1000)
+          // .delay(3500);
+          // .attr("src","icon/easteregg/animals1.png");
+        // $("#eggImg").delay(500).animate({top: "500px"}, fallingTime);
+
+
+
+        // $('.foodImg[value=egg]').css({
+        //  transition: 'all .3s ease-in',
+        //  transform: 'scale(10)'
+        // });
       }
     }
     // stop adding if the percentage is over 100 (99.99 is fine)

@@ -16,13 +16,13 @@
   padding-top: 20px;
   /* height: 150px; */
   background-color: #f2f2f2;;
-} 
+}
 
 #tipstitle{
   font-size: 40px;
   color: rgb(87, 171, 47);
   margin: 0;
-} 
+}
 
 #dis{
   font-size: 30px;
@@ -90,4 +90,28 @@
   font-weight: 100;
   padding-bottom: 5px;
   color: black;
+}
+
+#easterEgg{
+  position: fixed;
+  top: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+#canvs{
+  background-color: none;
+  width: 720px;
+  height: 720px;
+  display: inline-block;
+}
+
+#eggImg{
+  padding-top: 60px;
+}
+
+.blur {
+  filter: blur(20px);
+  /* filter:grayscale(50%); */
+  transition: 0.5s;
 }
