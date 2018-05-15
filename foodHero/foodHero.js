@@ -129,7 +129,47 @@ $(document).ready(function(){
   channelSize = window.innerWidth / 9;
 }); 
 
+// --------------------------------- draw UI elements on the canvas ----------------------------------------//
 function drawRactangle(){
+  drawHealthBar();
+  for (let i = 0; i < 5; i++){
+    ctx.beginPath();
+    ctx.rect(i*channelSize + canvas.width/2 - (channelSize*5/2), 0, channelSize, canvas.height);
+    let grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
+    grd.addColorStop(1,boxColors[i]);
+    grd.addColorStop(0,"black");
+    if (tappingBox == i){
+      ctx.globalAlpha = 0.5;
+      ctx.fillStyle = grd;
+      checkCollider(i);
+    } else {
+      ctx.fillStyle = "black";
+    }
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.closePath();
+    drawTapRectangle(i);
+    
+  }
+  drawScoreText();
+}
+
+// -------------------------------------- draw the the focus bar for each column --------------------------------//
+function drawTapRectangle(i){
+  ctx.beginPath();
+  ctx.rect(i*channelSize + canvas.width/2 - (channelSize*5/2), canvas.height - 200, channelSize, 100);
+  ctx.lineWidth = "6";
+  ctx.strokeStyle=boxColors[i];
+  ctx.stroke();
+  ctx.globalAlpha = 0.5;
+  ctx.fillStyle = boxColors[i];
+  ctx.fill();
+  ctx.globalAlpha = 1;
+  ctx.closePath();
+}
+
+// ------------------------------------------- to draw health bar ----------------------------------------//
+function drawHealthBar(){
   ctx.beginPath();
   ctx.fillStyle = "black";
   ctx.rect(0, 0, canvas.width, canvas.height);
@@ -152,39 +192,16 @@ function drawRactangle(){
   let lifeHeight = canvas.height * 0.8 * reachingLife / 100;
   ctx.fillRect(canvas.width * 0.9, canvas.height * 0.1 + (canvas.height * 0.8* (100 - reachingLife)/100 ) , canvas.width * 0.05, lifeHeight);
   ctx.closePath();
-  for (let i = 0; i < 5; i++){
-    ctx.beginPath();
-    ctx.rect(i*channelSize + canvas.width/2 - (channelSize*5/2), 0, channelSize, canvas.height);
-    let grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    grd.addColorStop(1,boxColors[i]);
-    grd.addColorStop(0,"black");
-    if (tappingBox == i){
-      ctx.globalAlpha = 0.5;
-      ctx.fillStyle = grd;
-      checkCollider(i);
-    } else {
-      ctx.fillStyle = "black";
-    }
-    ctx.fill();
-    ctx.globalAlpha = 1;
-    ctx.closePath();
-    // draw tap rectangle
-    ctx.beginPath();
-    ctx.rect(i*channelSize + canvas.width/2 - (channelSize*5/2), canvas.height - 200, channelSize, 100);
-    ctx.lineWidth = "6";
-    ctx.strokeStyle=boxColors[i];
-    ctx.stroke();
-    ctx.globalAlpha = 0.5;
-    ctx.fillStyle = boxColors[i];
-    ctx.fill();
-    ctx.globalAlpha = 1;
-    
-    ctx.closePath();
-  }
+}
+
+// ---------------------------------------- to display the score at the top of the screen ---------------------//
+
+function drawScoreText(){
   ctx.font = "300px Arial";
   ctx.fillText(score,300,300);
 }
 
+// ------------------------------------------ render notes every 10 ms until player die ------------------//
 function drawCanvas(){
   if(life>=100){
         life = 100;
@@ -211,6 +228,7 @@ function drawCanvas(){
   }
 }
 
+// -------------------------------- draw perfect/ cool/miss message --------------------------------------//
 function drawText() {
   for (let i = 0; i < textType.length; i++){
     let img = new Image();
@@ -219,6 +237,8 @@ function drawText() {
     coolTextY[i] -= 2;
   }
 }
+
+// ----------------------------------- render the note every 10 ms ---------------------------------------//
 
 function drawBall(){
   
@@ -237,6 +257,7 @@ function drawBall(){
   }
 }
 
+// ------------------------------------- create a new note every ---------------------------------------//
 function createBall(){
   if (Math.random() > 0.3 && life > 0){
     let index = ovalX.length;
