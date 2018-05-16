@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+canvas {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  background: green;
+}
+
+.playButton {
+  width: 80%;
+  height: 2000px;
+  margin-left: 10%;
+  margin-top: 500px;
+  font-size: 100pt;
+}

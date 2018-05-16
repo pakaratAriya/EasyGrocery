@@ -1,0 +1,44 @@
+#leaderboard p{
+    font-size: 4em;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#score{
+    height: 800px;
+    width: 600px;
+    background-color: aqua;
+    margin-left: 190px;
+}
+
+#form{
+    margin-top: 80px;
+}
+
+#form p{
+    font-size: 3em;
+    margin-left: 220px;
+    margin-bottom: 0;
+}
+
+#form input{
+    margin-left: 220px; 
+    height: 30px;
+}
+
+#form button{
+    height: 100px;
+    width: 150px;
+    margin-left: 200px;
+}
+
+#exit{
+    margin-top: 140px;
+}
+
+#exit button{
+    height: 100px;
+    width: 150px;
+    margin-left: 380px;
+}
+
