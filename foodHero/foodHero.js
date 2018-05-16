@@ -281,6 +281,7 @@ function drawCanvas(){
     ctx.fillStyle = "red";
     ctx.font = "100px Arial";
     ctx.fillText("Game Over", canvas.width/2 - 250, canvas.height/2 - 100);
+    ctx.fillText("Score: " + score, canvas.width/2 - 200, canvas.height/2);
     clearInterval(myCreateBall);
     if (reachingLife <= 0.1){
       clearInterval(myDrawCanvas);
