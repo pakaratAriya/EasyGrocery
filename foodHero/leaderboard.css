@@ -39,6 +39,9 @@
     width: 150px;
     margin-left: 200px;
     font-size: 20px;
+    border-radius: 50px;
+    background-color: coral;
+    border: 2px solid black;
 }
 
 #exit{
@@ -50,6 +53,9 @@
     width: 150px;
     margin-left: 380px;
     font-size: 20px;
+    border-radius: 50px;
+    background-color: coral;
+    border: 2px solid black;
 }
 
 #main{
