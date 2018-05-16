@@ -160,8 +160,18 @@ body {
 		border-radius: 3em;
 		background-color: white;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-        height: 1100px;
+        height: 690px;
         
+	}
+
+	#second {
+        margin-top: 60px;
+		display: inline-block;
+		width: 735px;
+		height: 280px;
+		border-radius: 3em;
+		background-color: white;
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 	}
 
 	#userInputPageForm h1{
@@ -289,12 +299,12 @@ body {
 	}
 	.nextButtomsGroup:nth-of-type(1){
 		width: 50%;
-		/*border-bottom-left-radius: 3em;*/
+		border-bottom-left-radius: 3em;
 
 	}
 	.nextButtomsGroup:nth-of-type(2){
 		width: 50%;
-		/*border-bottom-right-radius: 3em;*/
+		border-bottom-right-radius: 3em;
 	}
 	#nextStepsButtomForm h3{
 		padding: 0px;
@@ -326,9 +336,9 @@ body {
 		border: 0px;
 		padding-top: 50px;
 		padding-bottom: 50px;
-		margin-top: 320px;
+		margin-top: 380px;
 		display: inline-block;
-		background-color: #fc4a1a;
+		background-color: #16222A;
 		color: black;
 		height: 150px;
 		font-size: 50px;

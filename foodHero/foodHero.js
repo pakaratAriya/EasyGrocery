@@ -1,7 +1,11 @@
 var canvas = $("#myCanvas")[0];
 var ctx = $("#myCanvas")[0].getContext("2d");
 var dx = 4;
+<<<<<<< HEAD
 var dy = 1;
+=======
+var dy = 8;
+>>>>>>> bde344c7e7848579f9cabdf9099fc7a661689a81
 var currentColor;
 var ovalX = new Array();
 var ovalY = new Array();
@@ -18,20 +22,71 @@ var score = 0;
 var clicking = false;
 var audio = document.createElement("audio");
 var controlVolume= 0;
+var gameStart = false;
+var myCreateBall;
+var myDrawCanvas;
+var startButton;
 
-var myDrawCanvas = setInterval(drawCanvas, 5);
-var myCreateBall = setInterval(createBall, 800);
-
-playMusic();
 
 function playMusic(){
-  audio.src = "foodHero.mp3";
-  audio.controls = false;
-  audio.type = "audio/mpeg";
-  audio.play();
-  audio.volume = 0.1;
+  startButton = document.createElement("button");
+  startButton.setAttribute("onclick", "startGame()");
+  startButton.setAttribute("class", "playButton");
+  startButton.style = "width: " + window.innerWidth*0.8 + "px; height: " + window.innerHeight * 0.4 + "px; display: block;"
+  + " font-weight: 900; color: red;";
+  startButton.innerHTML = "<h1>Start</h1>";
+  document.body.append(startButton);
   document.body.appendChild(audio);
+  audio.src = "./foodHero.mp3";
+  audio.id = "myAudio";
+  audio.controls = false;
+  audio.setAttribute("type", "audio/mpeg");
+  audio.volume = 0.1;
+  audio.style = "width: " + window.innerWidth*0.8 + "px; height: " + window.innerHeight * 0.4 + "px; display: block";
+  audio.setAttribute("preload","auto");
+  audio.play().then(function(){}).catch(function(error){});
+  audio.pause();
+}
+
+audio.onplay = function(){
+    if(gameStart == false){
+        startGame();
+        gameStart = true;
+        audio.play();
+    }
+};
+
+function startGame(){
+  document.body.removeChild(startButton);
+  canvas.height = window.innerHeight;
+  audio.src = "./foodHero.mp3";
+  audio.play();
+  gameStart=true;
   
+  var songLength;
+  audio.addEventListener('loadedmetadata', function(){
+    songLength = audio.duration;
+    setInterval(finishSong, songLength*1000);
+    console.log(songLength);
+  });
+  myDrawCanvas = setInterval(drawCanvas, 5);
+ myCreateBall = setInterval(createBall, 600);
+}
+
+function finishSong(){
+  clearInterval(myDrawCanvas);
+  clearInterval(myCreateBall);
+  setTimeout(completeText, 600);
+}
+
+function completeText(){
+  audio.pause();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawBackground();
+  ctx.fillStyle = "red";
+  ctx.font = "100px Arial";
+  ctx.fillText("Complete", canvas.width/2 - 200, canvas.height/2 - 100);
+  ctx.fillText("Score: " + score, canvas.width/2 - 200, canvas.height/2);
 }
 
 function stopMusic(){
@@ -63,6 +118,10 @@ $("#myCanvas")[0].addEventListener('mouseup', function(e){
 
 $("#myCanvas")[0].addEventListener('touchstart', function(e){
   e.preventDefault();
+  if (gameStart == false){
+    
+    return;
+  }
   let tapSpot = e.touches[0].pageX - canvas.getBoundingClientRect().left;
   
   tappingBox = Math.floor((tapSpot - (canvas.width/2 - (channelSize*5/2))) / channelSize);
@@ -125,12 +184,20 @@ function destroyCoolText(i){
 
 $(document).ready(function(){
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  channelSize = window.innerWidth / 9;
+  canvas.height = 0;
+  channelSize = window.innerWidth / 8;
+  gameStart = false;
+  playMusic();
+  drawBackground();
+  ctx.fillStyle = "red";
+    ctx.font = "100px Arial";
+    ctx.fillText("Tap to start", canvas.width/2 - 600, canvas.height/2 - 100);
 }); 
+
 
 // --------------------------------- draw UI elements on the canvas ----------------------------------------//
 function drawRactangle(){
+  drawBackground();
   drawHealthBar();
   for (let i = 0; i < 5; i++){
     ctx.beginPath();
@@ -170,11 +237,7 @@ function drawTapRectangle(i){
 
 // ------------------------------------------- to draw health bar ----------------------------------------//
 function drawHealthBar(){
-  ctx.beginPath();
-  ctx.fillStyle = "black";
-  ctx.rect(0, 0, canvas.width, canvas.height);
-  ctx.fill();
-  ctx.closePath();
+  
   ctx.beginPath();
   let healthColor = "green"; 
   if (life <= 70){
@@ -191,6 +254,14 @@ function drawHealthBar(){
   }
   let lifeHeight = canvas.height * 0.8 * reachingLife / 100;
   ctx.fillRect(canvas.width * 0.9, canvas.height * 0.1 + (canvas.height * 0.8* (100 - reachingLife)/100 ) , canvas.width * 0.05, lifeHeight);
+  ctx.closePath();
+}
+
+function drawBackground(){
+  ctx.beginPath();
+  ctx.fillStyle = "black";
+  ctx.rect(0, 0, canvas.width, canvas.height);
+  ctx.fill();
   ctx.closePath();
 }
 
@@ -213,7 +284,8 @@ function drawCanvas(){
   drawRactangle();
   if(life == 0){
     ctx.fillStyle = "red";
-    ctx.fillText("Game Over", canvas.width/2 - 600, canvas.height/2 - 100);
+    ctx.font = "100px Arial";
+    ctx.fillText("Game Over", canvas.width/2 - 250, canvas.height/2 - 100);
     clearInterval(myCreateBall);
     if (reachingLife <= 0.1){
       clearInterval(myDrawCanvas);
