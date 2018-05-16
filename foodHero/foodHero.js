@@ -1,7 +1,7 @@
 var canvas = $("#myCanvas")[0];
 var ctx = $("#myCanvas")[0].getContext("2d");
 var dx = 4;
-var dy = 8;
+var dy = 6;
 var currentColor;
 var ovalX = new Array();
 var ovalY = new Array();
@@ -66,7 +66,7 @@ function startGame(){
     console.log(songLength);
   });
   myDrawCanvas = setInterval(drawCanvas, 5);
- myCreateBall = setInterval(createBall, 600);
+ myCreateBall = setInterval(createBall, 500);
 }
 
 function finishSong(){
@@ -145,10 +145,10 @@ function checkCollider(channelNum){
   let num = 0;
   let channelPos = (canvas.width/2 - (channelSize * 5 / 2)) + (channelSize * channelNum) + channelSize/2;
   for (let i = 0; i < ovalX.length; i++){
-    if (ovalX[i] == channelPos && ovalY[i] >= canvas.height - 300){
+    if (ovalX[i] == channelPos && ovalY[i] >= canvas.height - 175){
       let message = "cool";
       score+=2;
-      if (ovalY[i] >= canvas.height - 100) {
+      if (ovalY[i] >= canvas.height - 150 && ovalY[i] <= canvas.height - 100) {
         message = "perfect";
         life+=3;
         score+=3;
@@ -169,7 +169,6 @@ function createText(i, x, y, message){
   }
   coolTextX[i] = x - 200;
   coolTextY[i] = canvas.height - 400;
-  setTimeout(function(){destroyCoolText(i);}, 500);
 }
 
 function destroyCoolText(i){
@@ -220,7 +219,7 @@ function drawRactangle(){
 // -------------------------------------- draw the the focus bar for each column --------------------------------//
 function drawTapRectangle(i){
   ctx.beginPath();
-  ctx.rect(i*channelSize + canvas.width/2 - (channelSize*5/2), canvas.height - 200, channelSize, 100);
+  ctx.rect(i*channelSize + canvas.width/2 - (channelSize*5/2), canvas.height - 200, channelSize, 50);
   ctx.lineWidth = "6";
   ctx.strokeStyle=boxColors[i];
   ctx.stroke();
@@ -303,6 +302,9 @@ function drawText() {
     img.src=textType[i];
     ctx.drawImage(img, coolTextX[i], coolTextY[i]);
     coolTextY[i] -= 2;
+    if(coolTextY[i] < canvas.height - 500){
+      destroyCoolText(i);
+    }
   }
 }
 
