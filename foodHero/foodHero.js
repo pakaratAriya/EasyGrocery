@@ -1,7 +1,7 @@
 var canvas = $("#myCanvas")[0];
 var ctx = $("#myCanvas")[0].getContext("2d");
 var dx = 4;
-var dy = 6;
+var dy = 5;
 var currentColor;
 var ovalX = new Array();
 var ovalY = new Array();
