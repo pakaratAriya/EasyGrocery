@@ -38,6 +38,7 @@
     height: 100px;
     width: 150px;
     margin-left: 200px;
+    font-size: 20px;
 }
 
 #exit{
@@ -48,6 +49,7 @@
     height: 100px;
     width: 150px;
     margin-left: 380px;
+    font-size: 20px;
 }
 
 #main{
