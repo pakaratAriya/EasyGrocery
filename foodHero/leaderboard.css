@@ -12,18 +12,33 @@
 }
 
 #form{
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 #form p{
     font-size: 3em;
-    margin-left: 200px;
+    margin-left: 220px;
+    margin-bottom: 0;
 }
 
 #form input{
-    margin-left: 200px; 
+    margin-left: 220px; 
     height: 30px;
 }
 
+#form button{
+    height: 100px;
+    width: 150px;
+    margin-left: 200px;
+}
 
+#exit{
+    margin-top: 140px;
+}
+
+#exit button{
+    height: 100px;
+    width: 150px;
+    margin-left: 380px;
+}
 
