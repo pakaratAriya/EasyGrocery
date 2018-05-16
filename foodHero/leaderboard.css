@@ -1,0 +1,29 @@
+#leaderboard p{
+    font-size: 4em;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#score{
+    height: 800px;
+    width: 600px;
+    background-color: aqua;
+    margin-left: 190px;
+}
+
+#form{
+    margin-top: 50px;
+}
+
+#form p{
+    font-size: 3em;
+    margin-left: 200px;
+}
+
+#form input{
+    margin-left: 200px; 
+    height: 30px;
+}
+
+
+
