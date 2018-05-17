@@ -85,7 +85,7 @@ function startGame(){
   var songLength;
   audio.addEventListener('loadedmetadata', function(){
     songLength = audio.duration;
-    setTimeout(finishSong, songLength * 100);
+    setTimeout(finishSong, songLength * 1000);
   });
   myDrawCanvas = setInterval(drawCanvas, 5);
   myCreateBall = setInterval(createBall, 500);
