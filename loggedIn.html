@@ -50,7 +50,7 @@
 					<script>
 						firebase.auth().onAuthStateChanged(function(user){
 							if (user) {
-								document.getElementById("userLoggedIn").textContent = 'Welcome ' + user.displayName + '';
+								document.getElementById("userLoggedIn").textContent = 'Hi, ' + user.displayName + '';
                                 userName = user.displayName;
                                 localStorage.setItem("userName",userName);
 							} else {
@@ -101,21 +101,22 @@
 		</div>
 
 		<div id="second">
-            <div id="loadDiv" >
+      <div id="loadDiv" >
 				<!-- <img id="loadData" src="icon/load.png"> -->
 				<div></div>
-				<h2>Your Lists</h2>
-				<button id="openLoadData"></button>
-            </div>
-            
+				<h2>Manage Your Account</h2>
+				<button id="openLoadData"><p>Show Previous Shopping List</p></button>
+				<button class="secondPage"><a href="index.html"><p>Logo Out</p></a></button>
+      </div>
+
 		</div>
 
-		
 
-        
-      
+
+
+
 	<div id="optionalButtons">
-		
+
 		<a href="aboutUs.html" class="optional">About Us</a>
 		<a href="howItWorks.html" class="optional">How It Works</a>
 	</div>
@@ -123,22 +124,22 @@
 	</div>
 
 	<div id="lists">
-		<div>
+		<div class="eachListDisyplay">
 			<img class="loadBtn" value="list1" src="list.png"/>
 			<p class="text">List One</p>
 		</div>
 
-		<div>
+		<div class="eachListDisyplay">
 			<img class="loadBtn" value="list1" src="list.png"/>
 			<p class="text">List Two</p>
 		</div>
 
-		<div>
+		<div class="eachListDisyplay">
 			<img class="loadBtn" value="list1" src="list.png"/>
 			<p class="text">List Three</p>
 		</div>
 
-			<button id="cancel"></button>
+			<button id="cancel"><p>Cancel</p></button>
 		</div>
 	<script src="EasyGrocery.js"></script>
 
@@ -146,7 +147,7 @@
 
   <script src="saveFirebase.js"></script>
   <script src="thirdPage.js"></script>
-  
+
 	<div class="indexWhiteSpaceButtom"></div>
 
 
