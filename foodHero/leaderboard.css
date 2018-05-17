@@ -21,8 +21,10 @@ table{
 #score{
     height: 800px;
     width: 600px;
-    background-color: aqua;
+    background-color: white;
     margin-left: 190px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 18px #888888;
 }
 
 #form{
@@ -44,10 +46,11 @@ table{
     height: 100px;
     width: 150px;
     margin-left: 40px;
-    font-size: 20px;
+    font-size: 40px;
     border-radius: 50px;
     background-color: coral;
     border: 2px solid black;
+    color: white;
 }
 
 /* #exit{
@@ -58,10 +61,11 @@ table{
     height: 100px;
     width: 150px;
     margin-left: 40px; 
-    font-size: 20px;
+    font-size: 40px;
     border-radius: 50px;
     background-color: coral;
     border: 2px solid black;
+    color: white;
 }
 
 #main{
