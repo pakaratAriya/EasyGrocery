@@ -5,6 +5,8 @@
     </head>
 
     <body>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
         <div id="main">
             <div id="leaderboard">
                 <p>Leader board</p>
@@ -16,7 +18,7 @@
 
             <div id="form">
                 <p>User Name</p>
-                <input type="text" name="firstname"/>
+                <input id="playername" value="" type="text" name="firstname"/>
                 <button id="start" onclick="goToGame()">Start</button>
             </div>
 
@@ -26,6 +28,8 @@
 
         </div>
         <script src="leaderboard.js"></script>
+      
+      
     </body>
 
 </html>

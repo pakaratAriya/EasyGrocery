@@ -22,7 +22,27 @@ var gameStart = false;
 var myCreateBall;
 var myDrawCanvas;
 var startButton;
+var playingSong;
+var myFinalScore;
+var myDrawScoreText;
+var myDrawHealthBar;
 
+var loadedData = new Array();
+var dataIndex = 0;
+
+
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCzABecdstnYpHXmL9RmPbLsIezpqQOF8g",
+    authDomain: "easygrocery-b41d7.firebaseapp.com",
+    databaseURL: "https://easygrocery-b41d7.firebaseio.com",
+    projectId: "easygrocery-b41d7",
+    storageBucket: "easygrocery-b41d7.appspot.com",
+    messagingSenderId: "320819117084"
+  };
+  firebase.initializeApp(config);
+
+  var firebaseRef = firebase.database().ref();
 
 function playMusic(){
   startButton = document.createElement("button");
@@ -33,15 +53,15 @@ function playMusic(){
   startButton.innerHTML = "<h1>Start</h1>";
   document.body.append(startButton);
   document.body.appendChild(audio);
-  audio.src = "./foodHero.mp3";
+  audio.src = "./foodHeroModified.mp3";
   audio.id = "myAudio";
   audio.controls = false;
   audio.setAttribute("type", "audio/mpeg");
   audio.volume = 0.1;
   audio.style = "width: " + window.innerWidth*0.8 + "px; height: " + window.innerHeight * 0.4 + "px; display: block";
   audio.setAttribute("preload","auto");
-  audio.play().then(function(){}).catch(function(error){});
   audio.pause();
+  playingSong = true;
 }
 
 audio.onplay = function(){
@@ -49,40 +69,59 @@ audio.onplay = function(){
         startGame();
         gameStart = true;
         audio.play();
+      playingSong = true;
     }
 };
 
 function startGame(){
   document.body.removeChild(startButton);
   canvas.height = window.innerHeight;
-  audio.src = "./foodHero.mp3";
+  audio.src = "./foodHeroModified.mp3";
   audio.play();
   gameStart=true;
+  playingSong = true;
+  loadData();
   
   var songLength;
   audio.addEventListener('loadedmetadata', function(){
     songLength = audio.duration;
-    setInterval(finishSong, songLength*1000);
-    console.log(songLength);
+    setTimeout(finishSong, songLength * 100);
   });
   myDrawCanvas = setInterval(drawCanvas, 5);
- myCreateBall = setInterval(createBall, 500);
+  myCreateBall = setInterval(createBall, 500);
 }
 
 function finishSong(){
-  clearInterval(myDrawCanvas);
   clearInterval(myCreateBall);
-  setTimeout(completeText, 600);
+  myFinalScore = setInterval(finalizeScore,50);
+  myDrawScoreText = setInterval(drawScoreText,50);
+  myDrawHealthBar = setInterval(drawHealthBar,50);
+  stopMusic();
+  setTimeout(completeText, 5500);
+  playingSong = false;
+}
+
+function finalizeScore(){
+  if(life>0){
+    score++;
+    life--;
+  }
 }
 
 function completeText(){
-  audio.pause();
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  drawBackground();
+  clearInterval(myFinalScore);
+  clearInterval(myDrawScoreText);
+  clearInterval(myDrawHealthBar);
+  clearInterval(myDrawCanvas);
+  drawCanvas();
+  ctx.beginPath();
   ctx.fillStyle = "red";
   ctx.font = "100px Arial";
   ctx.fillText("Complete", canvas.width/2 - 200, canvas.height/2 - 100);
   ctx.fillText("Score: " + score, canvas.width/2 - 200, canvas.height/2);
+  ctx.closePath();
+  saveData();
+  setTimeout(function(){document.location = "leaderboard.html";},7000);
 }
 
 function stopMusic(){
@@ -178,11 +217,13 @@ function destroyCoolText(i){
 }
 
 $(document).ready(function(){
+  playername = localStorage.getItem("playername");
   canvas.width = window.innerWidth;
   canvas.height = 0;
   channelSize = window.innerWidth / 8;
   gameStart = false;
   playMusic();
+ 
   drawBackground();
   ctx.fillStyle = "red";
     ctx.font = "100px Arial";
@@ -253,6 +294,7 @@ function drawHealthBar(){
 }
 
 function drawBackground(){
+  
   ctx.beginPath();
   ctx.fillStyle = "black";
   ctx.rect(0, 0, canvas.width, canvas.height);
@@ -263,6 +305,8 @@ function drawBackground(){
 // ---------------------------------------- to display the score at the top of the screen ---------------------//
 
 function drawScoreText(){
+  ctx.font = "50px Arial";
+  ctx.fillText(playername + ": ",100,200);
   ctx.font = "300px Arial";
   ctx.fillText(score,300,300);
 }
@@ -277,13 +321,15 @@ function drawCanvas(){
       }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawRactangle();
-  if(life == 0){
+  if(life == 0 && playingSong == true){
     ctx.fillStyle = "red";
     ctx.font = "100px Arial";
     ctx.fillText("Game Over", canvas.width/2 - 250, canvas.height/2 - 100);
     ctx.fillText("Score: " + score, canvas.width/2 - 200, canvas.height/2);
+    saveData();
+    setTimeout(function(){document.location = "leaderboard.html";},2000);
     clearInterval(myCreateBall);
-    if (reachingLife <= 0.1){
+    if (reachingLife <= 0.1 || playingSong == false){
       clearInterval(myDrawCanvas);
       stopMusic();
     }
@@ -337,5 +383,33 @@ function createBall(){
     ovalY[index] = 0;
     ovalColor[index] = boxColors[channel];
   }
+}
+
+
+
+function saveData(){
+  loadedData = sortData(loadedData,dataIndex);
+  firebaseRef.child('scoreBoard').remove();
+  firebaseRef.child('scoreBoard').set(loadedData); 
+            
+}
+
+function loadData(){
+  firebase.database().ref("scoreBoard").on('value', function(snapshot) {
+      if (snapshot.val() != null){
+        loadedData = snapshot.val();
+        dataIndex = loadedData.length;
+        
+      }
+      
+    });
+}
+
+function sortData(data,index){
+  let tempData = {'playername':playername,'score':score};
+  data.push(tempData);
+  let returnData = data.sort(function(a,b){return b['score']-a['score'];});
+  returnData.spice(10,1);
+  return returnData;
 }
 
