@@ -409,7 +409,9 @@ function sortData(data,index){
   let tempData = {'playername':playername,'score':score};
   data.push(tempData);
   let returnData = data.sort(function(a,b){return b['score']-a['score'];});
-  returnData.spice(10,1);
+  if (returnData.length > 10){
+    returnData.spice(10,1);
+  }
   return returnData;
 }
 
