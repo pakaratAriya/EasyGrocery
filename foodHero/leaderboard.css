@@ -12,6 +12,12 @@
     text-shadow: 2px 2px 4px #000000;
 }
 
+table{
+    font-size: 50px;
+    padding-left: 110px;
+    padding-top: 30px;
+}
+
 #score{
     height: 800px;
     width: 600px;
@@ -20,7 +26,7 @@
 }
 
 #form{
-    margin-top: 80px;
+    margin-top: 180px;
 }
 
 #form p{
@@ -30,28 +36,28 @@
 }
 
 #form input{
-    margin-left: 220px; 
+    margin-left: 200px; 
     height: 30px;
 }
 
-#form button{
+#start{
     height: 100px;
     width: 150px;
-    margin-left: 200px;
+    margin-left: 40px;
     font-size: 20px;
     border-radius: 50px;
     background-color: coral;
     border: 2px solid black;
 }
 
-#exit{
+/* #exit{
     margin-top: 140px;
-}
+} */
 
-#exit button{
+#exitgame{
     height: 100px;
     width: 150px;
-    margin-left: 380px;
+    margin-left: 40px; 
     font-size: 20px;
     border-radius: 50px;
     background-color: coral;
@@ -65,5 +71,10 @@
 	background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
+}
+
+#playername{
+    font-size: 30px;
+    width: 200px;
 }
 
