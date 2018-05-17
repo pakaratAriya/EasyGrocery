@@ -326,13 +326,13 @@ function drawCanvas(){
     ctx.font = "100px Arial";
     ctx.fillText("Game Over", canvas.width/2 - 250, canvas.height/2 - 100);
     ctx.fillText("Score: " + score, canvas.width/2 - 200, canvas.height/2);
-    clearInterval(myDrawCanvas);
-    saveData();
+   
     setTimeout(function(){document.location = "leaderboard.html";},2000);
     clearInterval(myCreateBall);
     if (reachingLife <= 0.1 || playingSong == false){
       clearInterval(myDrawCanvas);
       stopMusic();
+      saveData();
     }
     return;
   }
@@ -411,7 +411,9 @@ function sortData(data,index){
   data.push(tempData);
   let returnData = data.sort(function(a,b){return b['score']-a['score'];});
   if (returnData.length > 10){
-    returnData.spice(10,1);
+    for(let i = 10; i < returnData.length; i++){
+      returnData[i] = null;
+    }
   }
   return returnData;
 }
