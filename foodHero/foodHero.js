@@ -60,7 +60,7 @@ function playMusic(){
   audio.volume = 0.1;
   audio.style = "width: " + window.innerWidth*0.8 + "px; height: " + window.innerHeight * 0.4 + "px; display: block";
   audio.setAttribute("preload","auto");
-  audio.pause();
+  //audio.pause();
   playingSong = true;
 }
 
