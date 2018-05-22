@@ -117,15 +117,28 @@ transition: 0.5s;
 }
 
 .selectedFood{
-	background-color: darkgreen;
+  background: grey;
+  opacity: 0.3;
+}
+
+.chosenFood{
+  background: darkgreen;
+}
+
+.chosenFood span {
+  color: white;
+}
+
+.chosenFood h6 {
+  color: white;
 }
 
 .selectedFood span {
-  color: white;
+  color: black;
 }
 
 .selectedFood h6 {
-  color: white;
+  color: black;
 }
 
 #title{

@@ -153,7 +153,7 @@ function createData(data){
 
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
-    $(this).addClass("selectedFood");
+    $(this).addClass("chosenFood");
     let count = ++dataCounter[$(this).attr('catagory')][$(this).attr('index')];
     calculateCalories($(this).attr('catagory'));
     let sendingFood = data[$(this).attr('catagory')][$(this).attr('index')];
@@ -177,7 +177,7 @@ $("#undo").on("click", function(event){
     calculateCalories(temp['catagory']);;
     $('#span' + temp['catagory'] + (temp['ID'] - 1)).html(count);
     if (count == 0){
-      $('#data' + temp['catagory'] + (temp['ID'] - 1)).removeClass('selectedFood');
+      $('#data' + temp['catagory'] + (temp['ID'] - 1)).removeClass('chosenFood');
     }
   }
 
