@@ -158,6 +158,7 @@ function createData(data){
     calculateCalories($(this).attr('catagory'));
     let sendingFood = data[$(this).attr('catagory')][$(this).attr('index')];
     sendingFood['catagory'] = $(this).attr('catagory');
+    sendingFood['isSelected'] = false;
     foodSelection.push(sendingFood);
     $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
   });
