@@ -5,7 +5,9 @@
     </head>
 
     <body>
-        <div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        <div id="main">
             <div id="leaderboard">
                 <p>Leader board</p>
             </div>
@@ -15,19 +17,20 @@
             </div>
 
             <div id="form">
-                <p>User Name</p>
-                <input type="text" name="firstname"/>
-                <button>Start</button>
+                <!-- <p>User Name</p> -->
+                <input id="playername" value="" type="text" name="firstname" required="required" 
+                placeholder="UserName" maxlength="6"/>
+                <button id="start" onclick="goToGame()">Start</button>
+                <button id="exitgame" onclick="exitGame()">Exit</button>
             </div>
 
-            <div id="exit">
-                <button>Exit</button>
-            </div>
-
-
-
+            <!-- <div id="exit">
+                
+            </div> -->
         </div>
-        
+        <script src="leaderboard.js"></script>
+      
+      
     </body>
 
 </html>
