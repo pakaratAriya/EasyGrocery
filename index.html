@@ -25,6 +25,7 @@
 	</script>
 
 		<!-- the code below initializes the sign-in widget from firebaseUI web. -->
+<<<<<<< HEAD
 	<script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
 	<script type="text/javascript">
@@ -47,6 +48,30 @@
 	</script>
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
+=======
+		  <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+		  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+		  <script type="text/javascript">
+		    // FirebaseUI config.
+		    var uiConfig = {
+		      signInSuccessUrl: 'loggedIn.html',
+		      signInOptions: [
+		        // Leave the lines as is for the providers you want to offer your users.
+		        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+		        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+		      ],
+		      // Terms of service url.
+		      tosUrl: '<your-tos-url>'
+		    };
+
+		    // Initialize the FirebaseUI Widget using Firebase.
+		    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+		    // The start method will wait until the DOM is loaded.
+		    ui.start('#firebaseui-auth-container', uiConfig);
+		  </script>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+>>>>>>> 11daa765cb29365b8383a346978feacb53f45c83
 
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -124,8 +149,18 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
 	<script src="EasyGrocery.js"></script>
 	<script src="thirdPage.js"></script>
+=======
+	</div>
+	<script src="js/EasyGrocery.js"></script>
+  <script src="js/thirdPage.js"></script>
+
+
+
+
+>>>>>>> 11daa765cb29365b8383a346978feacb53f45c83
 </body>
 
 </html>

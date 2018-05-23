@@ -1,0 +1,140 @@
+.labelRowWithProg{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress {
+  margin: 10px 10px;
+  margin-top: 18px;
+  height: 30px;
+  width: 400px;
+  display: inline-block;
+  background-color: grey;
+}
+#tips{
+  padding-top: 20px;
+  /* height: 150px; */
+  background-color: #f2f2f2;;
+}
+
+#tipstitle{
+  font-size: 40px;
+  color: rgb(87, 171, 47);
+  margin: 0;
+}
+
+#dis{
+  font-size: 30px;
+  margin: 0;
+}
+
+.catName {
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 1px;
+  margin: 0;
+  font-size: 50px;
+  font-weight: 600;
+  color: #56ab2f;
+}
+
+#bot{
+    background-color: none;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0px;
+    padding-bottom: 0px;
+}
+
+#bot p{
+    text-align: center;
+    font-weight: 100;
+    font-size: 40px;
+    color: white;
+}
+.button{
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #dd1818;
+  border-radius: 100%;
+  border: 0px solid grey;
+  font-size: 40px;
+  font-weight: 300;
+  right: 55px;
+  box-shadow: 1px 1px 4px #000000;
+}
+
+.minusStyle{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-color: #dd1818;
+  border-radius: 100%;
+  border: 0px solid grey;
+  font-size: 40px;
+  font-weight: 300;
+  box-shadow: 1px 1px 4px #000000;
+}
+
+.minusImage{
+  width: 30px;
+}
+
+.redoNextIcon{
+  width: 50px;
+}
+#undo{
+  bottom: 210px;
+  padding-left: 5px;
+}
+#next{
+  bottom: 90px;
+}
+.itemCounter{
+  display: inline-block;
+  max-width: 150px;
+  max-height:30px;
+  font-size: 30px;
+  line-height: 25px;
+  font-weight: 100;
+  padding-bottom: 5px;
+  color: black;
+}
+
+#easterEgg{
+  position: fixed;
+  top: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+#canvs{
+  background-color: none;
+  width: 720px;
+  height: 720px;
+  display: inline-block;
+}
+
+#eggImg{
+  padding-top: 60px;
+}
+
+.blur {
+  filter: blur(20px);
+  /* filter:grayscale(50%); */
+  transition: 0.5s;
+}
+
+.notAvailable {
+  display: none;
+}

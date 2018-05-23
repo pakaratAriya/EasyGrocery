@@ -1,4 +1,0 @@
-INSERT INTO Other(name, calories, img, cost) VALUES ("crab", "83", "./icon/Other/crab.png", "46.00");
-INSERT INTO Other(name, calories, img, cost) VALUES ("lobster", "89", "./icon/Other/lobster.png", "32.00");
-INSERT INTO Other(name, calories, img, cost) VALUES ("seaweed", "43", "./icon/Other/lobster.png", "5.00");
-INSERT INTO Other(name, calories, img, cost) VALUES ("shrimp", "99", "./icon/Other/shrimp.png", "12.00");
