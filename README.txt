@@ -5,9 +5,9 @@ COMP2910 GROUP 6 - EasyGrocery
 
 STUDENTS:
     Zoravar Lalli (A01019819)
-    Maxim Bulatov ()
-    Larry Park ()
-    Prakarat Ariyaprayoon ()
+    Maxim Bulatov (A01047821)
+    Larry Park (A01035412)
+    Prakarat Ariyaprayoon (A01010730)
     Chung-ju Hseieh (A01018666)
 
 COMPLETION OF PROJECT:
