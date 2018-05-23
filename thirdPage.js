@@ -12,7 +12,6 @@ var dataCounter = new Object();
 
 var counter = 0;
 
-
 for (let i = 0; i < maleCal.length; i++){
   calData['male'][i] = maleCal[i];
   calData['female'][i] = femaleCal[i];
@@ -39,7 +38,6 @@ $(".selectionButton").on("click",function(event){
       success: function(data) {
           localStorage.setItem("queryData",JSON.stringify(data));
           document.location = "thirdpage.html";
-
     },
     error: function(errorThrown) {
       console.log(errorThrown);
@@ -97,11 +95,18 @@ function createData(data){
       + "'/><h6>"
       + data[d][i]['name']
       + "</h6>"
-      + "<span id='span" + d + i + "' class='itemCounter'>0</span></div>";
+      + "<span id='span" + d + i + "' class='itemCounter'>0</span>"
+      + "<button type='button' catagory='" + d + "' index='" + i
+      + "' class='minusStyle minusButton" + d + i + " notAvailable'>"
+      + "<img src='./icon/redo.png' class='minusImage' alt='redo'/>"
+      + "</button></div>";
     }
     $("#" + d).html(st);
   }
   // ----------------------- work when the user click the food img -> add the item into foodSelection --------------------//
+  
+  var canAdd = true;
+  
   $(".foodBlock").on("click", function(event){
     if ($(this).attr('value') == 'egg') {
       counter++;
@@ -150,7 +155,9 @@ function createData(data){
     if (getFoodData($(this).attr('catagory')) >= 100) {
       return;
     }
-
+    if(canAdd == false){
+      return;
+    }
     calSum[$(this).attr('catagory')] += parseFloat($(this).attr("cal"));
     totalCost += parseFloat($(this).attr("cost"));
     $(this).addClass("chosenFood");
@@ -161,23 +168,50 @@ function createData(data){
     sendingFood['isSelected'] = false;
     foodSelection.push(sendingFood);
     $('#span' + $(this).attr('catagory') + $(this).attr('index')).html(count);
+    $('.minusButton' + $(this).attr('catagory') + $(this).attr('index')).removeClass('notAvailable');
   });
+  
+  $(".minusStyle").on("mousedown", function(event){
+    canAdd = false;
+  for(let x in foodSelection){
+    for(let d in foodSelection[x]){
+      if (foodSelection[x]['catagory'] == $(this).attr('catagory') && (foodSelection[x]['ID'] - 1) == $(this).attr('index')){
+        let temp = foodSelection[x];
+        calSum[temp['catagory']] -= temp['calories'];
+        totalCost -= temp['cost'];
+        let count = --dataCounter[temp['catagory']][temp['ID'] - 1];
+        calculateCalories(temp['catagory']);;
+        $('#span' + temp['catagory'] + (temp['ID'] - 1)).html(count);
+        if (count == 0){
+          $('#data' + temp['catagory'] + (temp['ID'] - 1)).removeClass('chosenFood');
+          $('.minusButton' + temp['catagory'] + (temp['ID'] - 1)).addClass('notAvailable');
+        }
+        foodSelection.splice(x,1);
+        setTimeout(function(){ canAdd=true; }, 20);
+        return;
+      }
+    }
+  }
+});
 
 }
+
+
 
 // ------------------------------- delete the latest item that the user just chose ----------------------------//
 
 $("#undo").on("click", function(event){
   if(foodSelection.length > 0) {
 
-    var temp = foodSelection.pop();
+    let temp = foodSelection.pop();
     calSum[temp['catagory']] -= temp['calories'];
     totalCost -= temp['cost'];
-    var count = --dataCounter[temp['catagory']][temp['ID'] - 1];
+    let count = --dataCounter[temp['catagory']][temp['ID'] - 1];
     calculateCalories(temp['catagory']);;
     $('#span' + temp['catagory'] + (temp['ID'] - 1)).html(count);
     if (count == 0){
       $('#data' + temp['catagory'] + (temp['ID'] - 1)).removeClass('chosenFood');
+      $('.minusButton' + temp['catagory'] + (temp['ID']-1)).addClass('notAvailable');
     }
   }
 
