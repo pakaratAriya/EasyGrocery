@@ -1,19 +1,20 @@
 
   // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyCzABecdstnYpHXmL9RmPbLsIezpqQOF8g",
     authDomain: "easygrocery-b41d7.firebaseapp.com",
     databaseURL: "https://easygrocery-b41d7.firebaseio.com",
     projectId: "easygrocery-b41d7",
     storageBucket: "easygrocery-b41d7.appspot.com",
     messagingSenderId: "320819117084"
-  };
-  firebase.initializeApp(config);
+};
 
-  var firebaseRef = firebase.database().ref();
+firebase.initializeApp(config);
+
+var firebaseRef = firebase.database().ref();
 
 $(document).ready(function(){
-      userName = localStorage.getItem("userName");
+  userName = localStorage.getItem("userName");
 });
 
 $(".saveBtn").on("click", function(){
@@ -39,8 +40,8 @@ $(".saveBtn").on("click", function(){
 });
 
 $("#openSaveData").on("click", function(){
-    $("#main").toggleClass("blur");
-    $("#saveContent").fadeToggle("slow","linear");
+  $("#main").toggleClass("blur");
+  $("#saveContent").fadeToggle("slow","linear");
 });
 
 $("#openLoadData").on("click", function(){
@@ -49,12 +50,12 @@ $("#openLoadData").on("click", function(){
 });
 
 $(".cancelSaveBtn").on("click", function(){
-    $("#main").toggleClass("blur");
-    $("#saveContent").fadeToggle("slow","linear");
+  $("#main").toggleClass("blur");
+  $("#saveContent").fadeToggle("slow","linear");
 });
 
 $("#cancel").on("click", function(){
-    $("#content").toggleClass("blur");
+  $("#content").toggleClass("blur");
   $("#lists").fadeToggle("slow","linear");
 });
 
