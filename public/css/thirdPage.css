@@ -76,18 +76,21 @@
   display: block;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 50%;
-  background-color: #dd1818;
-  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  background-color: orange;
+  border-radius: 0 0 10px 0;
   border: 0px solid grey;
   font-size: 40px;
   font-weight: 300;
   box-shadow: 1px 1px 4px #000000;
+  margin-bottom: 3px;
+  margin-left: 88px;
 }
 
 .minusImage{
   width: 30px;
+  height: 20px;
 }
 
 .redoNextIcon{
